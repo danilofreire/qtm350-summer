@@ -1,78 +1,65 @@
 # QTM 350 - Data Science Computing
 
-## Course Description
+This branch hosts the website for the course [QTM 350 - Data Science
+Computing](http://danilofreire.github.io/qtm350) at [Emory
+University](http://www.emory.edu). The course provides an introduction to
+Python and SQL for data management and analysis. Please refer to the `main`
+branch of [this repository](https://github.com/danilofreire/qtm350) for the
+course materials.
 
-Welcome to [QTM 350](https://github.com/danilofreire/qtm350)! This course
-introduces key tools in modern data science, focusing on three essential
-aspects: reliability, reproducibility, and robustness. We will cover command
-line interfaces, version control with [Git](https://git-scm.com/) and
-[GitHub](https://github.com/), and literate programming using
-[Quarto](https://quarto.org/) and [Jupyter Notebooks](https://jupyter.org/).
-You will also learn about data storage and manipulation with
-[SQL](https://www.w3schools.com/sql/) and [Pandas](https://pandas.pydata.org/),
-data visualisation using [Matplotlib](https://matplotlib.org/),
-[Seaborn](https://seaborn.pydata.org/) and
-[plotnine](https://plotnine.readthedocs.io/), and parallel computing with
-[Dask](https://www.dask.org/). We will explore artificial intelligence-assisted
-programming with [GitHub Copilot](https://github.com/features/copilot) and
-finish with [Docker](https://www.docker.com/) and containerisation. Throughout
-the course, you will learn how to use these tools to improve your data science
-workflow and create more reliable, reproducible, and robust analyses.
+## Building the website
 
-## Contact Information
+I used [Quarto](https://quarto.org) to build the website, and the process was
+quite straightforward. To keep the website organised, I created a `gh-pages`
+branch and removed all unnecessary files. Then, I converted some of the course
+materials, such as the syllabus, to `.qmd` format (Quarto Markdown) and added
+them to their respective folders. The tutorials were already in `.qmd` format,
+so I simply moved them to the `tutorials` folder and added a `tutorials.qmd`
+file to list them. Similarly, the lectures are described in the `lectures.qmd`
+file.
 
-- [Danilo Freire](https://danilofreire.github.io/)
-  - Email: [`danilofreire@gmail.com`](mailto:danilofreire@gmail.com)
-  - Office hours: By appointment at any time (online or in person).
+I decided to keep the Jupyter Notebooks, which will be used in the lectures,
+only in the `main` branch. This way, I encourage students to download the
+repository and follow the lectures using their local Jupyter environment.
 
-## Learning Outcomes
+The `_quarto.yml` file contains the configuration for the website, including
+the theme, the title, and the navigation bar. The website files are in the
+`docs/` folder, as it is one of the easiest ways to host a website on GitHub. I
+also added a `.nojekyll` file to the root of the repository to prevent GitHub
+from processing the website as a Jekyll project.
 
-By the end of this course, students will be able to:
+I then built the website with `quarto render docs/` and pushed the changes to the
+`gh-pages` branch with `git push origin gh-pages`.
 
-- Use data science tools for project collaboration and version control
-- Apply advanced techniques for data storage, manipulation, and querying
-- Create clear data visualisations and write well-documented code
-- Use AI tools to help with programming tasks
-- Understand the basics of containerisation and parallel computing
+## Building JupyterLite pages with Pyodide
 
-## Repository Structure
+I have created a simple JupyterLite page using Pyodide for this website. The
+idea is that students can run Python code in the browser without needing to
+install Python on their own machines. The page is available at
+<https://danilofreire.github.io/qtm30/jupyter>. The code for the page is
+available below:
 
-This repository is organised as follows:
+```bash
+mkdir -p docs/jupyter
+cp -r jupyter/* docs/jupyter
+cd docs/jupyter
+pip install -r requirements.txt
+jupyter lite build
+mv _output/* ./
+git add ../../docs/jupyter -f
+git commit -m "update JupyterLite page"
+git push
+```
 
-- [`assignments/`](https://github.com/danilofreire/qtm350/tree/main/assignments): Contains all course assignments
-- [`lectures/`](https://github.com/danilofreire/qtm350/tree/main/lectures): Includes lecture materials and code
-- [`tutorials/`](https://github.com/danilofreire/qtm350/tree/main/tutorials): Step-by-step guides for the tools used in the course
-- [`README.md`](https://github.com/danilofreire/qtm350/blob/main/README.md): This file, providing an overview of the course and repository
-- [`syllabus.pdf`](https://github.com/danilofreire/qtm350/blob/main/syllabus/syllabus.pdf): Course syllabus in PDF format
+For further information on how to build a website with Quarto, please refer to
+<https://quarto.org/docs/websites/>.
 
-The course website is available at <https://danilofreire.github.io/qtm350/>.
-
-## Getting Help
-
-If you encounter any issues with the course materials or have questions about the content, please:
-
-1. Check the [course syllabus](https://github.com/danilofreire/qtm350/blob/main/syllabus/syllabus.pdf) and this README for relevant information
-2. Review the [lecture materials](https://github.com/danilofreire/qtm350/tree/main/lectures) and [tutorials](https://github.com/danilofreire/qtm350/tree/main/tutorials) in the repository
-3. Consult with your classmates or post in the [course discussion forum](https://github.com/danilofreire/qtm350/discussions)
-4. Attend office hours or schedule an appointment with the instructor
-
-## Contributing to the Repository
-
-While this repository is primarily maintained by the course instructor,
-everyone is welcome to contribute. Please feel free to suggest improvements or
-report issues by [opening a GitHub
-issue](https://github.com/danilofreire/qtm350/issues), [submitting a pull
-request](https://github.com/danilofreire/qtm350/pulls), [creating a discussion
-post](https://github.com/danilofreire/qtm350/discussions), or [contacting the
-instructor directly](mailto:danilo.freire@emory.edu).
+If you have any questions, please feel free to [open an
+issue](https://github.com/danilofreire/qtm350/issues) or [create a pull
+request](https://github.com/danilofreire/qtm350/pulls).
 
 ## License
 
-This repository is licensed under the [MIT
-License](https://github.com/danilofreire/qtm350/blob/main/LICENSE.qmd). You are
-free to use, modify, and distribute the materials as needed, with appropriate
-attribution to the original source.
-
------
-
-We look forward to an engaging and productive semester! Good luck, and happy coding! :smiley:
+The content of this repository is released under the [MIT
+License](LICENSE.qmd). You are free to use, modify or distribute it as long as
+you provide the attribution to the original author.

@@ -1,37 +1,16 @@
 ---
 title: "Jupyter Notebook and Markdown Tutorial"
 lang: en-GB
-thanks: Many thanks to Alejandro Sanchez Becerra for his help with the tutorials.
-author: 
-  - Danilo Freire\thanks{Visiting Assistant Professor, Department of Quantitative Theory and Methods, Emory University, \href{mailto:danilo.freire@emory.edu}{\texttt{danilo.freire@emory.edu}}, \url{https://danilofreire.github.io}.}
-appendix: false
-fontfamily: libertine
-monofont: inconsolata
-monofontoptions: scaled=.95
-fontsize: 12pt
-spacing: double
-geometry: 
-  - top=2cm
-  - bottom=2cm
-  - left=2cm
-  - right=2cm
-urlcolor: darkblue
-linkcolor: Mahogany
-citecolor: Mahogany
 jupyter: python3
 highlight-style: arrow
-pdf-engine: pdflatex
 format: 
-    pdf:
-      template: article-template.latex
+    html:
       toc: true
       toc-depth: 2
-      number-sections: true
+      number-sections: false
 editor:
   render-on-save: true
 ---
-
-\newpage
 
 # Introduction
 
@@ -49,46 +28,32 @@ Jupyter Notebooks provide an interactive development environment that allows you
 
 ## Creating a New Notebook
 
-First, please make sure you have Python, Jupyter Notebook, and VSCode installed on your computer. If you do not have these installed, please refer to the [VSCode and Anaconda Tutorial](https://github.com/danilofreire/qtm350/blob/main/tutorials/01-vscode-anaconda-tutorial.pdf) for instructions on how to install them.
+First, please make sure you have Python, Jupyter Notebook, and VSCode installed
+on your computer. If you do not have these installed, please refer to the
+[VSCode and Anaconda Tutorial](https://github.com/danilofreire/qtm350/blob/main/tutorials/01-vscode-anaconda-tutorial.pdf) for instructions on how to install them.
 
 To create a new Jupyter Notebook in VSCode, please go to the tab "File" > "New File". You will see a prompt in the middle of the screen. Select the option "Jupyter Notebook". 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/new-jupyter-notebook.png}
-\caption{Creating a new Jupyter Notebook in VSCode.}
-\end{figure}
+![Creating a new Jupyter Notebook in VSCode.](images/new-jupyter-notebook.png)
 
 A new Jupyter Notebook will be created with the file extension `.ipynb`. You can rename the notebook by clicking on the notebook name at the top of the screen. An empty notebook will look like this:
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/empty-jupyter-notebook.png}
-\caption{An empty Jupyter Notebook.}
-\end{figure}
+![An empty Jupyter Notebook.](images/empty-jupyter-notebook.png)
 
 Please do not forget to select the Python interpreter that you want to use for the notebook. You can do this by clicking on the Python version at the top right corner of the screen. A prompt will appear, and you can select the Python interpreter that you want to use (in this case, Anacoda's "base").
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/select-kernel.png}
-\caption{Selecting the Python interpreter for the notebook.}
-\end{figure}
+![Selecting the Python interpreter for the notebook.](images/select-kernel.png)
 
 To create a chunk of Python code click on "+ Code." You will get an empty gray box which has Python on the lower-right corner. You can type Python code in this box and run it by clicking on the "Run" button on the left side of the box. You can also run the code by pressing "Shift + Enter" on your keyboard.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/code-cell.png}
-\caption{A code cell in a Jupyter Notebook.}
-\end{figure}
+![A code cell in a Jupyter Notebook.](images/code-cell.png)
 
 Here you should enter the Python commands. For example, type the following lines of code in the code cell:
 
 ```{python}
 #| output: false
 #| eval: false
-print("Welcome to QTM 151!")
+print("Welcome to QTM 350!")
 
 x = 5
 y = 10
@@ -98,16 +63,12 @@ print(z)
 
 The results of the code will be displayed below the code cell. In this case, the output will be:
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/code-output.png}
-\caption{Output of the code cell.}
-\end{figure}
+![Output of the code cell.](images/code-output.png)
 
 To create a text cell click on "+ Markdown." You will get an empty white box where you can type text. We will cover Markdown in more detail in the next section. But for now, you can type the following text in the Markdown cell:
 
 ```{markdown}
-# Welcome to QTM 151!
+# Welcome to QTM 350!
 
 This is a Jupyter Notebook. You can write *text*, **equations**, and `code` 
 in [this notebook](https://github.com/danilofreire/qtm350/blob/main/tutorials/testing-ipython.ipynb). 
@@ -115,11 +76,7 @@ in [this notebook](https://github.com/danilofreire/qtm350/blob/main/tutorials/te
 
 The text will be displayed in the text cell like this:
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/text-cell.png}
-\caption{A text cell in a Jupyter Notebook.}
-\end{figure}
+![A text cell in a Jupyter Notebook.](images/text-cell.png)
 
 You can run the text cell by clicking the "Run" button on the left side of the box or by pressing "Shift + Enter" on your keyboard. The first text block shows how the text looks before running the cell, and the second block shows how it looks after running the cell. Just double click on the space where the text is to edit the Markdown block. This is should open the gray box again.
 
@@ -282,11 +239,7 @@ display(Markdown(markdown_table))
 
 This will render a nicely formatted table in your notebook:
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{images/markdown-table.png}
-\caption{Markdown table in a Jupyter Notebook.}
-\end{figure}
+![Markdown table in a Jupyter Notebook.](images/markdown-table.png)
 
 ### Advanced Formatting
 
@@ -370,11 +323,7 @@ display(Markdown(markdown_table))
 
 This will produce a well-formatted table with custom headers, appropriate number formatting, and a title.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{images/comprehensive-table.png}
-\caption{Comprehensive Markdown table in a Jupyter Notebook.}
-\end{figure}
+![Comprehensive Markdown table in a Jupyter Notebook.](images/comprehensive-table.png)
 
 ## Equations
 

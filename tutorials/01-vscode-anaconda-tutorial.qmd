@@ -1,41 +1,24 @@
 ---
 title: "Installing VS Code and Connecting it with Anaconda"
 lang: en-GB
-thanks: Many thanks to Alejandro Sanchez Becerra for his help with the tutorials.
-author: 
-  - Danilo Freire\thanks{Visiting Assistant Professor, Department of Quantitative Theory and Methods, Emory University, \href{mailto:danilo.freire@emory.edu}{\texttt{danilo.freire@emory.edu}}, \url{https://danilofreire.github.io}.}
-appendix: false
-fontfamily: libertine
-monofont: inconsolata
-monofontoptions: scaled=.95
-fontsize: 12pt
-spacing: double
-geometry: 
-  - top=2cm
-  - bottom=2cm
-  - left=2cm
-  - right=2cm
-urlcolor: darkblue
-linkcolor: Mahogany
-citecolor: Mahogany
 jupyter: python3
 highlight-style: arrow
-pdf-engine: pdflatex
 format: 
-    pdf:
-      template: article-template.latex
+    html:
       toc: true
       toc-depth: 1
-      number-sections: true
+      number-sections: false
 editor:
   render-on-save: true
 ---
 
-\newpage
-
 # Introduction
 
-This tutorial will guide students new to computer programming through the process of installing Visual Studio Code (VS Code) and connecting it with Anaconda. We will cover each step in detail to ensure a smooth setup process. If you have any questions or encounter issues during the installation, please feel free to ask for help from me (<danilo.freire@emory.edu>) or the qtm350 teaching assistants.
+This tutorial will guide students new to computer programming through the
+process of installing Visual Studio Code (VS Code) and connecting it with
+Anaconda. We will cover each step in detail to ensure a smooth setup process.
+If you have any questions or encounter issues during the installation, please
+feel free to ask for help from me (<danilo.freire@emory.edu>) or the QTM350 teaching assistants.
 
 # Why VS Code?
 
@@ -56,77 +39,37 @@ With that said, let us start the installation process.
 - Please visit the official Visual Studio Code website: <https://code.visualstudio.com/>.
 - Click on the "Download" button for your operating system (Windows, macOS, or Linux).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-download.png}
-    \caption{VS Code Website}
-    \label{fig:vscode-download}
-\end{figure}
+![VS Code Website](images/vscode-download.png)
 
 ## For Windows Users
 
 - Run the "VSCodeUserSetup-{version}.exe" file.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/windows01.png}
-    \caption{Windows Installation}
-    \label{fig:windows01}
-\end{figure}
+![Windows Installation](images/windows01.png)
 
 - Accept the license agreement and click "Next".
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/windows02.png}
-    \caption{License Agreement}
-    \label{fig:windows02}
-\end{figure}
+![License Agreement](images/windows02.png)
 
 - Choose the installation location (default is recommended) and click "Next".
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/windows03.png}
-    \caption{Installation Location}
-    \label{fig:windows03}
-\end{figure}
+![Installation Location](images/windows03.png)
 
 - Select additional tasks if desired (e.g., adding "Open with Code" action) and click "Next".
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/windows05.png}
-    \caption{Additional Tasks}
-    \label{fig:windows05}
-\end{figure}
+![Additional Tasks](images/windows05.png)
 
 - Click "Install" to begin the installation process.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/windows06.png}
-    \caption{Installation Progress}
-    \label{fig:windows06}
-\end{figure}
+![Installation Progress](images/windows06.png)
 
 ## For macOS Users
 
 - Open the downloaded .zip file and drag the VS Code application to the Applications folder.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{images/macos01.png}
-    \caption{Unzip file}
-    \label{fig:macos01}
-\end{figure}
+![Unzip file](images/macos01.png)
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/macos02.png}
-    \caption{Drag to Applications folder}
-    \label{fig:macos02}
-\end{figure}
+![Drag to Applications folder](images/macos02.png)
 
 ## For Linux Users
 
@@ -137,12 +80,7 @@ With that said, let us start the installation process.
 - After installation, launch VS Code.
 - You should see the welcome screen with options to start a new project or open existing files.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-screen.png}
-    \caption{VS Code Welcome Screen}
-    \label{fig:vscode-welcome}
-\end{figure}
+![VS Code Welcome Screen](images/vscode-screen.png)
 
 ## Getting Started
 
@@ -156,70 +94,35 @@ Anaconda is a distribution of Python that includes many popular packages for dat
 
 - Visit the Anaconda website: <https://www.anaconda.com/products/distribution>. You can skip the registration if you prefer.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda01.png}
-    \caption{Anaconda Website}
-    \label{fig:anaconda-download}
-\end{figure}
+![Anaconda Website](images/anaconda01.png)
 
 - Click on the "Download" button for your operating system.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda02.png}
-    \caption{Download Anaconda}
-    \label{fig:anaconda-download}
-\end{figure}
+![Download Anaconda](images/anaconda02.png)
 
 ## For Windows Users
 
 - Choose "Just Me" for the installation type (recommended).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda-windows01.png}
-    \caption{Anaconda Installation}
-    \label{fig:anaconda-install}
-\end{figure}
+![Anaconda Installation](images/anaconda-windows01.png)
 
 - Select the installation location (default is fine).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda-windows02.png}
-    \caption{Anaconda Installation}
-    \label{fig:anaconda-install02}
-\end{figure}
+![Anaconda Installation](images/anaconda-windows02.png)
 
 - In the "Advanced Options" section, check "Add Anaconda to my PATH environment variable" and "Register Anaconda as my default Python".
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda-windows03.png}
-    \caption{Advanced Options}
-    \label{fig:anaconda-advanced}
-\end{figure}
+![Advanced Options](images/anaconda-windows03.png)
 
 ## For macOS Users
 
 - Open the downloaded .pkg file and follow the installation instructions. You can install Anaconda for all users.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda-macos01.png}
-    \caption{Anaconda Installation}
-    \label{fig:anaconda-macos}
-\end{figure}
+![Anaconda Installation](images/anaconda-macos01.png)
 
 - Follow the on-screen instructions, accepting the default options.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/anaconda-macos02.png}
-    \caption{Anaconda Installation}
-    \label{fig:anaconda-macos02}
-\end{figure}
+![Anaconda Installation](images/anaconda-macos02.png)
 
 ## For Linux Users
 
@@ -231,12 +134,7 @@ Anaconda is a distribution of Python that includes many popular packages for dat
 - Type `conda --version` and press Enter. You should see the Conda version number.
 - Type `python --version` and press Enter. You should see the Python version installed by Anaconda.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{images/anaconda-verify.png}
-    \caption{Verify Anaconda Installation}
-    \label{fig:anaconda-verify}
-\end{figure}
+![Verify Anaconda Installation](images/anaconda-verify.png)
 
 # Connecting VS Code with Anaconda
 
@@ -246,34 +144,19 @@ Now that both VS Code and Anaconda are installed, we will connect them to use An
 
 - Open VS Code and click on the Extensions view icon on the left sidebar (it looks like four squares). Search for "Python" in the search bar.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-python-extension.png}
-    \caption{Python Extension in VS Code}
-    \label{fig:vscode-python-extension}
-\end{figure}
+![Python Extension in VS Code](images/vscode-python-extension.png)
 
 - Find the [official Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) by Microsoft and click "Install".
 
 - Please also install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) to work with Jupyter notebooks.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-jupyter-extension.png}
-    \caption{Jupyter Extension in VS Code}
-    \label{fig:vscode-jupyter-extension}
-\end{figure}
+![Jupyter Extension in VS Code](images/vscode-jupyter-extension.png)
 
 ## Select the Anaconda Python Interpreter:
 
 - Create a Python file in VS Code. Click on the "New File" button in the top left corner and save it with a `.py` extension. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-new-file.png}
-    \caption{New Python File in VS Code}
-    \label{fig:vscode-new-file}
-\end{figure}
+![New Python File in VS Code](images/vscode-new-file.png)
 
 - Include the following code in the file:
 
@@ -287,30 +170,15 @@ print(sys.executable)
 
 - Save the file again. Here I saved it as `testing-anaconda.py`.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-save-file.png}
-    \caption{Save Python File in VS Code}
-    \label{fig:vscode-save-file}
-\end{figure}
+![Save Python File in VS Code](images/vscode-save-file.png)
 
 - Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to open the Command Palette.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-command-palette.png}
-    \caption{Command Palette in VS Code}
-    \label{fig:vscode-command-palette}
-\end{figure}
+![Command Palette in VS Code](images/vscode-command-palette.png)
 
 - Type "Python: Select Interpreter" and select it from the list.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-select-interpreter.png}
-    \caption{Select Python Interpreter}
-    \label{fig:vscode-select-interpreter}
-\end{figure}
+![Select Python Interpreter](images/vscode-select-interpreter.png)
 
 - Choose the Anaconda Python interpreter from the list. It should be labelled something like "Python 3.x.x ('base') Conda".
 
@@ -318,25 +186,18 @@ print(sys.executable)
 
 - Please click on the "Run" button at the top right corner of the editor to execute the code in your `.py` file. Select "Run Current File in Dedicated Terminal"
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-run-file.png}
-    \caption{Run Python File in VS Code}
-    \label{fig:vscode-run-file}
-\end{figure}
+![Run Python File in VS Code](images/vscode-run-file.png)
 
 - The output should show the Anaconda Python version and its location.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/vscode-output.png}
-    \caption{Python Output in VS Code}
-    \label{fig:vscode-output}
-\end{figure}
+![Python Output in VS Code](images/vscode-output.png)
 
 # Optional: GitHub Copilot
 
-[GitHub Copilot](https://github.com/features/copilot) is an AI-powered code completion tool that helps you write code faster and with fewer errors. It is available as an extension for VS Code. Detailed instructions are available on the [03-github-copilot-tutorial](https://github.com/danilofreire/qtm350/blob/main/tutorials/03-github-tutorial.pdf) tutorial in the course repository, but I will provide a brief overview here. Please also refer to <https://code.visualstudio.com/docs/copilot/getting-started-chat> for further instructions.
+[GitHub Copilot](https://github.com/features/copilot) is an AI-powered code
+completion tool that helps you write code faster and with fewer errors. It is
+available as an extension for VS Code. Detailed instructions are available on
+the [03-github-copilot-tutorial](https://github.com/danilofreire/qtm350/blob/main/tutorials/03-github-tutorial.pdf) tutorial in the course repository, but I will provide a brief overview here. Please also refer to <https://code.visualstudio.com/docs/copilot/getting-started-chat> for further instructions.
 
 To install GitHub Copilot, follow these steps:
 
@@ -363,5 +224,3 @@ For further information and advanced usage, refer to the following resources:
 - VS Code Documentation: <https://code.visualstudio.com/docs>
 
 Happy coding!
-
-\nocite{*}
