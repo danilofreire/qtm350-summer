@@ -193,7 +193,7 @@
     "href": "index.html",
     "title": "QTM 350 - Data Science Computing",
     "section": "",
-    "text": "Welcome to QTM 350! This course introduces key tools in modern data science, focusing on three essential aspects: reliability, reproducibility, and robustness. We will cover the command-line interface, version control with Git and GitHub, and literate programming using Quarto. You will also learn about cloud computing with AWS (basics), data storage and manipulation with SQL and Pandas, and parallel computing with Dask. We will explore AI-assisted programming with GitHub Copilot and Ollama and finish with Docker and containerisation.\nWe will meet every Monday and Wednesday from 14:30 to 15:45 in the Maths and Science Centre - E208."
+    "text": "Welcome to QTM 350! This course introduces key tools in modern data science, focusing on three essential aspects: reliability, reproducibility, and robustness. We will cover the command-line interface, version control with Git and GitHub, and literate programming using Quarto. You will also learn about cloud computing with AWS (basics), data storage and manipulation with SQL and Pandas, and parallel computing with Dask. We will explore AI-assisted programming with GitHub Copilot and Ollama and finish with Docker and containerisation.\nWe will meet every Monday, Wednesday, and Friday from 2:30pm-4:45pm online via Teams. The link is available on Canvas and on the course syllabus. The course is designed to be hands-on, with a mix of lectures, tutorials, and assignments. You will have the opportunity to work on real-world data science projects and collaborate with your peers."
   },
   {
     "objectID": "index.html#contact-information",
@@ -214,7 +214,7 @@
     "href": "index.html#website-structure",
     "title": "QTM 350 - Data Science Computing",
     "section": "Website Structure",
-    "text": "Website Structure\nThis website contains the course syllabus, lecture materials, tutorials, and assignments for the course. The course repository at https://github.com/danilofreire/qtm350 is similarly structured. Feel free to explore the materials and use them as needed."
+    "text": "Website Structure\nThis website contains the course syllabus, lecture materials, tutorials, and assignments for the course. The course repository at https://github.com/danilofreire/qtm350-summer is similarly structured. Feel free to explore the materials and use them as needed."
   },
   {
     "objectID": "index.html#getting-help",
