@@ -4,13 +4,14 @@ title: "Lectures"
 
 The course covers the following topics, with corresponding lecture materials available in the [lectures folder](https://github.com/danilofreire/qtm350/tree/main/lectures). Please refer to the syllabus for additional suggested readings on each topic. Links will be added as the materials are posted.
 
-## Module 01: Introduction 
+## Friday, March 16: Introduction to the Course, Computational Literacy
 
-### Wednesday, January 15:
-
-- Syllabus and course repository: <https://github.com/danilofreire/qtm350>.
-- Lecture 01: [Welcome to QTM 350 - Introduction](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-01/01-introduction.html).
+- Syllabus and course repository: <https://github.com/danilofreire/qtm350-summer>.
+- Lecture 01: [Welcome to QTM 350 - Introduction](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-01/01-introduction.html).
 - [Course Tutorials: How to Install Anaconda, Jupyter, PostgreSQL, VSCode, and Open a Free Educational Account on GitHub](https://github.com/danilofreire/qtm350/tutorials).
+
+- Lecture 02: [Computational Literacy](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-02/02-computational-literacy.html).
+- **Assignment 01:** [Problem Set 01](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/01-assignment.ipynb).
 
 Suggested references:
 
@@ -19,27 +20,17 @@ Suggested references:
 - Breiman, L. (2001). [Statistical Modeling: The Two Cultures (with Comments and a Rejoinder by the Author)](https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full). Statistical Science, 16(3), 199-231.
 - Brady, H. E. (2019). [The Challenge of Big Data and Data Science](https://www.annualreviews.org/content/journals/10.1146/annurev-polisci-090216-023229). Annual Review of Political Science, 22(1), 297-323.
 - Zitnik, M., Nguyen, F., Wang, B., Leskovec, J., Goldenberg, A., & Hoffman, M. M. (2019). [Machine Learning for Integrating Data in Biology and Medicine: Principles, Practice, and Opportunities](https://www.sciencedirect.com/science/article/abs/pii/S1566253518304482). Information Fusion, 50, 71-91.
-
-### Monday, January 20: Martin Luther King Jr. Day (no class)
-
-### Wednesday, January 22:
-
-- Lecture 02: [Computational Literacy](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-02/02-computational-literacy.html).
-- **Assignment 01:** [Problem Set 01](https://github.com/danilofreire/qtm350/blob/main/assignments/01-assignment.ipynb).
-
-Suggested references:
-
 - Campbell-Kelly, M., Aspray, W. F., Yost, J. R., Tinn, H., & Díaz, G. C. (2023). [Computer: A History of the Information Machine](https://doi.org/10.4324/9781003263272). Routledge.
 - Shalf, J. (2020). [The Future of Computing beyond Moore’s Law](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0061). Philosophical Transactions of the Royal Society A, 378(2166), 20190061.
 - Al-Hashimi, H. M. (2023). [Turing, von Neumann, and The Computational Architecture of Biological Machines](https://www.pnas.org/doi/abs/10.1073/pnas.2220022120). Proceedings of the National Academy of Sciences, 120(25), e2220022120.
 - Wing, J. M. (2006). [Computational Thinking](https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf). Communications of the ACM, 49(3), 33-35.
 - Videos: [David J. Malan - Abstraction](https://www.youtube.com/watch?v=6V1sr0XV_Ng), [Khan Academy - Hexadecimal Number System](https://www.youtube.com/watch?v=4EJay-6Bioo), [Matthias Wandel - Marble Adding Machine](https://youtu.be/GcDshWmhF4A), [Crash Course - Early Computing](https://www.youtube.com/watch?v=O5nskjZ_GoI) and [Electronic Computing](https://www.youtube.com/watch?v=LN0ucKNX0hc) (the last two are quite entertaining!).
 
-## Module 02: Introduction to the Command-Line Interface and Version Control
+# Monday, January 27: Command Line Interface (CLI) and Shell Basics
 
-### Monday, January 27:
+- Lecture 03: [The Command-Line Interface (CLI), Shell Basics, and File Management](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-03/03-command-line.html).
 
-- Lecture 03: [The Command-Line Interface (CLI), Shell Basics, and File Management](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-03/03-command-line.html).
+- Lecture 04: [More Command Line Tools, Text Files and Scripting](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-04/04-more-command-line.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9a77f4a0-f1ea-498a-b85f-1a8993922f82&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Suggested references:
@@ -48,16 +39,6 @@ Suggested references:
 - Levy, J. (2024). [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line). GitHub.
 - Shotts, W. (2019). [The Linux Command Line: A Complete Introduction](https://linuxcommand.org/tlcl.php). No Starch Press.
 - Healy, K. (2019). [The Plain Person's Guide to Plain Text Social Science](https://plain-text.co/). Chapters 1-5.
-
-### Wednesday, January 29:
-
-- Lecture 04: [More Command Line Tools, Text Files and Scripting](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-04/04-more-command-line.html).
-- **Assignment 01 due (5%).**
-- **Assignment 02:** [Problem Set 02](https://github.com/danilofreire/qtm350/blob/main/assignments/02-assignment.ipynb).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9a77f4a0-f1ea-498a-b85f-1a8993922f82&hostId=05eb977d-4f8a-440e-9e45-95212b29d103).
-
-Suggested references:
-
 - Kerr, D. (2024). [Effective Shell](https://effective-shell.com/).
 - Irianto, I. (2021). [Learn Vim (the Smart Way)](https://github.com/iggredible/Learn-Vim).
 - Neil, D. (2015). [Practical Vim: Edit Text at the Speed of Thought](https://pragprog.com/titles/dnvim2/practical-vim-second-edition/). Pragmatic Bookshelf.
