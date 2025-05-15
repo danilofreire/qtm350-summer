@@ -639,24 +639,6 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::
 :::
 
-# Next lecture  {background-color="#2d4563"}
-
-## The Command Line Interface & Practical Shell Usage
-
-:::{style="margin-top:30px; font-size: 22px;"}
-In our next lecture, we will dive deeper into the command line:
-- **Terminals**: How we access and use the shell.
-- **The Command Line**: The text-based interface itself.
-- **Shell Variants**: Exploring Bash, Zsh, and others.
-- **Why Use the Shell?**: Advantages for speed, power, reproducibility, and automation.
-- **The Unix Philosophy**: "Do One Thing And Do It Well."
-- **Shell Basics**: The prompt, command syntax (commands, options, arguments).
-- **Getting Help**: Using `man` pages and other resources.
-- **Navigating Your File System**: Essential commands like `pwd`, `cd`, `ls`.
-- **File and Directory Operations**: Creating, moving, copying, and deleting with `mkdir`, `touch`, `cp`, `mv`, `rm`.
-- **Hands-on Practice**: Putting these commands to use!
-:::
-
 # Questions? `r emo::ji('thinking_face')` {background-color="#2d4563"}
 
 # Thank you very much! `r emo::ji('smiling_face_with_smiling_eyes')` `r emo::ji('folded_hands')` {background-color="#2d4563"}

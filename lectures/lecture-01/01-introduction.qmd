@@ -146,23 +146,6 @@ Tell us your name, your major, one thing you really like, and something we don't
 - I am always available to help and answer questions. And I mean it
 - Your feedback helps me improve my teaching. Please let me know what is working and what is not
 
-## Office hours
-### What for and what not for
-
-:::{style="margin-top: 60px;"}
-:::
-
-- What office hours are meant for:
-  - Applying tools in practice
-  - Discussion of issues related to the assignments
-  - Boosting your knowledge of data science
-
-:::{.fragment .fade-in}
-- What these sessions are [not]{.alert} meant for: 
-    - Solving the assignments for you
-    - Taking care of developing your coding skills
-:::
-
 ## Class etiquette
 
 :::{style="margin-top: 60px; font-size: 26px;"}
@@ -241,13 +224,6 @@ Tell us your name, your major, one thing you really like, and something we don't
 ![](figures/collab.png){ width=80% style="display: block; margin: auto;" }
 
 # And what can we do with all these data? `r emo::ji('thinking_face')` {background-color="#2d4563"}
-
-## Scraping the web for social research
-
-:::{style="margin-top: 40px;"}
-:::
-
-![](figures/scrap.png)
 
 ## Tackling social problems
 
@@ -472,7 +448,7 @@ And much more...
 :::
 
 ::: {style="font-size: 27px;"}
-- **Syllabus**: Available on our [course repository](https://github.com/danilofreire/qtm350-summer/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/qtm350-summer/syllabus.html). The course is designed to be self-contained. The syllabus includes links to slides and Jupyter Notebooks we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress.
+- **Syllabus**: Available on our [course repository](https://github.com/danilofreire/qtm350-summer/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/qtm350-summer/syllabus.html). The course is designed to be self-contained. The syllabus includes links to slides and Jupyter Notebooks we will use in class, along with recommended readings, and problem sets. I will upload slides and update the website as we progress.
 - **Schedule**: Lectures are on Mondays, Wednesdays, and Fridays from 2:30pm to 4:45pm.
 - **Office Hours**: I'm available to meet you [at any time.]{.alert} Please reach out some time in advance and we can schedule a meeting
 
@@ -492,7 +468,7 @@ And much more...
 - **In-class quizzes**: Five of them (30%)
 - **Final project**: Due on the last day of class (20%)
 - **Late policy**: 10% off per day late
-- **Collaboration**: You can discuss assignments with your classmates, but you must write your own code and submit your own work. AI is allowed.
+- **Collaboration**: You can discuss assignments with your classmates, but you must write your own code and submit your own work.
 - **Academic integrity**: Please refer to the syllabus for the university's policy on academic integrity
 
 # Set up `r emo::ji('computer')` `r emo::ji('hammer_and_wrench')` {background-color="#2d4563"}

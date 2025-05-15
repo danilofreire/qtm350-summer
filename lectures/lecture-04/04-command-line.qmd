@@ -50,69 +50,7 @@ for (package in packages) {
 }
 ```
 
-# Recap and lecture overview 📚 {background-color="#2d4563"}
-
-## Brief recap of last class
-### Early computing and data representation
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-
-:::{.columns}
-:::{.column width="50%"}
-- Computers evolved from [people to mechanical calculators to silicon-based machines]{.alert}
-- Modern computers use the [Von Neumann architecture]{.alert}, storing both instructions and data in memory
-- Computers represent data using [binary (base 2) numbers]{.alert} made up of 0s and 1s
-- A [bit]{.alert} is a single binary digit; [8 bits make a byte]{.alert}
-- [Hexadecimal (base 16)]{.alert} is a compact way to represent binary, with each hex digit corresponding to 4 bits
-- [Abstraction]{.alert} allows representing complex data like images and text using numbers
-:::
-
-:::{.column width="50%"}
-![](figures/hexadecimal.png)
-:::
-:::
-:::
-
-## Brief recap of last class
-### Representing images, colours and text
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-
-:::{.columns}
-:::{.column width="50%"}
-- Images can be broken down into a [grid of coloured pixels]{.alert}
-- Colours are represented using the [RGB model]{.alert}, with each colour channel (red, green, blue) ranging from 0-255
-- 8-bit color uses 256 levels per channel, allowing for over [16 million possible colors]{.alert}
-- Text is broken into [individual characters]{.alert}, with each character mapped to a number using an encoding like [ASCII]{.alert}
-- [ASCII is a simple lookup table]{.alert} mapping the numbers 0-255 to characters
-- [Unicode]{.alert} extends ASCII to support accented characters and symbols from all languages
-:::
-
-:::{.column width="50%"}
-![](figures/rgb.png)
-:::
-:::
-:::
-
-## Brief recap of last class
-### Programming languages
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-
-:::{.columns}
-:::{.column width="50%"}
-- [Konrad Zuse]{.alert} created the first programmable computers and high-level programming language in the 1940s
-- [Assembly]{.alert} allows writing human-readable instructions that map closely to machine code
-- [High-level languages like Python]{.alert} abstract away hardware details and are more portable across systems
-- [Low-level languages]{.alert} are harder to read and write but very fast and efficient
-- [Compiled languages]{.alert} are converted to machine code before execution; [interpreted languages]{.alert} are executed on the fly
-:::
-
-:::{.column width="50%"}
-![](figures/high-low-languages.png)
-:::
-:::
-:::
+# Lecture overview 📚 {background-color="#2d4563"}
 
 ## This lecture
 ### Command line: the old school way of interacting with computers
