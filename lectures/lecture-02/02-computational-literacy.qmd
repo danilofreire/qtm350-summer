@@ -88,20 +88,6 @@ Video: [How to use an abacus](https://youtu.be/SkUdjlQy3rk&t=176)
 ::::
 :::::
 
-## Activity/Discussion: Modern "Computers"
-
-:::{style="margin-top:40px;"}
-:::
-
-Think about your daily life:
-
-- What devices do you use regularly that are essentially computers, even if they don't look like a traditional desktop or laptop?
-- [Share some examples!]{.alert} 
-
-:::{.fragment}
-This helps us see how broadly the concept of "computing" applies today!
-:::
-
 ## Four-species mechanical calculators
 
 :::{style="margin-top:40px;"}
@@ -145,7 +131,7 @@ The 1970s marked the transition from mechanical to electronic:
 :::
 ::::
 
-## Moore's Law: Exponential Growth
+## Moore's law: exponential growth
 
 :::{style="margin-top:40px;"}
 :::
@@ -425,6 +411,16 @@ D) 010
 
 2. What binary number represents 7?
 
+:::{.incremental}
+Solutions:
+
+- 5 = 101
+
+- 7 = 111
+
+- [Binary calculator](https://www.calculator.net/binary-calculator.html)
+:::
+
 ## Convert binary to decimal
 
 :::{style="margin-top:40px;"}
@@ -581,7 +577,6 @@ Let's explore the RGB model interactively!
 - Solutions:
   - Decimal 13 to binary: 1101$_2$
   - Binary 1101$_2$ to hexadecimal: D$_{16}$
-  - [Number converter](https://www.rapidtables.com/convert/number/index.html)
 :::
 :::
 
@@ -604,9 +599,9 @@ Let's explore the RGB model interactively!
 ## Hexadecimal in HTML/CSS Colours
 ### Examples and Interpretation
 
-:::{style="margin-top:30px; font-size: 22px;"}
-Let's look at how these #RRGGBB values translate to actual colours:
-
+:::{style="margin-top:30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width="50%"}
 - **Pure Colours:**
   - `#FF0000`: Full Red (Red=FF, Green=00, Blue=00)
   - `#00FF00`: Full Green (Red=00, Green=FF, Blue=00)
@@ -620,38 +615,40 @@ Let's look at how these #RRGGBB values translate to actual colours:
   - `#FFFF00`: Yellow (Red=FF, Green=FF, Blue=00)
   - `#00FFFF`: Cyan (Red=00, Green=FF, Blue=FF)
   - `#FF00FF`: Magenta (Red=FF, Green=00, Blue=FF)
+:::
 
-- **Shades of Grey:**
-  - When R, G, and B values are equal, you get a shade of grey.
-  - `#808080`: A medium grey (Red=80, Green=80, Blue=80). `80` hex is 128 decimal, the midpoint of 0-255.
-  - `#C0C0C0`: Silver (a lighter grey). `C0` hex is 192 decimal.
+:::{.column width="50%"}
+![](figures/wheel.jpg)
+:::
+:::
 :::
 
 ## Hexadecimal in HTML/CSS Colours
 ### Shorthand and Transparency (Alpha)
 
-:::{style="margin-top:30px; font-size: 22px;"}
-Web developers often use a few more tricks with hex colours:
-
+:::{style="margin-top:30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width="50%"}
 - **3-Digit Shorthand (`#RGB`):**
-  - If each pair of hex digits in a 6-digit code is the same (e.g., RR, GG, BB where R1=R2, G1=G2, B1=B2), you can use a 3-digit shorthand.
-  - The browser expands it by duplicating each digit.
+  - If each pair of hex digits in a 6-digit code is the same, you can use a 3-digit shorthand
+  - The browser expands it by duplicating each digit!
   - Examples:
     - `#F00` is equivalent to `#FF0000` (Red)
     - `#0A3` is equivalent to `#00AA33` (a dark green)
     - `#FFF` is equivalent to `#FFFFFF` (White)
 
-- **Transparency (Alpha Channel):**
-  - Sometimes you need to specify the opacity of a colour. This is done using an "alpha" channel.
-  - **8-Digit Hex (`#RRGGBBAA`):** The last two hex digits (`AA`) represent the alpha value.
-    - `00` is fully transparent (invisible).
-    - `FF` is fully opaque (solid).
-    - Values in between give partial transparency (e.g., `80` is 50% opaque).
-    - Example: `#FF000080` would be a semi-transparent red.
+- Opacity is represented by an additional two hex digits (8-digit hex)
+  - `00` is fully transparent (invisible)
+  - `FF` is fully opaque (solid)
+  - Values in between give partial transparency (e.g., `80` is 50% opaque)
   - **4-Digit Shorthand (`#RGBA`):** Similar to the 3-digit shorthand, but for colours with an alpha channel.
-    - Example: `#F008` would be equivalent to `#FF000088` (semi-transparent red, with alpha 88 hex).
+  - Example: `#F008` would be equivalent to `#FF000088` (semi-transparent red, with alpha 88 hex).
+:::
 
-Understanding these formats is crucial for anyone working with web design or digital graphics!
+:::{.column width="50%"}
+![](figures/css-rgba.png)
+:::
+:::
 :::
 
 # Conclusion {background-color="#2d4563"}
@@ -681,28 +678,10 @@ In this lecture, we covered:
 :::
 :::
 
-# Next lecture {background-color="#2d4563"}
-
-## Next lecture
-
-:::{style="margin-top:40px;"}
-:::
-
-:::{style="font-size: 24px;"}
-In our next lecture, we will explore:
-
-- **Representing Text**: How characters are encoded using ASCII and Unicode.
-- **The Genesis of Programming**: Early pioneers and the first programming languages.
-- **Assembly Language**: Getting closer to the machine.
-- **Low-level vs. High-level Languages**: Understanding the spectrum of programming languages.
-- **Compiled vs. Interpreted Languages**: Different approaches to executing code.
-- **Introduction to the Operating System**: The role of the OS, kernel, and user space.
-- **The Shell**: Our gateway to interacting with the OS.
-:::
-
 # Questions? `r emo::ji('thinking_face')` {background-color="#2d4563"}
 
----
+# Thank you very much and see you next class! `r emo::ji('smiling_face_with_smiling_eyes')` `r emo::ji('folded_hands')` {background-color="#2d4563"}
+
 # Solutions to Practice Exercises {background-color="#2d4563"}
 
 ## Solution - Practice Exercise 01 {#sec-solution01}
@@ -710,10 +689,12 @@ In our next lecture, we will explore:
 :::{style="font-size: 24px; margin-top: 40px;"}
 
 1. What binary number represents 5?
+
   - In binary, the number 5 is represented as 101$_2$.
   - $ (1 \times 2^2) + (0 \times 2^1) + (1 \times 2^0) = 4 + 0 + 1 = 5 $.
 
 2. What binary number represents 7?
+
   -  In binary, the number 7 is represented as 111$_2$.
   - $ (1 \times 2^2) + (1 \times 2^1) + (1 \times 2^0) = 4 + 2 + 1 = 7 $.
 
@@ -723,18 +704,17 @@ In our next lecture, we will explore:
 
 :::{style="font-size: 22px; margin-top: 40px;"}
 
-1. Decimal 13 to binary:
+- Decimal 13 to binary:
+
   - $13 = 8 + 4 + 0 + 1$
   - $13 = (1 \times 2^3) + (1 \times 2^2) + (0 \times 2^1) + (1 \times 2^0)$
   - So, decimal 13 is `1101` in binary (1101$_2$).
 
-2. Binary `1101` to hexadecimal:
+- Binary `1101` to hexadecimal:
+
   - Group the binary into blocks of four (from the right): `1101`.
   - Convert the block `1101` to its hexadecimal equivalent:
     - `1101`$_2$ = $(1 \times 8) + (1 \times 4) + (0 \times 2) + (1 \times 1) = 8 + 4 + 0 + 1 = 13$ in decimal.
     - Decimal 13 is `D` in hexadecimal.
   - So, binary `1101` is `D` in hexadecimal (D$_{16}$).
 :::
-
-# Thank you very much and see you next class! `r emo::ji('smiling_face_with_smiling_eyes')` `r emo::ji('folded_hands')` {background-color="#2d4563"}
-

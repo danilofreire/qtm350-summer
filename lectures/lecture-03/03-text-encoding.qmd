@@ -1,0 +1,688 @@
+---
+title: QTM 350 - Data Science Computing
+subtitle: "Encoding Information & Introduction to Programming"
+author:
+  - name: Danilo Freire
+    email: danilo.freire@emory.edu
+    affiliations: Department of Quantitative Theory and Methods <br> Emory University
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[Encoding Information & Intro to Programming](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-03/03-text-encoding.html)"
+transition: slide
+transition-speed: default
+scrollable: true
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+# figures formatting setup
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center", #fig.width=6, fig.height=4.5, 
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/', # Assuming figures are in a Figures subdirectory relative to this new lecture file
+  cache=T, #echo=F, warning=F, message=F
+  engine.opts = list(bash = "-l")
+  )
+
+## Next hook based on this SO answer: [https://stackoverflow.com/a/39025054](https://stackoverflow.com/a/39025054)
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+packages <- c("tidyverse", "emo", "fontawesome") # Add other packages if needed from lecture 2.txt
+
+for (package in packages) {
+  if (!require(package, character.only = TRUE)) {
+    install.packages(package, dependencies = TRUE)
+    library(package, character.only = TRUE)
+  }
+}
+```
+
+# Brief recap 📚 {background-color="#2d4563"}
+
+## Brief recap
+
+:::{style="margin-top:30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width="50%"}
+- In the previous lecture, we covered:
+- The [evolution of computing](https://en.wikipedia.org/wiki/History_of_computing) from manual methods to silicon-based machines
+- The [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) as the blueprint for modern computers
+- How computers use [binary (0s and 1s)](https://en.wikipedia.org/wiki/Binary_number) to represent data
+- The concept of [abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)) in simplifying complexity
+- [Number systems]{.alert}:
+    - [Binary (Base 2)](https://en.wikipedia.org/wiki/Binary_number): Bits, bytes, and decimal-binary conversions
+    - [Hexadecimal (Base 16)](https://en.wikipedia.org/wiki/Hexadecimal): Compact binary representation, conversions, and use in [RGB colours for HTML/CSS](https://en.wikipedia.org/wiki/RGB) (e.g., `#FF0000` for red)
+- Representing [images]{.alert} using pixels and the RGB model
+:::
+
+::: {.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/binary.jpg)
+:::
+:::
+:::
+:::
+
+## Learning objectives
+### By the end of this lecture, you will be able to:
+
+:::{style="margin-top:40px; font-size: 23px;"}
+:::{.columns}
+::: {.column width="50%"}
+- Understand how text is represented digitally using [ASCII and Unicode](https://en.wikipedia.org/wiki/Unicode)
+- Describe the historical origins of [programming languages](https://en.wikipedia.org/wiki/Programming_language)
+- Distinguish between low-level (like [Assembly](https://en.wikipedia.org/wiki/Assembly_language)) and [high-level programming languages](https://en.wikipedia.org/wiki/High-level_programming_language)
+- Understand the difference between [compiled](https://en.wikipedia.org/wiki/Compiled_language) and [interpreted languages](https://en.wikipedia.org/wiki/Interpreted_language)
+- Recognize the role of the [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) in managing hardware and software resources
+- Understand the basic structure of an OS, including the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) and user space
+:::
+::: {.column width="50%"}
+:::{style="text-align: center; margin-top: -20px;"}
+![](figures/assembly-meme.jpg)
+:::
+:::
+:::
+:::
+
+# Representing Text `r emo::ji('abc')` {background-color="#2d4563"}
+
+## Represent text as individual characters
+### Characters and glyphs
+
+:::{style="margin-top:40px; font-size: 23px;"}
+
+:::{.columns}
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -20px;"}
+![](figures/glyphs.webp){width="45%"}
+:::
+:::
+
+:::{.column width="50%"}
+- Next, how do we represent text?
+- First, we break it down into smaller parts, like with images. In this case,
+  we can break text down into [individual characters]{.alert}
+- A **character** is the smallest component of text, like A, B, or /.
+- A [**glyph**](https://en.wikipedia.org/wiki/Glyph) is the graphical representation of a character.
+- In programming, the display of glyphs is typically handled by GUI (Graphical
+  User Interface) toolkits or font renderers
+:::
+:::
+:::
+
+## Represent text as individual characters
+### Lookup tables
+
+:::{style="font-size: 22px; margin-top: 40px;"}
+
+::: {.columns}
+::: {.column width="60%"}
+![](figures/ascii-art-homer.jpg){width="70%"} 
+:::
+
+::: {.column width="40%"}
+- For example, the text "Homer Simpson" becomes `H, o, m, e, r, space, S, i, m, p, s, o, n` 
+- Unlike colours, characters do not have a logical connection to numbers
+- To represent characters as numbers, we use a [lookup table]{.alert} called
+  [ASCII](https://en.wikipedia.org/wiki/ASCII)
+- ASCII stands for American Standard Code for Information Interchange
+- As long as every computer uses the same lookup table, computers can always translate a set of numbers into the same set of characters
+:::
+:::
+:::
+
+## ASCII is nothing but a simple lookup table
+### Yes, really!
+
+:::{style="margin-top:40px;"}
+:::
+
+:::: {.columns}
+::: {.column width="40%"}
+For basic characters, we can use the encoding system called ASCII. This maps
+the numbers 0 to 255 to characters. Therefore, one character is represented by
+one byte
+
+Check it out here: [ASCII Table](https://www.asciitable.com/)
+:::
+
+::: {.column width="60%"}
+![](figures/ascii-table.png) 
+:::
+::::
+
+## ASCII is nothing but a simple lookup table
+### Translation
+
+:::{style="margin-top:40px;"}
+:::
+
+:::: {.columns}
+::: {.column width="40%"}
+:::{style="font-size: 27px;"}
+"Hello World" =
+
+`01001000` (H)
+`01100101` (e)
+
+`01101100` (l)
+`01101100` (l)
+
+`01101111` (o)
+`00100000` (space)
+
+`01010111` (W)
+`01101111` (o)
+
+`01110010` (r)
+`01101100` (l)
+
+`01100100` (d)
+:::
+:::
+
+::: {.column width="60%"}
+![](figures/ascii-table.png) 
+:::
+::::
+
+## Your turn!
+### Practice Exercise 03
+
+:::{style="margin-top:40px;"}
+:::
+
+:::: {.columns}
+::: {.column width="40%"}
+:::{style="font-size: 38px;"}
+- Translate the following binary into ASCII text:
+
+`01011001`
+`01100001`
+`01111001`
+:::
+:::
+
+::: {.column width="60%"}
+![](figures/ascii-table.png) 
+:::
+::::
+
+## ASCII Limitations
+
+:::{style="margin-top:40px; font-size: 27px;"}
+
+- ASCII uses 7 bits (standard) or 8 bits (extended) to represent characters. This means it can only represent $2^7=128$ or $2^8=256$ unique characters.
+- This is sufficient for American English (unaccented letters, numbers, common punctuation).
+- However, it [lacks characters for many other languages]{.alert} (e.g., with accents like 'é', 'ü', 'ñ', or entirely different scripts like Cyrillic, Greek, Arabic, Chinese, Japanese, Korean).
+- Even English needs characters like ‘é’ for words such as ‘café’ or ‘resume’.
+
+:::{style="margin-top:20px;"}
+- To address this, [Unicode](https://en.wikipedia.org/wiki/Unicode) was developed.
+:::
+:::
+
+## Unicode: A Universal Character Set
+
+:::{style="margin-top:40px; font-size: 25px;"}
+:::{.columns}
+:::{.column width="50%"}
+- [Unicode](https://en.wikipedia.org/wiki/Unicode) is a global standard designed to represent [every character from (almost) every writing system]{.alert} used in the world, plus many symbols and emojis
+- It aims to be a superset of ASCII; the first 128 Unicode characters are identical to ASCII
+- Unicode assigns a unique number (called a "code point") to each character
+- The Unicode standard defines over 149,000 characters!
+:::
+
+:::{.column width="50%"}
+![](figures/unicode.png)
+:::
+:::
+:::
+
+## Unicode: A Universal Character Set
+
+:::{style="margin-top:40px; font-size: 19px;"}
+:::{.columns}
+::: {.column width="50%"}
+- **UTF-8 (Unicode Transformation Format - 8-bit):**
+  - This is the most common way Unicode characters are *encoded* into bytes for storage and transmission.
+  - It's a [variable-width encoding]{.alert}:
+    - Uses 1 byte for standard ASCII characters (making it backward compatible).
+    - Uses 2, 3, or 4 bytes for other characters.
+  - This makes UTF-8 efficient for documents that are mostly English/ASCII but can still represent any Unicode character.
+- Find all the Unicode characters here: <https://symbl.cc/en/unicode-table/>
+  - "Danilo" in Unicode code points: `U+0044 U+0061 U+006E U+0069 U+006C U+006F`
+  - "QTM 350" in Unicode code points: `U+0051 U+0054 U+004D U+0020 U+0033 U+0035 U+0030`
+:::
+
+::: {.column width="50%"}
+![](figures/iso.jpg)
+:::
+:::
+:::
+
+## Examples of Unicode Characters
+
+:::{style="margin-top:30px; font-size: 22px;"}
+Unicode allows us to represent a vast range of characters beyond basic ASCII:
+
+- **Accented Latin Characters:**
+  - 'é' (as in café) - Code Point: `U+00E9`
+  - 'ü' (as in über) - Code Point: `U+00FC`
+  - 'ñ' (as in piñata) - Code Point: `U+00F1`
+
+- **Non-Latin Characters:**
+  - Greek: 'Σ' (Sigma) - Code Point: `U+03A3`
+  - Cyrillic: 'Д' (De) - Code Point: `U+0414`
+  - Japanese: '猫' (Neko - cat) - Code Point: `U+732B`
+  - Arabic: 'ب' (Ba) - Code Point: `U+0628`
+
+- **Symbols and Emojis:**
+  - '€' (Euro sign) - Code Point: `U+20AC`
+  - '→' (Rightwards arrow) - Code Point: `U+2192`
+  - `r emo::ji('smiley')` (Smiling Face Emoji) - Code Point: `U+1F603`
+  - `r emo::ji('heart')` (Red Heart Emoji) - Code Point: `U+2764` (or `U+FE0F` for emoji presentation)
+:::
+
+# The Genesis of Programming `r emo::ji('glowing_star')` {background-color="#2d4563"}
+
+## The genesis of programming
+### Zuse's computers
+
+:::{style="margin-top:40px;"}
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+![](figures/z3.JPG) 
+:::
+
+::: {.column width="50%"}
+:::{style="font-size: 24px; margin-top: 40px;"}
+- [Konrad Zuse](https://en.wikipedia.org/wiki/Konrad_Zuse) was a German
+  engineer and computer pioneer
+- He created the first programmable computer, the
+  [Z3](https://en.wikipedia.org/wiki/Z3_(computer)), in 1941
+- The Z3 was the first computer to use [binary arithmetic]{.alert} and read binary instructions from punch tape
+- Example: Z4 had 512 bytes of memory
+- Zuse also created the first high-level programming language,
+  [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) (though not widely implemented at the time)
+:::
+:::
+::::
+
+## What is Assembly language?
+
+:::{style="margin-top:40px; font-size: 23px;"}
+
+::: {.columns}
+::: {.column width="60%"}
+![](figures/assembly.png) 
+:::
+
+::: {.column width="40%"}
+- [Assembly language](https://en.wikipedia.org/wiki/Assembly_language) is a
+  [low-level programming language]{.alert} that allows writing machine code in human-readable text (mnemonics)
+- Each assembly instruction typically corresponds to a [single machine code instruction]{.alert} that the computer's processor can execute directly
+- It's a bridge between human understanding and the raw binary the CPU understands
+- The first assemblers were human! Programmers wrote assembly code, which secretaries transcribed to binary for machine processing. Later, "assembler" programs automated this translation
+:::
+:::
+:::
+
+## Some curious facts about Assembly!
+
+:::{style="margin-top:40px;"}
+:::
+
+:::: {.columns}
+::: {.column width="60%"}
+![Margaret Hamilton and the Apollo 11 code](figures/apollo11a.jpg) 
+:::
+
+::: {.column width="40%"}
+:::{style="font-size: 22px; margin-top: 40px;"}
+- The [Apollo 11](https://en.wikipedia.org/wiki/Apollo_11) mission to the moon
+  was programmed in assembly language for the Apollo Guidance Computer (AGC).
+- The code is available here: <https://github.com/chrislgarry/Apollo-11> (good
+  luck reading it! `r emo::ji('grinning_face_with_sweat')`)
+
+- One of the files is the `BURN_BABY_BURN--MASTER_IGNITION_ROUTINE.agc` `r emo::ji('fire')` `r emo::ji('rocket')`
+
+- Assembly is very fast and efficient because it's close to the hardware.
+- But if Assembly is so fast and efficient, why don't we use it all the time?
+:::
+:::
+::::
+
+## Low-level vs high-level languages
+
+:::{style="margin-top:40px; font-size: 20px;"}
+
+::: {.columns}
+::: {.column width="50%"}
+- [**Low-level languages**](https://en.wikipedia.org/wiki/Low-level_programming_language) (e.g., Machine Code, Assembly)
+  - Closer to the hardware, providing direct control over the processor and memory
+  - [Harder to read, write, and debug]{.alert} for humans
+  - Code is specific to a particular computer architecture (not easily portable)
+  - Very fast and memory efficient
+
+- [**High-level languages**](https://en.wikipedia.org/wiki/High-level_programming_language) (e.g., Python, R, Java, C++)
+  - [Abstract away hardware details]{.alert}, using more human-readable syntax (closer to natural language)
+  - Easier to learn, write, and maintain
+  - Generally portable across different computer systems (with a compiler/interpreter)
+  - May be less performant than optimised low-level code but offer faster development
+:::
+
+::: {.column width="50%"}
+![](figures/high-low-languages.png) 
+:::
+:::
+:::
+
+## Compiled vs. Interpreted Languages
+
+:::{style="margin-top:40px;"}
+:::
+
+:::{style="font-size: 24px;"}
+High-level languages can be broadly categorised by how their code is executed:
+
+- **Compiled Languages:**
+  - The human-readable source code is translated [entirely into machine code (binary instructions) by a program called a compiler *before* execution]{.alert}.
+  - This machine code is then run directly by the computer's processor.
+  - Examples: `C`, `C++`, `Fortran`, `Go`, `Swift`, `Rust`.
+
+- **Interpreted Languages:**
+  - The source code is [read and executed line-by-line (or statement-by-statement) by another program called an interpreter *during* runtime]{.alert}.
+  - The interpreter translates and executes the code on the fly.
+  - Examples: `Python`, `R`, `JavaScript` (traditionally, though modern JS engines often use JIT compilation), `Ruby`, `PHP`, Shell scripts.
+
+:::{.fragment}
+Some languages can have both compiled and interpreted implementations, or use a hybrid approach (e.g., Java compiles to bytecode, which is then interpreted by the Java Virtual Machine - JVM).
+:::
+:::
+
+## Pros & Cons: Compiled vs. Interpreted
+
+:::{style="margin-top:30px; font-size: 25px;"}
+**Compiled Languages**
+
+::: {.columns}
+::: {.column width="50%"}
+
+**Pros:**
+
+- [Generally faster execution speed]{.alert} once compiled, as the translation to machine code is done beforehand
+- The compiler can perform extensive optimisations
+- [Many errors are caught at compile-time]{.alert}, before the program is run
+- The resulting executable can be distributed without the source code
+:::
+
+::: {.column width="50%"}
+**Cons:**
+
+- [Compilation step can be time-consuming]{.alert}, especially for large projects
+- Less platform-independent: typically need to recompile for different operating systems/architectures
+- Debugging can sometimes be more complex as you're debugging the compiled code's behaviour
+:::
+:::
+:::
+
+## Pros & Cons: Compiled vs. Interpreted
+
+:::{style="margin-top:30px; font-size: 25px;"}
+**Interpreted Languages**
+
+::: {.columns}
+::: {.column width="50%"}
+**Pros:**
+
+- [Faster development cycle and easier debugging]{.alert} (edit-and-run, errors often point directly to source lines)
+- [Greater platform independence]{.alert} (source code can run on any system with the interpreter)
+- Often more dynamic and flexible (e.g., modifying code at runtime)
+:::
+
+::: {.column width="50%"}
+**Cons:**
+
+- [Generally slower execution speed]{.alert} as code is translated during runtime
+- Runtime errors can occur if not thoroughly tested
+- Usually requires the interpreter to be installed on the target machine
+:::
+:::
+:::
+
+## Low-level vs high-level languages
+### Code that is worth a thousand words
+
+:::{style="margin-top:40px; font-size: 27px;"}
+- "Hello, World!" in machine code (Hex representation):
+
+:::{style="font-size: 40px;"}
+```{verbatim}
+# This is a conceptual representation, actual machine code varies greatly
+# For a Linux executable, it would involve system calls.
+# A simple sequence of ASCII values in hex:
+48 65 6C 6C 6F 2C 20 57 6F 72 6C 64 21 0A 
+# (H e l l o ,   W o r l d ! \n)
+```
+:::
+:::
+
+## Low-level vs high-level languages
+### Code that is worth a thousand words
+
+:::{style="margin-top:40px; font-size: 27px;"}
+
+- "Hello, World!" in
+  [Assembly](https://en.wikipedia.org/wiki/Assembly_language) (x86 Assembly for Linux)
+
+```{assembly}
+#| echo: true
+#| eval: false
+
+section .data
+    message db 'Hello, World!', 10    ; 10 is the ASCII code for newline
+
+section .text
+    global _start
+
+_start:
+    ; write(stdout, message, length)
+    mov eax, 4          ; system call number for write (sys_write)
+    mov ebx, 1          ; file descriptor 1 is stdout
+    mov ecx, message    ; address of string to output
+    mov edx, 14         ; number of bytes (length of "Hello, World!\n")
+    int 0x80            ; call kernel to perform the write
+
+    ; exit(0)
+    mov eax, 1          ; system call number for exit (sys_exit)
+    xor ebx, ebx        ; exit status 0 (clear ebx register)
+    int 0x80            ; call kernel to exit
+```
+
+:::
+
+## Low-level vs high-level languages
+### Code that is worth a thousand words
+
+:::{style="margin-top:40px; font-size: 27px;"}
+- "Hello, World!" in [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) or [R](https://www.r-project.org/):
+
+:::{style="font-size: 40px;"}
+```{python}
+#| echo: true
+#| eval: false
+print("Hello, World!")
+```
+:::
+:::
+
+# Question: Is Natural Language Programming the Future of High-Level Languages? `r emo::ji('robot')` {background-color="#2d4563"}
+
+# The Operating System (OS) `r emo::ji('desktop_computer')` {background-color="#2d4563"}
+
+## A computer in a nutshell
+### Operating system
+
+:::{style="font-size: 27px;"}
+:::{.columns}
+
+::: {.column width="50%"}
+![](figures/kernel-and-user-space.png) Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
+:::
+
+::: {.column width="50%"}
+- The [operating system (OS)]{.alert} is system software that interfaces with (and manages access to) a computer's hardware. It also provides software resources for applications
+- Key functions: Process management, memory management, file system management, device management, security, user interface
+- The OS is broadly divided into the [kernel and user space]{.alert}
+:::
+:::
+:::
+
+## A computer in a nutshell
+### Operating system
+
+:::{style="font-size: 24px;"}
+:::{.columns}
+
+::: {.column width="50%"}
+![](figures/kernel-and-user-space.png) Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
+:::
+
+::: {.column width="50%"}
+- The [kernel]{.alert} is the core of the OS. It's responsible for interfacing directly with hardware (via drivers), managing system resources (CPU, memory), and providing essential services. Running software in the kernel is *extremely* sensitive! That's why users and most applications are kept away from it!
+- Curiosity: You can see the Linux kernel source code [on GitHub](https://github.com/torvalds/linux).
+- The [user space]{.alert} is where user applications run. It provides an interface for users to interact with the system. Hardware access for programs in user space is managed and controlled by the kernel. Programs in user space are essentially in sandboxes, which limits the potential damage they can cause.
+:::
+:::
+:::
+
+## A computer in a nutshell
+### Kernels and shells
+
+:::{style="font-size: 19px;"}
+:::{.columns}
+:::{.column width="50%"}
+![](figures/kernel-and-user-space.png) ![](figures/walnut.jpeg){width=25%} Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)/[Kkchaudhary11](https://commons.wikimedia.org/w/index.php?curid=49069244)
+:::
+
+::: {.column width="50%"}
+- The [shell]{.alert} is a general name for any user space program that allows users to access and interact with the operating system's services and resources.
+- It acts as an **interface** between the user and the kernel.
+- Shells come in many different flavours but are generally provided to aid a human operator in accessing the system. This could be:
+  - **Interactively**, by typing commands at a terminal.
+  - Via **scripts**, which are files containing a sequence of commands to be executed.
+- Modern computers often use [graphical user interfaces (GUIs)]{.alert} (like Windows Explorer or macOS Finder) as a type of shell. However, the term "shell" in computing often refers to command-line shells.
+- [Why "kernel" and "shell"?]{.alert} The kernel is the soft, edible part of a nut or seed (the core functionality), which is surrounded by a hard shell (the user interface) to protect it and provide access. Useful metaphor, isn't it? 😉
+:::
+:::
+:::
+
+## Interacting with the shell
+### Terminals
+
+:::{style="font-size: 20px;"}
+:::{.columns}
+:::{.column width="50%"}
+![](figures/diagram3-terminal-and-shell.png)
+Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shell/)
+:::
+
+:::{.column width="50%"}
+- Things are still a bit more complicated
+- We're not directly interacting with the "shell" but using a [terminal]{.alert}
+- A terminal is just a program that [reads input]{.alert} from the keyboard, [passes that input]{.alert} to another programme, and [displays the results]{.alert} on the screen
+- A shell program on its own does not do this - it requires a terminal as an interface
+- [Why "terminal"?]{.alert} Back in the old days (before computer screen existed), [terminal machines (hardware!)](https://www.friendlywire.com/articles/vintage-computers/) were used to let humans interface with [large machines ("mainframes")](https://en.wikipedia.org/wiki/Mainframe_computer). Often many terminals were connected to a single machine
+- When you want to work with a computer in a data center (or remotely in cloud computing), you'll still do pretty much the same
+- [But this is a topic for our next lecture!]{.alert} 😄
+:::
+:::
+:::
+
+# Summary `r emo::ji('light_bulb')` {background-color="#2d4563"}
+
+## Summary
+
+:::{style="margin-top:30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Text is represented using ASCII and Unicode, with UTF-8 encoding for diverse characters
+- Programming languages evolved from early machines to high-level languages
+- Assembly language provides a human-readable way to write machine instructions
+- Low-level languages are close to hardware, while high-level languages are more abstract
+- Compiled languages are translated to machine code before runtime, while interpreted languages are translated during runtime
+- The operating system manages hardware and software resources, divided into the kernel (core) and user space (applications)
+- The shell is a user interface program that interacts with the OS
+- The terminal is a program that reads input from the keyboard, passes it to the shell, and displays results on the screen... which is what we will be using in the next lecture and beyond! 🤓
+:::
+
+::: {.column width="50%"}
+:::{style="text-align: center; margin-top: -20px;"}
+![](figures/linus-meme.png)
+:::
+:::
+:::
+:::
+
+# Next lecture  {background-color="#2d4563"}
+
+## The Command Line Interface & Practical Shell Usage
+
+:::{style="margin-top:30px; font-size: 22px;"}
+In our next lecture, we will dive deeper into the command line:
+- **Terminals**: How we access and use the shell.
+- **The Command Line**: The text-based interface itself.
+- **Shell Variants**: Exploring Bash, Zsh, and others.
+- **Why Use the Shell?**: Advantages for speed, power, reproducibility, and automation.
+- **The Unix Philosophy**: "Do One Thing And Do It Well."
+- **Shell Basics**: The prompt, command syntax (commands, options, arguments).
+- **Getting Help**: Using `man` pages and other resources.
+- **Navigating Your File System**: Essential commands like `pwd`, `cd`, `ls`.
+- **File and Directory Operations**: Creating, moving, copying, and deleting with `mkdir`, `touch`, `cp`, `mv`, `rm`.
+- **Hands-on Practice**: Putting these commands to use!
+:::
+
+# Questions? `r emo::ji('thinking_face')` {background-color="#2d4563"}
+
+# Thank you very much! `r emo::ji('smiling_face_with_smiling_eyes')` `r emo::ji('folded_hands')` {background-color="#2d4563"}
+
+# Solutions to Practice Exercises {background-color="#2d4563"}
+
+## Solution - Practice Exercise 03 {#sec-solution03}
+:::{style="font-size: 24px; margin-top: 40px;"}
+- Task: Translate the following binary into ASCII text:
+  `01011001`
+  `01100001`
+  `01111001`
+
+- Step 1: Convert each binary string to its decimal equivalent:
+  - `01011001`$_2$ = $(0 \cdot 128) + (1 \cdot 64) + (0 \cdot 32) + (1 \cdot 16) + (1 \cdot 8) + (0 \cdot 4) + (0 \cdot 2) + (1 \cdot 1) = 64 + 16 + 8 + 1 = 89_{10}$
+  - `01100001`$_2$ = $(0 \cdot 128) + (1 \cdot 64) + (1 \cdot 32) + (0 \cdot 16) + (0 \cdot 8) + (0 \cdot 4) + (0 \cdot 2) + (1 \cdot 1) = 64 + 32 + 1 = 97_{10}$
+  - `01111001`$_2$ = $(0 \cdot 128) + (1 \cdot 64) + (1 \cdot 32) + (1 \cdot 16) + (1 \cdot 8) + (0 \cdot 4) + (0 \cdot 2) + (1 \cdot 1) = 64 + 32 + 16 + 8 + 1 = 121_{10}$
+
+- Step 2: Map each decimal value to its corresponding ASCII character (refer to an ASCII table):
+  - 89 = 'Y'
+  - 97 = 'a'
+  - 121 = 'y'
+
+- Step 3: Combine the ASCII characters to form the final text:
+  - Result: **Yay**
+:::
+
+# Thank you very much! `r emo::ji('smiling_face_with_smiling_eyes')` `r emo::ji('folded_hands')` {background-color="#2d4563"}
+

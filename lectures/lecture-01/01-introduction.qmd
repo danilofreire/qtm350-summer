@@ -506,7 +506,7 @@ And much more...
 
 - **GitHub**: Online platform for hosting code repositories. You will use it a lot, and not only for this class. Create an account on [GitHub](https://github.com/) and register for a student/educator [discount](https://education.github.com/discount_requests/new). 
 
-- There is a series of tutorials available on our course website on how to set up Git and GitHub: <https://danilofreire.github.io/qtm350/tutorials/tutorials.html>
+- There is a series of tutorials available on our course website on how to set up Git and GitHub: <https://danilofreire.github.io/qtm350-summer/tutorials/tutorials.html>
 
 ## OS extras
 
