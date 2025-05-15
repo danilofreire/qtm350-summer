@@ -4,14 +4,14 @@ title: "Lectures"
 
 The course covers the following topics, with corresponding lecture materials available in the [lectures folder](https://github.com/danilofreire/qtm350/tree/main/lectures). Please refer to the syllabus for additional suggested readings on each topic. Links will be added as the materials are posted.
 
-## Friday, March 16: Introduction to the Course, Computational Literacy
+## Module 01: Introduction, Computational Literacy, and Command Line Interface (CLI)
+
+### Friday, May 16: 
 
 - Syllabus and course repository: <https://github.com/danilofreire/qtm350-summer>.
 - Lecture 01: [Welcome to QTM 350 - Introduction](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-01/01-introduction.html).
-- [Course Tutorials: How to Install Anaconda, Jupyter, PostgreSQL, VSCode, and Open a Free Educational Account on GitHub](https://github.com/danilofreire/qtm350/tutorials).
-
 - Lecture 02: [Computational Literacy](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-02/02-computational-literacy.html).
-- **Assignment 01:** [Problem Set 01](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/01-assignment.ipynb).
+- [Course Tutorials: How to Install Anaconda, Jupyter, PostgreSQL, VSCode, and Open a Free Educational Account on GitHub](https://github.com/danilofreire/qtm350/tutorials).
 
 Suggested references:
 
@@ -26,12 +26,12 @@ Suggested references:
 - Wing, J. M. (2006). [Computational Thinking](https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf). Communications of the ACM, 49(3), 33-35.
 - Videos: [David J. Malan - Abstraction](https://www.youtube.com/watch?v=6V1sr0XV_Ng), [Khan Academy - Hexadecimal Number System](https://www.youtube.com/watch?v=4EJay-6Bioo), [Matthias Wandel - Marble Adding Machine](https://youtu.be/GcDshWmhF4A), [Crash Course - Early Computing](https://www.youtube.com/watch?v=O5nskjZ_GoI) and [Electronic Computing](https://www.youtube.com/watch?v=LN0ucKNX0hc) (the last two are quite entertaining!).
 
-# Monday, January 27: Command Line Interface (CLI) and Shell Basics
+### Monday, May 19:
 
-- Lecture 03: [The Command-Line Interface (CLI), Shell Basics, and File Management](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-03/03-command-line.html).
+- Lecture 03: [Encoding Information & Introduction to Programming](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-03/03-text-encoding.html).
+- Lecture 04: [Command Line Interface](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-04/04-command-line.html).
 
-- Lecture 04: [More Command Line Tools, Text Files and Scripting](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-04/04-more-command-line.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9a77f4a0-f1ea-498a-b85f-1a8993922f82&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- **Assignment 01:** [Problem Set 01](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/01-assignment.ipynb).
 
 Suggested references:
 
@@ -46,19 +46,23 @@ Suggested references:
 - [Vim Adventures](https://vim-adventures.com/). (Instructor's note: this is a fun, albeit cringy, way to learn Vim).
 - Videos: [freeCodeCamp - Command line crash course](https://www.youtube.com/watch?v=yz7nYlnXLfE&pp=ygUXaG93IHRvIHVzZSBjb21tYW5kIGxpbmU%3D), [Percy Grunwald - Absolute beginner guide to the macOS terminal](https://www.youtube.com/watch?v=aKRYQsKR46I&pp=ygUcdGVybWluYWwgZm9yIGJlZ2lubmVycyBtYWNvcw%3D%3D), [NetworkChuck - 50 macOS tips and tricks using terminal](https://www.youtube.com/watch?v=qOrlYzqXPa8&pp=ygUcdGVybWluYWwgZm9yIGJlZ2lubmVycyBtYWNvcw%3D%3D)
 
-### Monday, February 03:
+## Module 02: Version Control with Git and GitHub
 
-- Lecture 05: [Version control with Git and GitHub](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-05/05-git-github.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=f3930dce-298d-4610-a365-406fa3088a87&hostId=05eb977d-4f8a-440e-9e45-95212b29d103).
+### Wednesday, May 21:
+
+- Lecture 05: [Command Line Interface Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-04/04-command-line.html).
+- Lecture 06: [Version control with Git and GitHub](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-05/05-git-github.html).
+- **Assignment 01 due (5%).**
 
 Suggested references:
 
 - Chacon, S. and Straub, B. (2014). [Pro Git](https://git-scm.com/book/en/v2). Apress. (Instructor's note: this is _the book_ on Git).
 - GitHub tutorials: [GitHub skills](https://skills.github.com/) (recommended), [Git guides](https://github.com/git-guides), [GitHub learning lab](https://lab.github.com/), [Best practices for repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories).
 
-### Wednesday, February 05:
+### Friday, May 23:
 
-- Lecture 06: [More Git and GitHub: pull requests, issues, pages, and collaboration features](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-06/06-more-git-github.html).
+- Lecture 07: [More Git and GitHub: pull requests, issues, pages, and collaboration features](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-06/06-more-git-github.html).
+- Lecture 08: [Git and GitHub Continued](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-05/05-git-github.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=eec92538-78d8-4974-ba7b-8f83b5f3b215&hostId=05eb977d-4f8a-440e-9e45-95212b29d103).
 - **Assignment 02 due (5%).**
 - **Assignment 03:** [Problem Set 03](https://github.com/danilofreire/qtm350/blob/main/assignments/03-assignment.ipynb).
@@ -71,7 +75,6 @@ Suggested references:
 
 ### Monday, February 10:
 
-- Lecture 07: [Git and GitHub Continued](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-05/05-git-github.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=0c41d485-25b6-44a6-a825-70854f1953cb&hostId=05eb977d-4f8a-440e-9e45-95212b29d103).
 
 ## Module 03: Literate Programming with Markdown, Quarto, and Jupyter
