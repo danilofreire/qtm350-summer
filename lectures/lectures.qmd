@@ -2,7 +2,7 @@
 title: "Lectures"
 ---
 
-The course covers the following topics, with corresponding lecture materials available in the [lectures folder](https://github.com/danilofreire/qtm350/tree/main/lectures). Please refer to the syllabus for additional suggested readings on each topic. Links will be added as the materials are posted.
+The course covers the following topics, with corresponding lecture materials available in the [lectures folder](https://github.com/danilofreire/qtm350-summer/tree/main/lectures). Please refer to the syllabus for additional suggested readings on each topic. Links will be added as the materials are posted.
 
 ## Module 01: Introduction, Computational Literacy, and Command Line Interface (CLI)
 
