@@ -30,7 +30,6 @@ Suggested references:
 
 - Lecture 03: [Encoding Information & Introduction to Programming](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-03/03-text-encoding.html).
 - Lecture 04: [Command Line Interface](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-04/04-command-line.html).
-
 - **Assignment 01:** [Problem Set 01](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/01-assignment.ipynb).
 
 Suggested references:
