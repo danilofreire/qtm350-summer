@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[More Git and GitHub](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-06/06-more-git-github.html)"
+    footer: "[More Git and GitHub](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-07/07-more-git-github.html)"
 transition: slide
 transition-speed: default
 scrollable: true
@@ -26,7 +26,7 @@ editor:
 ### In our last class, we covered
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - How to think in terms of projects
 - File and folder organisation tips

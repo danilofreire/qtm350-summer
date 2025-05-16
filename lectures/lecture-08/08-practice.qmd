@@ -1,0 +1,358 @@
+---
+title: QTM 350 - Data Science Computing
+subtitle: Lecture 08 - Practice
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: Emory University
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[More Git and GitHub](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-08/08-practice.html)"
+transition: slide
+transition-speed: default
+scrollable: true
+engine: jupyter
+editor:
+  render-on-save: true
+---
+
+# And here we are! 😊 {background-color="#2d4563"}
+
+# Time to practice! 🧑🏻‍💻👩🏼‍💻 {background-color="#2d4563"}
+
+## Hands-on practice
+
+:::{style="margin-top: 30px; font-size: 24p;"}
+:::{.columns}
+:::{.column width="50%"}
+- Now, you will practice setting up a new data science project
+  - Structuring it, using Git for version control, and connecting it to a remote GitHub repository
+- You should execute these commands in your terminal and are encouraged to document their main commands in a `README.md` file as they go.
+
+- Estimated Time: 40-50 minutes
+:::
+
+:::{.column width="50%"}
+- Feel free to use any of resources you have available, [but please avoid using AI tools]{.alert}
+- Why? Because this is a risk-less activity to [practice and learn]{.alert} 🤓
+- If you get stuck, please ask for help! Searching the web is also a good option 😉
+:::
+:::
+:::
+
+## Instructions
+
+:::{style="margin-top: 30px; font-size: 24p;"}
+- You can download a Jupyter Notebook with the instructions for this activity [in this link](https://raw.githubusercontent.com/danilofreire/qtm350-summer/main/lectures/lecture-08/08-practice.ipynb)
+- You can also find the same instructions in this presentation
+- You can use any terminal you want, but we recommend using the terminal in JupyterLab 
+  - Use the `!` command to run shell commands in Jupyter, it should work the same way
+  - e.g., `!mkdir my_ds_project_revision`
+- You can also use the terminal in RStudio, VSCode, or any other terminal you prefer
+:::
+
+## Part 1: Project & GitHub Setup
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+Throughout this revision, please execute the commands in your terminal. You should create a `project_log.md` file in your project's root directory and add the commands you use as you go.
+
+- 1. **Create a Project Directory:**
+    * On your local machine, create a new directory for this project. Let's call it `my_ds_project_revision`.
+
+```{verbatim}
+mkdir my_ds_project_revision
+```
+
+- Navigate into this new directory. 
+
+```{verbatim}
+cd my_ds_project_revision
+```
+- *(Self-check: Use `pwd` to confirm you're in the right place.)*
+
+```{verbatim}
+pwd
+```
+:::
+
+## Part 1: Project & GitHub Setup
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 2.  **Create a New Repository on GitHub:** 
+
+- Go to [GitHub](https://github.com) and create a **new, empty public repository**.
+- Name it `my-ds-project-revision` (or similar).
+- **Important:** Do *not* initialise it with a README, .gitignore, or license yet.
+- Once created, copy the HTTPS or SSH URL for your new repository.
+
+- 3.  **Initialise Local Git Repository:**
+
+- Back in your `my_ds_project_revision` directory in the terminal:
+
+```{verbatim}
+git init
+```
+:::
+
+## Part 1: Project & GitHub Setup
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 4.  **Initial Commit:**
+
+- Create a simple `README.md` file. Add content using `echo`:
+
+```{verbatim}
+echo "# My Data Science Project Revision" > README.md
+echo "This project is a hands-on revision of setting up a data science workflow with Git and GitHub." >> README.md
+```
+- Stage the `README.md` file:
+
+```{verbatim}
+git add README.md
+```
+- Commit the staged file:
+
+```{verbatim}
+git commit -m "Initial commit: Add README"
+```
+:::
+
+## Part 1: Project & GitHub Setup
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 5.  **Connect to GitHub and Push:**
+
+- Add the GitHub repository as the remote origin (replace `YOUR_GITHUB_REPO_URL` with the URL you copied):
+
+```{verbatim}
+git remote add origin YOUR_GITHUB_REPO_URL
+```
+- Rename your default branch to `main` (if it's not already named that, e.g., if it's `master`):
+```{verbatim}
+git branch -M main
+```
+
+- Push your initial commit to the `main` branch on GitHub:
+```{verbatim}
+git push -u origin main
+```
+
+- *(Self-check: Refresh your GitHub repository page to see the `README.md` file.)*
+:::
+
+## Part 2: Structuring Your Data Science Project
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 1.  **Create Standard Directories:**
+
+- Create the following directories using brace expansion:
+
+```{verbatim}
+mkdir -p data/{raw,processed} notebooks scripts results docs
+```
+- *(Self-check: Use `ls` or `tree` if available.)*
+
+```{verbatim}
+ls -R
+```
+:::
+
+## Part 2: Structuring Your Data Science Project
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- 2.  **Add Initial Project Files:**
+
+- Create empty files:
+
+```{verbatim}
+touch scripts/01_data_preprocessing.py scripts/02_analysis.py notebooks/exploratory_data_analysis.ipynb data/raw/placeholder.txt docs/project_plan.md
+```
+- Add placeholder text to `docs/project_plan.md`:
+
+```{verbatim}
+echo "## Project Plan" > docs/project_plan.md
+echo "1. Setup project structure." >> docs/project_plan.md
+echo "2. Implement data preprocessing." >> docs/project_plan.md
+echo "3. Perform analysis." >> docs/project_plan.md
+```
+:::
+
+## Part 2: Structuring Your Data Science Project
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 3.  **Create a `.gitignore` file:**
+- Create the file:
+
+```{verbatim}
+touch .gitignore
+```
+
+- Add lines to `.gitignore` (you can use `echo ... >> .gitignore` for each line or open it in a text editor):
+
+```{verbatim}
+echo "# Python" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+echo "*.pyo" >> .gitignore
+echo "*.pyd" >> .gitignore
+echo "" >> .gitignore
+echo "# Jupyter Notebook" >> .gitignore
+echo ".ipynb_checkpoints/" >> .gitignore
+echo "" >> .gitignore
+echo "# Data files" >> .gitignore
+echo "data/raw/*" >> .gitignore
+echo "data/processed/*" >> .gitignore
+echo "!data/raw/placeholder.txt" >> .gitignore
+echo "" >> .gitignore
+echo "# Results" >> .gitignore
+echo "results/*" >> .gitignore
+echo "" >> .gitignore
+echo "# Environment" >> .gitignore
+echo ".env" >> .gitignore
+echo "venv/" >> .gitignore
+echo "env/" >> .gitignore
+```
+
+- *(Self-check: View the contents of `.gitignore` using `cat .gitignore`)*
+:::
+
+## Part 2: Structuring Your Data Science Project
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 4.  **Commit Project Structure:**
+- Stage all new directories/files:
+
+```{verbatim}
+git add .
+```
+- Commit the changes:
+
+```{verbatim}
+git commit -m "Feat: Setup project directory structure and gitignore"
+```
+- Push to GitHub:
+
+```{verbatim}
+git push origin main
+```
+:::
+
+## Part 3: Simulating a Workflow with Branching
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 1.  **Create a Feature Branch:**
+
+```{verbatim}
+git branch feature/add-initial-script-logic
+git checkout feature/add-initial-script-logic
+```
+
+- (Or in one command: `git checkout -b feature/add-initial-script-logic`)*
+
+- 2.  **"Develop" a Script:**
+
+- Append lines to `scripts/01_data_preprocessing.py`:
+
+```{verbatim}
+echo "# scripts/01_data_preprocessing.py" > scripts/01_data_preprocessing.py
+echo "import pandas as pd" >> scripts/01_data_preprocessing.py
+echo "" >> scripts/01_data_preprocessing.py
+echo "def load_data(filepath):" >> scripts/01_data_preprocessing.py
+echo "    print(f\"Loading data from {filepath}...\")" >> scripts/01_data_preprocessing.py
+echo "    # df = pd.read_csv(filepath)" >> scripts/01_data_preprocessing.py
+echo "    # print(\"Data loaded successfully.\")" >> scripts/01_data_preprocessing.py
+echo "    # return df" >> scripts/01_data_preprocessing.py
+echo "" >> scripts/01_data_preprocessing.py
+echo "print(\"Data preprocessing script initialized.\")" >> scripts/01_data_preprocessing.py
+```
+
+- *(Self-check: `cat scripts/01_data_preprocessing.py`)*
+:::
+
+## Part 3: Simulating a Workflow with Branching
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- 3.  **Simulate Data Processing:**
+
+```{verbatim}
+cp data/raw/placeholder.txt data/processed/processed_placeholder.txt
+```
+
+- 4.  **Commit Feature Development:**
+
+- Stage the changes:
+
+```{verbatim}
+git add scripts/01_data_preprocessing.py data/processed/processed_placeholder.txt
+```
+
+- Commit:
+
+```{verbatim}
+git commit -m "Feat: Add initial logic to preprocessing script and simulate output"
+```
+:::
+
+## Part 3: Simulating a Workflow with Branching
+
+::::{style="margin-top: 30px; font-size: 26px;"}
+- 5.  **Merge Feature Branch:**
+
+- Switch to main:
+
+```{verbatim}
+git checkout main
+```
+
+- Merge:
+
+```{verbatim}
+git merge feature/add-initial-script-logic
+```
+
+- (Optional) Delete the feature branch locally:
+
+```{verbatim}
+git branch -d feature/add-initial-script-logic
+```
+:::
+
+## Part 3: Simulating a Workflow with Branching
+
+::::{style="margin-top: 30px; font-size: 26px;"}
+- 6.  **Push Final Changes:**
+
+```{verbatim}
+git push origin main
+```
+
+- *(Self-check: Verify on GitHub.)* 
+
+- 7. **Document Your Work:**
+
+- Create `project_log.md`. It's recommended you do this as you go.
+
+```{verbatim}
+touch project_log.md
+```
+
+- Add all the shell and Git commands you used to this file using Markdown.
+
+- Stage, commit, and push `project_log.md`.
+```{verbatim}
+git add project_log.md
+git commit -m "Docs: Add project log with commands"
+git push origin main
+```
+:::
+
+## End of Revision Lecture Activity
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+- [Congratulations!]{.alert} 🥳 
+- You've set up a data science project with version control and connected it to GitHub 🐙
+- If you have any questions, please feel free to ask!
+- Happy coding! 💻
+:::
+
+# And that's all for today! 🎉 {background-color="#2d4563"}
