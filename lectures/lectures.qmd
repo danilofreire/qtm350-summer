@@ -70,3 +70,5 @@ Suggested references:
 - Perez-Riverol, Y., Gatto, L., Wang, R., Sachsenberg, T., Uszkoreit, J., Leprevost, F. da V., Fufezan, C., Ternent, T., Eglen, S. J., Katz, D. S., Pollard, T. J., Konovalov, A., Flight, R. M., Blin, K., & Vizcaíno, J. A. (2016). [Ten Simple Rules for Taking Advantage of Git and GitHub](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004947). PLOS Computational Biology, 12(7), e1004947.
 - Beckman, M. D., Çetinkaya-Rundel, M., Horton, N. J., Rundel, C. W., Sullivan, A. J., & Tackett, M. (2021). [Implementing version control with git and GitHub as a learning objective in statistics and data science courses](https://www.tandfonline.com/doi/pdf/10.1080/10691898.2020.1848485). Journal of Statistics and Data Science Education, 29(sup1), S132-S144.
 - Escamilla, E., Klein, M., Cooper, T., Rampin, V., Weigle, M. C., & Nelson, M. L. (2022). [The Rise of GitHub in Scholarly Publications](https://arxiv.org/abs/2208.04895). arXiv preprint arXiv:2208.04895.
+
+(**More lectures to be added soon**)
