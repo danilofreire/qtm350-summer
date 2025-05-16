@@ -1,6 +1,6 @@
 ---
 title: QTM 350 - Data Science Computing
-subtitle: "Lecture 02: Computational Literacy"
+subtitle: Lecture 02 - Computational Literacy
 author:
   - name: Danilo Freire
     email: danilo.freire@emory.edu

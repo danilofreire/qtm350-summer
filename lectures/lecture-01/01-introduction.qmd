@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Data Science Computing!"
-subtitle: "Lecture 01: Introduction"
+title: QTM350 - Welcome to Data Science Computing!
+subtitle: Lecture 01 - Introduction
 author:
   - name: Danilo Freire
     orcid: 0000-0002-4712-6810

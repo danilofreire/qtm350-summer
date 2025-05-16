@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[More Git and GitHub](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-08/08-practice.html)"
+    footer: "[Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-08/08-practice.html)"
 transition: slide
 transition-speed: default
 scrollable: true

@@ -1,6 +1,6 @@
 ---
 title: QTM 350 - Data Science Computing
-subtitle: "Lecture 05: More About the Command Line"
+subtitle: Lecture 05 - More About the Command Line
 author:
   - name: Danilo Freire
     email: danilo.freire@emory.edu

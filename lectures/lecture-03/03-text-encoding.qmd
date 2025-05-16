@@ -1,6 +1,6 @@
 ---
 title: QTM 350 - Data Science Computing
-subtitle: "Encoding Information & Introduction to Programming"
+subtitle: Lecture 03 - Encoding Information & Introduction to Programming
 author:
   - name: Danilo Freire
     email: danilo.freire@emory.edu
