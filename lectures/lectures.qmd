@@ -53,6 +53,7 @@ Suggested references:
 - Lecture 05: [Command Line Interface Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-05/05-more-command-line.html).
 - Lecture 06: [Version control with Git and GitHub](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-06/06-git-github.html).
 - **Assignment 01 due (5%).**
+- **Assignment 02:** [Problem Set 02](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/03-assignment.ipynb).
 
 Suggested references:
 
@@ -64,7 +65,7 @@ Suggested references:
 - Lecture 07: [More Git and GitHub: pull requests, issues, pages, and collaboration features](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-07/07-more-git-github.html).
 - Lecture 08: [Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-08/08-practice.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=eec92538-78d8-4974-ba7b-8f83b5f3b215&hostId=05eb977d-4f8a-440e-9e45-95212b29d103).
-- **Assignment 02:** [Problem Set 02](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/03-assignment.ipynb).
+- **Assignment 02 due (5%).**
 
 Suggested references:
 
