@@ -318,7 +318,7 @@ Unicode allows us to represent a vast range of characters beyond basic ASCII:
 - The Z3 was the first computer to use [binary arithmetic]{.alert} and read binary instructions from punch tape
 - Example: Z4 had 512 bytes of memory
 - Zuse also created the first high-level programming language,
-  [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) (though not widely implemented at the time)
+  [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) ("a formal system of planning". Not widely implemented at the time)
 :::
 :::
 ::::
@@ -472,9 +472,7 @@ Some languages can have both compiled and interpreted implementations, or use a 
 - "Hello, World!" in machine code (Hex representation):
 
 :::{style="font-size: 40px;"}
-```{verbatim}
-# This is a conceptual representation, actual machine code varies greatly
-# For a Linux executable, it would involve system calls.
+```{assembly}
 # A simple sequence of ASCII values in hex:
 48 65 6C 6C 6F 2C 20 57 6F 72 6C 64 21 0A 
 # (H e l l o ,   W o r l d ! \n)
@@ -531,7 +529,7 @@ print("Hello, World!")
 :::
 :::
 
-# Question: Is Natural Language Programming the Future of High-Level Languages? `r emo::ji('robot')` {background-color="#2d4563"}
+# Question: <br> Is Natural Language Programming the Future of High-Level Languages? `r emo::ji('robot')` {background-color="#2d4563"}
 
 # The Operating System (OS) `r emo::ji('desktop_computer')` {background-color="#2d4563"}
 
