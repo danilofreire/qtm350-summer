@@ -375,7 +375,7 @@ The character count is actually higher than we'd get if we count by hand, becaus
 :::
 
 :::{.callout-note}
-Download the `sonnet.txt` file at <https://raw.githubusercontent.com/danilofreire/qtm350-summer/main/lectures/lecture-05/sonnets.txt>. Click on "Download raw file". Or use `curl` as shown in the code above. [Download curl here](https://curl.se/download.html).
+Download the `sonnet.txt` file at <https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-05/sonnets.txt>. Click on "Download raw file". Or use `curl` as shown in the code above. [Download curl here](https://curl.se/download.html).
 :::
 
 ## Read text: `cat`
