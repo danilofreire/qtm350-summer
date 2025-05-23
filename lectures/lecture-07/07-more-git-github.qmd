@@ -576,98 +576,59 @@ Pull requests
 :::
 :::
 
-## GitHub Actions
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
-:::{.column size="50%"}
-- [GitHub Actions](https://github.com/features/actions) is a way to automate your workflow
-- Actions are workflows that run on GitHub when you push changes to your repository
-- You can use them to build, test, package, release, and deploy your code
-- They are a relatively new feature of GitHub and are very powerful
-- Basically, you can create a `.yml` file with the steps you want to run
-- Then, every time you push a new commit, GitHub will run the steps in the `.yml` file
-  - For instance, you can update your website every time you change the text
-  - Or you can test your code/run a model every time you push changes
-  - I have one that [automatically creates a list of my starred repositories every day](https://github.com/danilofreire/awesome-stars)
-:::
-
-:::{.column size="50%"}
-:::{style="text-align: center;"}
-![](figures/actions.png){width="100%"}
-:::
-:::
-:::
-:::
-
-## GitHub Actions
-
-:::{style="margin-top: 30px; font-size: 21px; text-align: center;"}
-![](figures/actions2.png){width="82%"}
-:::
-
-## GitHub in the command line
+## GitHub CLI
+### Cloning and forking
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.colunms}
 :::{.column size="50%"}
 - [GitHub CLI](https://cli.github.com/) is a command-line tool that brings GitHub to your terminal
-- You can install it with `brew install gh`
+- You can install it with `brew install gh` or by [downloading the installer from the website](https://github.com/cli/cli/releases/latest) (all major OS supported)
 - GitHub CLI creates repositories, issues, pull requests, and more
-- I use it both to create repositories and clone/fork them
-  - `gh repo create my-project`
-  - `gh repo clone danilofreire/my-project`
-- Have a look at the [GitHub CLI manual](https://cli.github.com/manual/) for more information
+- To login, you can use `gh auth login`
+  - This will open a browser window to authenticate your GitHub account
+- Once you are logged in, you can use `gh repo clone` to clone a repository
+- Most of the repository-related commands use the `username/repo` format
+- For example, `gh repo clone danilofreire/my-project` will clone the `my-project` repository from my GitHub account
 :::
 
 :::{.column size="50%"}
-:::{style="text-align: center;"}
+:::{style="text-align: center; margin-top: -20px;"}
+![](figures/clix.png){width="100%"}
+
+- To fork a repository, use `gh repo fork username/repo`, such as `gh repo fork chrislgarry/Apollo-11`
+
 ![](figures/cli.png){width="100%"}
 :::
 :::
 :::
 :::
 
-## GitHub Copilot 🤖
+## GitHub CLI
+### Issues and pull requests
 
 :::{style="margin-top: 30px; font-size: 21px;"}
+
 :::{.colunms}
 :::{.column size="50%"}
-- Okay, I have the feeling that you are already tired of me talking about GitHub 😂
-- But there's also [GitHub Copilot](https://copilot.github.com)
-- It works really well! GitHub Copilot is an AI pair programmer that helps you write code
-- Think about [ChatGPT](https://chat.openai.com) but integrated into your IDE
-- It is based on OpenAI's Codex and is available as a [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
-- You can use it to write entire functions, classes, or even entire programs
-- Like ChatGPT, it is not perfect, but it is really good and can save you a lot of time
+- If someone creates an issue on your repository, you can use `gh issue list` to see the list of issues
+- You can use `gh issue view issue-number` to see the details of an issue (`--comments` to see the whole conversation)
+- You can also `create`, `close`, `comment`, and `edit` issues from the command line
+- More commands [here](https://cli.github.com/manual/gh_issue)
+- If someone creates a pull request on your repository, you can use `gh pr list` to see the list of pull requests
+- To merge a pull request, use `gh pr merge pr-number`
+- You can also `create`, `close`, `comment`, and `edit` pull requests, just like issues
+- Further information [here](https://cli.github.com/manual/gh_pr)
 :::
 
 :::{.column size="50%"}
 :::{style="text-align: center;"}
-![](figures/copilot2.png)
+![](figures/cli02.png){width="100%"}
 :::
 :::
 :::
 :::
 
-## GitHub Copilot
+# That's all for now! 🎉 {background-color="#2d4563"}
 
-:::{style="margin-top: 30px; font-size: 21px;"}
-![](figures/readme-gif.gif){width="100%"}
-:::
-
-## GitHub Copilot
-
-:::{style="margin-top: 30px; font-size: 21px; text-align: center;"}
-![](figures/copilot4.gif)
-:::
-
-## GitHub Copilot
-
-:::{style="margin-top: 30px; font-size: 21px; text-align: center;"}
-![](figures/copilot5.webp)
-:::
-
-# Phew! That's all for today! 🎉 {background-color="#2d4563"}
-
-# Thank you for your attention and see you next week! 😊🙏 {background-color="#2d4563"}
+# Thank you for your attention! 😊🙏 {background-color="#2d4563"}
