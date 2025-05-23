@@ -8,7 +8,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Quarto Continued](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-11/11-quarto-continued.html)"
+    footer: "[Quarto Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-11/11-quarto-continued.html)"
 transition: slide
 transition-speed: default
 scrollable: true
