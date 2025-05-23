@@ -1,0 +1,377 @@
+---
+title: QTM 350 - Data Science Computing
+subtitle: "Lecture 11 - Introduction to AI-Assisted Programming"
+author:
+  - name: Danilo Freire
+    email: danilo.freire@emory.edu
+    affiliations: Emory University
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[AI Programming](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-11/11-ai-programming.html)"
+transition: slide
+transition-speed: default
+scrollable: true
+engine: jupyter
+revealjs-plugins:
+  - fontawesome
+editor:
+  render-on-save: true
+---
+
+# I hope you're having a lovely day! 😊 {background-color="#2d4563"}
+
+# Today's lecture 🤖 {background-color="#2d4563"}
+
+## Introduction to AI-Assisted Programming
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Yes, we all love ChatGPT! 🤖
+- LLMs (Large Language Models) are indeed changing the way we code
+- This new paradigm is called [AI-Assisted Programming]{.alert}
+- It is not about replacing programmers, but about making them more productive (at least for now 😅)
+- We will discuss the main concepts behind AI-Assisted Programming
+  - What LLMs are
+  - How they can help us write code
+  - Limits and challenges
+  - How to get started with GitHub Copilot
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/flux01.png)
+:::
+:::
+:::
+:::
+
+## What are LLMs?
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width="50%"}
+- LLMs are a type of [neural network](https://en.wikipedia.org/wiki/Neural_network_(machine_learning)) based on the [Transformer architecture](https://arxiv.org/pdf/1706.03762) (that's the [T in GPT - Generative Pre-trained Transformer](https://arxiv.org/abs/2303.08774))
+- Many important ideas behind neural networks were developed in the 1950s (!), but the area has recently exploded due to the availability of [large datasets and powerful GPUs]{.alert}
+- LLMs are trained on large corpora of text data (e.g., books, articles, websites, etc.), and they learn to predict [the next word in a sentence]{.alert}
+- For code, they are trained on large repositories like GitHub and use Natural Language Processing (NLP) to understand the context and generate code snippets
+- Which means that they are particularly good at writing [Python or JavaScript]{.alert}, but they can also help with other languages
+- For a very good introduction to LLMs, I strongly recommend [this article](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/) by [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram)
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/wolfram.png){width="80%"}
+![](figures/wolfram02.png){width="80%"}
+![](figures/karpathy.png){width="80%"}
+:::
+:::
+:::
+:::
+
+## How do LLMs work?
+### A _very_ simplified explanation: Sorry mathematicians! 😅
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width="50%"}
+- The data collected by AI firms are huge and include [many languages and styles]{.alert}
+- An overlooked part of the training process is the [data cleaning and preprocessing]{.alert}: removing duplicates, correcting errors, and standardising formats
+- [Tokenisation](https://en.wikipedia.org/wiki/Tokenization_(lexical_analysis)) is the process of breaking text into smaller units called tokens, and each token is assigned a unique ID
+  - For example, "`Chatbots are helpful in 2025!`" = `["Chat", "bots", "are", "help", "ful", "in", "2025", "!"]`
+- The main objective during training is for the model to [predict the next token in a sequence]{.alert} based on the tokens that come before it
+- This allows the model to [learn language patterns without needing labeled data]{.alert}
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/tokens.png)
+
+![](figures/unsupervised.webp)
+:::
+:::
+:::
+:::
+
+## Why was GPT-3 so special?
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Transformers changed the field by allowing models to [process text in parallel]{.alert}, which made them much faster than previous models
+- The model consists of multiple layers, each performing specific functions to process and generate text
+- GPT-3 was the first model to have [175 billion parameters]{.alert}, which made it the largest model at the time
+- Another important feature was its [zero-shot leaning](https://en.wikipedia.org/wiki/Zero-shot_learning) capability, which allowed it to perform tasks without any training data
+- GPT also uses [multi-head attention](https://en.wikipedia.org/wiki/Attention_(machine_learning)) to focus on different parts of the input text at the same time 
+  - For example, it can focus on the subject and the verb of a sentence simultaneously
+- Finally, the model also scales well with more data and more parameters
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+[![](figures/sam.png)](https://x.com/sama/status/1284315896735883264?lang=en)
+
+[![](figures/sam02.png)](https://x.com/sama/status/1284922296348454913?lang=en)
+:::
+:::
+:::
+:::
+
+
+## AI-Assisted Programming
+### Some benefits
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width="50%"}
+- The area is still very new, but we can already see some important benefits of AI-Assisted Programming:
+- [Minimising search time]{.alert}: According to the [2022 Stack Overflow Developer Survey](https://insights.stackoverflow.com/survey/2022), 62% of the developers spent more than 30 minutes a day searching for answers, and 25% spent over an hour a day. Users of GitHub Copilot report that [they finish tasks 55% faster](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)
+- [Reflecting your codebase and workspace]{.alert}: New tools allow you to train LLMs on your own codebase and search for files and functions in your workspace
+- [Language translation]{.alert}: You can write code in your language and get it translated to another language. For example, IBM's Watsonx.ai model [understands 115 coding languages based on 1.5 trillion tokens](https://www.eweek.com/it-management/modernizing-the-mainframe-ibm-introduces-watsonx-code-assistant-for-z/)
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/stack.webp)
+:::
+:::
+:::
+:::
+
+## AI-Assisted Programming: Challenges
+### Hallucination
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Generative AI models can produce incorrect or misleading content
+- This can be due to errors in the model, biases or incorrect information in the training data, or the limitations of the model architecture
+- This makes it vital to check the output of these models and not take it at face value. For example, I asked Copilot (which is powered by OpenAI's GPT-4) to solve a simple quadratic equation, and [it very confidently gave me a very wrong answer]{.alert} 😅
+- It provided the answers of $\frac{1}{2}$ and $\frac{-5}{4}$ when the correct answers were 0.804 and -1.55. 
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/quadratic.png)
+:::
+:::
+:::
+:::
+
+## AI-Assisted Programming: Challenges
+### Bias
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width="50%"}
+- AI models can [amplify biases](https://www.scientificamerican.com/article/humans-absorb-bias-from-ai-and-keep-it-after-they-stop-using-the-algorithm/) present in the training data
+- For instance, I asked an AI to give me the names of 10 famous scientists, and it came up with the following list:
+- [Can you spot the bias?]{.alert}
+  - Albert Einstein
+  - Isaac Newton
+  - Marie Curie
+  - Charles Darwin
+  - Nikola Tesla
+  - Galileo Galilei
+  - Stephen Hawking
+  - Leonardo da Vinci
+  - Thomas Edison
+  - Ada Lovelace
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/biases.jpg)
+:::
+:::
+:::
+:::
+
+## AI-Assisted Programming: Challenges
+### Bias
+
+:::{style="margin-top: 30px; text-align: center;"}
+![](figures/biases02.png){width="75%"}
+
+<https://www.nature.com/articles/s41598-023-42384-8>
+:::
+
+# Can we prevent these issues? 🤔 {background-color="#2d4563"}
+
+## How to prevent some of these issues 
+### Better prompt engineering
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width="50%"}
+- [Prompt engineering](https://platform.openai.com/docs/guides/prompt-engineering) is a new buzzword in the AI community
+- It refers to the process of designing the input to an AI model to get the desired output
+- It is, to a large extent, [a mix of art and science]{.alert} that involves _a lot_ of trial and error (at least in my experience!)
+- The idea is to [guide the model to produce the desired output]{.alert} by providing it with the right context and examples
+- Prompt engineering will never be fully exact simply because [models themselves are probabilistic](https://en.wikipedia.org/wiki/Probabilistic_model)
+- But you can think of a prompt as having [four main components]{.alert}:
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/components.png)
+
+Source: [Tulio (2024)](https://www.oreilly.com/library/view/ai-assisted-programming/9781098164553/).
+
+- [Context]{.alert}: The information you provide to the model
+- [Instructions]{.alert}: The task you want the model to perform
+- [Input of the model]{.alert}: The data you feed into the model
+- [Format]{.alert}: The structure of the prompt
+:::
+:::
+:::
+:::
+
+## Best practices for prompt engineering
+### Rules of thumb and tips
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width="50%"}
+- It is a good idea to begin your prompt with a sentence that [clearly defines the task]{.alert} you want the model to perform
+- [Creating a persona]{.alert} for the model can also help guide its output
+  - Less effective: "Write a function that takes a list of integers and returns the sum of the even numbers."
+  - Better: "You are an experienced software engineer specialising in debugging Python code. You are asked to write a function that takes a list of integers and returns the sum of the even numbers."
+- [Use tags]{.alert} to provide additional information to the model and separate instructions from context
+  - Less effective: "Summarise the text below as a bullet point list of the most important points."
+  - Better: "`<task>` Summarise the text below as a bullet point list of the most important points. `</task> <context>` The text is about the history of AI and its impact on society. `</context>`"
+:::
+
+:::{.column width="50%"}
+- [Try chain-of-thought prompting]{.alert} to show intermediate steps to the model ([Wei et al (2023)](https://arxiv.org/abs/2201.11903))
+  - [OpenAI's o1](https://www.forbes.com/sites/lanceeliot/2024/09/15/openais-new-o1-model-leverages-chain-of-thought-double-checking-to-reduce-ai-hallucinations-and-boost-ai-safety/) and several new models now do automatic chain-of-thought prompting
+
+![](figures/cot.webp)
+
+- [Use AI itself to improve your prompts]{.alert} by asking the model to generate prompts for you
+  - For example, you can ask the model to generate a prompt for a specific task, and then use that prompt to generate the final output
+:::
+:::
+:::
+
+# How to get started with GitHub Copilot 🚀 {background-color="#2d4563"}
+
+## How to get started with GitHub Copilot
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+- First, I would like to make sure we all have Copilot installed and ready to go 😉
+- It is a good idea to have [VS Code](https://code.visualstudio.com/) installed on your computer
+- Then, you can install the [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) from the VS Code marketplace
+- You will need to [sign in with your GitHub account](https://github.com) to use Copilot (there is a free plan too, or you can use your GitHub Educational account)
+- Copilot works in the CLI as well, and you can install it using [this guide](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line). You need to install [GitHub CLI](https://cli.github.com/) first
+- Please let me know if you have any questions or issues!
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/copilot.jpeg)
+
+<https://github.com/features/copilot>
+:::
+:::
+:::
+:::
+
+## Basic components
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+- There are two main components to GitHub Copilot:
+  - [GitHub Copilot]{.alert}: This provides code suggestions and completions in the editor window
+  - [GitHub Copilot Chat]{.alert}: This provides a chat interface to Copilot, allowing you to ask questions and get code suggestions. It can also interact with code in the editor window. [This is by far the most powerful feature of Copilot]{.alert}
+- Copilot not only offers code suggestions, but it can also help you with writing documentation, providing explantions for code you don't know, and, more recently, retrieving code snippets and information from your whole workspace
+- In my view, it is the most convenient AI-assistant for programming available today
+- It is also [very easy to use](https://docs.github.com/en/copilot/getting-started-with-github-copilot)
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/unexpectedcopilot2.webp)
+:::
+:::
+:::
+:::
+
+## In-Editor Prompting
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- In an empty file/code cell, VS Code will display a greyed-out piece of text as follows:
+
+![](figures/prompt_invitation.png)
+
+- If you press `Ctrl + I`, a text box will appear into which you can write a prompt C
+- Copilot will suggest new code, or changes to existing code based on this prompt
+- These may be in the form of one or more proposed changes
+- You may choose to accept ach of these changes by clicking the Accept or Discard buttons
+
+![](figures/bubble_sort.png)
+:::
+
+## In-Editor Prompting
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- You can also highlight an existing piece of code and press `Ctrl + I` to ask Copilot to suggest changes to that code 
+- This can be useful if you have a piece of code that you think could be improved, or if you want to see alternative ways of writing the same code
+- When you do this, you can also click on the button next to Accept and Discard to see which code Copilot is suggesting removing for each change
+
+![](figures/relative_std.gif)
+:::
+
+## In-Editor Prompting
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- There are a few standard commands that are available for prompting Copilot to do something when you have a piece of code selected
+- You can access these in the `Ctrl + I` interface by typing a forward slash, then the name of the command. These are:
+ - `/doc`: This will ask Copilot to generate documentation for the selected code. This will suggest changes in the editor 
+ - `/explain`: This will ask Copilot to explain the selected code. It will do this in the Copilot Chat extension
+ -  `/fix` will look for problems in the selected code and suggest fixes for them in the editor.
+ -  `/test` will ask Copilot to generate tests for the selected code. This will suggest changes in the editor, which may include creating a new file for the tests
+
+- You can also find these options by right-clicking a highlighted piece of code, and going into the Copilot menu
+
+- We'll look at using some of these tools later in the course
+:::
+
+## Copilot Chat
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- You can also chat to Copilot in a manner closer to that of a chatbot like ChatGPT
+- To do this, you can open the chat window by clicking on the chat icon in the activity bar at the left of the screen
+
+![](figures/copilot_chat_icon.png){width="5%"}
+
+- You can type a message to Copilot in the window and it will respond, including suggesting code snippets where relevant
+- Copilot chat is limited to discussing programming
+- If Copilot produces a code snippet that you want to use, you can hover over the snippet and click the "Copy" button to copy it to the clipboard, click the "Insert at Cursor" button to insert at the location of the cursor in the editor, or insert it into a new file or the currently active terminal
+
+![](figures/chat_inserting_code.png){width="65%"}
+:::
+
+## Exercise
+### You can work on this exercise on your own time
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+- Experiment with some of the ways of using Copilot that we have discussed in this notebook. Include the following activities:
+  - Use the Ctrl + I interface to ask Copilot to generate a function from scratch.
+  - Use the Ctrl + I interface to ask Copilot a question about an existing piece of code.
+  - Use autocomplete to complete a function that you have started writing.
+  - Ask Copilot Chat a general question about programming.
+  - Ask Copilot Chat a question about a specific piece of code.
+  - Insert some code produced by Copilot Chat into the code cell.
+:::
+
+# That's all for today! 🎉 {background-color="#2d4563"}
+
+# Next time we will learn what Copilot can do for us! 🤖 {background-color="#2d4563"}
+
+# Have a great day! 😊 {background-color="#2d4563"}
+
