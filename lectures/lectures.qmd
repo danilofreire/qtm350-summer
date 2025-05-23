@@ -66,7 +66,7 @@ Suggested references:
 - Lecture 08: [Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-08/08-practice.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=eec92538-78d8-4974-ba7b-8f83b5f3b215&hostId=05eb977d-4f8a-440e-9e45-95212b29d103).
 - **Assignment 02 due (5%).**
-- [Assignment 03:] [Problem Set 03](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/03-assignment.ipynb).
+- **Assignment 03:** [Problem Set 03](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/03-assignment.ipynb).
 
 Suggested references:
 
@@ -83,7 +83,7 @@ Suggested references:
 - Lecture 09: [Introduction to Quarto](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-09/09-quarto.html).
 - Lecture 10: [Quiz 01 - Command Line Interface and Version Control](https://github.com/danilofreire/qtm350-summer-quiz01/).
 - **Assignment 03 due (5%).**
-- [Assignment 04:] [Problem Set 04](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/04-assignment.ipynb).
+- **Assignment 04:** [Problem Set 04](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/04-assignment.ipynb).
 
 Suggested references:
 

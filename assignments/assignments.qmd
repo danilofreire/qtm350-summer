@@ -17,8 +17,9 @@ When submitting, please name your files as follows: `assignment-01-your-name.pdf
 | Session | Topic | Assignment | Submission Deadline |
 |---------|-------|------------|---------------------|
 | 02 | Computational Literacy | [Assignment 01](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/01-assignment.ipynb) | 2025-05-21 |
-| 03 | Command Line Interface | [Assignment 02](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/02-assignment.ipynb) | 2025-05-23 |
-
+| 04 | Command Line Interface | [Assignment 02](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/02-assignment.ipynb) | 2025-05-23 |
+| 05 | Git | [Assignment 03](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/03-assignment.ipynb) | 2025-05-28 |
+| 06 | Advanced Git | [Assignment 04](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/04-assignment.ipynb) | 2025-05-30 |
 
 
 ## In-Class Quizzes
