@@ -95,6 +95,26 @@ Suggested references:
 ## Friday, May 30:
 
 - Lecture 11: [Quarto Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-11/11-quarto-continued.html).
-- Lecture 12: [Introduction to AI-Assisted Programming and Chatbots](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-12/12-ai-programming.html)
+- Lecture 12: [Quarto Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-12/12-quarto-practice.html).
 - **Assignment 04 due (5%).**
 - **Assignment 05:** [Problem Set 05](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/05-assignment.ipynb).
+
+## Module 04: AI-Assisted Programming
+
+### Monday, June 2:
+
+- Lecture 13: [Introduction to AI-Assisted Programming](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-13/13-ai-assisted-programming.html).
+- Lecture 14: [APIs and Agents](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-14/14-ai-assisted-programming-github-copilot.html).
+
+### Wednesday, June 4:
+
+- Lecture 15: [APIs and Agents Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-15/15-ai-assisted-programming-continued.html). 
+- Lecture 16: [Quiz 02 - Quarto](https://github.com/danilofreire/qtm350-summer-quiz02/).
+- **Assignment 05 due (5%).**
+- **Assignment 06:** [Problem Set 06](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/06-assignment.ipynb).
+
+### Friday, June 6:
+
+- Lecture 17: [AI-Assisted Programming Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-17/17-ai-assisted-programming-practice.html).
+- Lecture 18: [Introduction to Cloud Computing](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-18/18-cloud-computing.html).
+- **Assignment 06 due (5%).**

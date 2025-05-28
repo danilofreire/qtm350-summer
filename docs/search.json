@@ -410,7 +410,7 @@
     "href": "lectures/lectures.html#module-04-ai-assisted-programming",
     "title": "Lectures",
     "section": "Module 04: AI-Assisted Programming",
-    "text": "Module 04: AI-Assisted Programming\n\nMonday, February 24:\n\nLecture 11: Introduction to AI-Assisted Programming and Chatbots.\nKahoot Quiz.\n\nSuggested references:\n\nMatarazzo, A & Torlone, R. (2025). A Survey on Large Language Models with some Insights on their Capabilities and Limitations. arXiv preprint arXiv:2501.04040.”\nCihon, P. & Demirer, M. (2023). How AI-powered software development may affect labor markets. Brookings Institution\nPoldrack, R. A., Lu, T., & Beguš, G. (2023). AI-assisted Coding: Experiments with GPT-4. arXiv preprint arXiv:2304.13187.\nLau, S & Guo, P. (2023). From “Ban It Till We Understand It” to “Resistance is Futile”: How University Programming Instructors Plan to Adapt as More Students Use AI Code Generation and Explanation Tools such as ChatGPT and GitHub Copilot. In Proceedings of the 2023 ACM Conference on International Computing Education Research V.1 (ICER ’23 V1), August 07–11, 2023, Chicago, IL, USA. ACM, New York, NY, USA 16 Pages.\nLinus Torvalds Discusses the Impact of AI on Programming (YouTube).\nUsing GitHub Copilot in the Command Line\nGitHub Copilot YouTube Playlist\n\n\n\nWednesday, February 26:\n\nLecture 12: Quiz 02: Literate Programming (6%).\nAssignment 04 due (5%).\nAssignment 05: Problem Set 05.\n\n\n\nMonday, March 03:\n\nLecture 13: AI-Assisted Programming, APIs, and Agents.."
+    "text": "Module 04: AI-Assisted Programming\n\nMonday, June 2:\n\nLecture 13: Introduction to AI-Assisted Programming.\nLecture 14: APIs and Agents.\n\n\n\nWednesday, June 4:\n\nLecture 15: APIs and Agents Continued.\nLecture 16: Quiz 02 - Quarto.\nAssignment 05 due (5%).\nAssignment 06: Problem Set 06.\n\n\n\nFriday, June 6:\n\nLecture 17: AI-Assisted Programming Practice.\nLecture 18: Introduction to Cloud Computing.\nAssignment 06 due (5%)."
   },
   {
     "objectID": "lectures/lectures.html#module-05-introduction-to-cloud-computing",
@@ -473,6 +473,6 @@
     "href": "lectures/lectures.html#friday-may-30",
     "title": "Lectures",
     "section": "Friday, May 30:",
-    "text": "Friday, May 30:\n\nLecture 11: Quarto Continued.\nLecture 12: Introduction to AI-Assisted Programming and Chatbots\nAssignment 04 due (5%).\nAssignment 05: Problem Set 05."
+    "text": "Friday, May 30:\n\nLecture 11: Quarto Continued.\nLecture 12: Quarto Practice.\nAssignment 04 due (5%).\nAssignment 05: Problem Set 05."
   }
 ]
