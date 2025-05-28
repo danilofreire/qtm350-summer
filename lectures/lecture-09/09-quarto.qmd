@@ -566,7 +566,6 @@ g.set_ylabels('Body Mass');
 ![](https://quarto.org/docs/get-started/images/jupyter-logo.png){width="160"}
 
 ![](https://quarto.org/docs/get-started/images/text-editor-logo.png){width="160"}
-:::
 
 :::{style="margin-top: 10px; font-size: 20px;"}
 ```{verbatim}
