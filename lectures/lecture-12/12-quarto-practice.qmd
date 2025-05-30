@@ -20,8 +20,6 @@ editor:
 
 # Titanic data using Quarto & GitHub Pages 🚢 {background-color="#2d4563"}
 
-# Time to build and publish with Quarto! 📝 {background-color="#2d4563"}
-
 ## Hands-on Practice
 
 :::{style="margin-top: 30px; font-size: 23px;"}
@@ -146,7 +144,7 @@ The data used is the well-known Titanic dataset.
 ![](https://www.science.smith.edu/climatelit/wp-content/uploads/sites/97/2024/07/GettyImages-517357578-5c4a27edc9e77c0001ccf77d-Large.jpeg)
 *Source: Smith College*
 ```
-* Customise text/images as you like.  
+* Feel free to customise the text and add a relevant image if you like (ensure you have rights or use public domain images).* You can save an image to your project directory (e.g., in an `images` folder) and link to it like `![](images/titanic.jpg)`.
 :::
 
 ## Part 4: Creating Content - Analysis Pages
@@ -162,7 +160,7 @@ The data used is the well-known Titanic dataset.
 title: "Survival Rate by Passenger Class"
 ---
 
-This page analyzes survival rates by socio-economic class (Pclass).
+This page analyses survival rates by socio-economic class (Pclass).
 
 First, let's load libraries and data.
 
@@ -341,7 +339,7 @@ git commit -m "Add Titanic Quarto website"
 *  **Create a New Repository on GitHub:**  
     * Go to [GitHub](https://github.com) -> New, empty public repository.  
     * Name it (e.g., `titanic-quarto-insights`).  
-    * **Do not** initialize with README, etc., on GitHub.  
+    * **Do not** initialise with README, etc., on GitHub.  
     * Copy the HTTPS or SSH URL.  
 :::
 
