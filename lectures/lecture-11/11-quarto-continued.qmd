@@ -75,7 +75,7 @@ print("Hello, world!")
 - Lists: `*`, `1.`, `-`
 - Links: `[text](url)`
 - Images: `![alt text](url)`
-- Code: \`code\`, `code`
+- Code: \`code\`
 - Tables:
 
 ```markdown

@@ -32,7 +32,7 @@ editor:
 - You will then publish this website live on the internet using GitHub Pages.
 - This practice session focuses on:
   - Creating and structuring a Quarto website project.
-  - Developing content for different pages (text, code, visualizations).
+  - Developing content for different pages.
   - Configuring website navigation. 
   - Using Git for version control. 
   - Publishing your work via GitHub Pages. 
@@ -91,7 +91,8 @@ titanic_df.to_csv('data/titanic.csv', index=False)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 1.  **Edit `_quarto.yml`:**  
-    * Open `_quarto.yml`. Modify it to control structure and appearance. Example:  
+    * Open `_quarto.yml`. Modify it to control structure and appearance. Example below. 
+    * More themes here: <https://quarto.org/docs/output-formats/html-themes.html>
 
 ```yaml
 project:
