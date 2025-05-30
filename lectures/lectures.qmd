@@ -103,7 +103,7 @@ Suggested references:
 
 ### Monday, June 2:
 
-- Lecture 13: [Introduction to AI-Assisted Programming](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-13/13-ai-assisted-programming.html).
+- Lecture 13: [Introduction to AI-Assisted Programming](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-13/13-ai-programming.html).
 - Lecture 14: [APIs and Agents](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-14/14-ai-assisted-programming-github-copilot.html).
 
 ### Wednesday, June 4:
