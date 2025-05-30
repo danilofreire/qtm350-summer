@@ -95,7 +95,7 @@ Suggested references:
 ## Friday, May 30:
 
 - Lecture 11: [Quarto Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-11/11-quarto-continued.html).
-- Lecture 12: [Quarto Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-12/12-quarto-practice.html).
+- Lecture 12: [Quarto Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-12/12-quarto-practice.html). [Jupyter Notebook version](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-12/12-quarto-practice.ipynb)
 - **Assignment 04 due (5%).**
 - **Assignment 05:** [Problem Set 05](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/05-assignment.ipynb).
 
