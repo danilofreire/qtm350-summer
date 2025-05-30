@@ -75,14 +75,20 @@ print("Hello, world!")
 - Lists: `*`, `1.`, `-`
 - Links: `[text](url)`
 - Images: `![alt text](url)`
-- Code: \`code\`, \`\`\`code\`\`\`
+- Code: \`code\`, `code`
 - Tables:
 
 ```markdown
-| Header 1 | Header 2 |
-|----------|----------|
-| Cell 1   | Cell 2   |
+| Header 1 | Header 2 | Header 3 |
+|:---------|:--------:|---------:|
+| Cell 1   | Cell 2   | Cell 3   |
 ```
+
+:::{style="text-align: center;"}
+| Header 1 | Header 2 | Header 3 |
+|:---------|:--------:|---------:|
+| Cell 1   | Cell 2   | Cell 3   |
+:::
 :::
 
 :::{.column width="50%"}
@@ -714,8 +720,6 @@ We will meet every Monday and Wednesday [...]
 # And now you know everything Quarto can do! 😎 {background-color="#2d4563"}
 
 # That's all for today! 🎉 {background-color="#2d4563"}
-
-# See you next time! 😊 {background-color="#2d4563"}
 
 ## Appendix 01 {#sec:appendix-01}
 

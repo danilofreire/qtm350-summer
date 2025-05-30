@@ -1,0 +1,410 @@
+---
+title: QTM 350 - Data Science Computing
+subtitle: "Practice: Building & Publishing a Titanic Insights Website"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810 
+    email: danilo.freire@emory.edu
+    affiliations: Emory University
+format:
+  clean-revealjs: 
+    self-contained: true
+    footer: "[Quarto Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-12/12-quarto-practice.html)" 
+transition: slide
+transition-speed: default
+scrollable: true
+engine: jupyter
+editor:
+  render-on-save: true
+---
+
+# Titanic data using Quarto & GitHub Pages 🚢 {background-color="#2d4563"}
+
+# Time to build and publish with Quarto! 📝 {background-color="#2d4563"}
+
+## Hands-on Practice
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width="60%"}
+- **Objective:** In this session, you'll create a small Quarto **website** with multiple pages. 
+- This website will showcase data analysis and visualisations using the Titanic dataset. 
+- You will then publish this website live on the internet using GitHub Pages.
+- This practice session focuses on:
+  - Creating and structuring a Quarto website project.
+  - Developing content for different pages (text, code, visualizations).
+  - Configuring website navigation. 
+  - Using Git for version control. 
+  - Publishing your work via GitHub Pages. 
+- **Estimated Time:** 60-75 minutes (publishing can take a few extra minutes for GitHub to build).
+:::
+
+:::{.column width="40%"}
+- Feel free to use any resources you have available (lecture notes, Quarto documentation).
+- If you get stuck, please ask for help!
+- Searching the web (e.g., for specific Quarto options or Git commands) is also a good idea!
+:::
+:::
+:::
+
+## Part 1: Creating Your Quarto Website Project
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+1.  **Create a Project Directory (Local Machine):**  
+    * Open your terminal or command prompt.  
+    * Create a new directory and navigate into it:  
+
+```sh
+mkdir titanic_quarto_website
+cd titanic_quarto_website
+```
+
+2.  **Create a New Quarto Website Project:**  
+    * Inside `titanic_quarto_website`, run:  
+
+```sh
+quarto create-project --type website .
+```
+* *This generates `_quarto.yml`, `index.qmd`, `about.qmd`, etc.*
+:::
+
+## Part 1: Creating Your Quarto Website Project (cont.)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+3.  **Obtain the Titanic Dataset:**  
+    * Create a `data` subdirectory:  
+
+```sh
+mkdir data
+```
+* Create `data/titanic.csv` using `seaborn` (run this Python code, e.g., in a temporary script):  
+
+```python
+import seaborn as sns
+import pandas as pd
+titanic_df = sns.load_dataset('titanic')
+titanic_df.to_csv('data/titanic.csv', index=False)
+```
+:::
+
+## Part 2: Configuring Your Website (`_quarto.yml`)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+1.  **Edit `_quarto.yml`:**  
+    * Open `_quarto.yml`. Modify it to control structure and appearance. Example:  
+
+```yaml
+project:
+  type: website
+  output-dir: docs # For GitHub Pages
+
+website:
+  title: "Titanic Data"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: pclass_analysis.qmd
+        text: Survival by Class
+      - href: age_fare_analysis.qmd
+        text: Age vs. Fare
+      - about.qmd 
+  page-footer: "Built with Quarto by Your Name"
+
+format:
+  html:
+    theme: cosmo 
+    css: styles.css
+    toc: true
+    code-fold: true
+```
+:::
+
+## Part 3: Creating Content - Index Page (`index.qmd`)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+1.  **Edit `index.qmd` (Homepage):**  
+    * Example content:  
+
+```markdown
+---
+title: "Titanic Insights"
+---
+
+## Exploring the Titanic Dataset
+
+This website presents a brief analysis of the passenger data from the RMS Titanic. The analysis includes:
+
+- Survival rates based on passenger class.
+- The relationship between passenger age and the fare they paid.
+
+Use the navigation bar above to explore the different analyses.
+
+The data used is the well-known Titanic dataset.
+
+![](https://www.science.smith.edu/climatelit/wp-content/uploads/sites/97/2024/07/GettyImages-517357578-5c4a27edc9e77c0001ccf77d-Large.jpeg)
+*Source: Smith College*
+```
+* Customise text/images as you like.  
+:::
+
+## Part 4: Creating Content - Analysis Pages
+
+### 4.1. `pclass_analysis.qmd` (Survival by Class)
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+1.  **Create `pclass_analysis.qmd`** in your project root.  
+2.  **Add Content:**  
+
+```markdown
+---
+title: "Survival Rate by Passenger Class"
+---
+
+This page analyzes survival rates by socio-economic class (Pclass).
+
+First, let's load libraries and data.
+
+```python
+#| label: setup-libs-data-pclass
+#| echo: true
+#| eval: true 
+#| message: false
+#| warning: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+titanic_df = pd.read_csv('data/titanic.csv')
+```
+:::
+
+## Part 4: `pclass_analysis.qmd` (cont.)
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+```markdown
+### Calculating and Visualising Survival Rates
+
+```python
+#| label: pclass-survival-plot
+#| echo: true
+#| eval: true
+#| fig-cap: "Survival Rate by Passenger Class"
+
+pclass_survival_rate = titanic_df.groupby('pclass')['survived'].mean().reset_index()
+print("Survival rate by Pclass:")
+print(pclass_survival_rate)
+
+plt.figure(figsize=(8, 5))
+sns.barplot(x='pclass', y='survived', data=pclass_survival_rate, palette='viridis', hue='pclass', dodge=False, legend=False)
+plt.title('Survival Rate by Passenger Class')
+plt.xlabel('Passenger Class')
+plt.ylabel('Survival Rate')
+plt.xticks(ticks=[0,1,2], labels=['1st Class', '2nd Class', '3rd Class'])
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+```
+
+#### Interpretation
+The bar chart shows that first-class passengers had a higher survival rate. Third-class passengers had the lowest.  
+:::
+
+## Part 4: Creating Content - Analysis Pages
+
+### 4.2. `age_fare_analysis.qmd` (Age vs. Fare)
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+1.  **Create `age_fare_analysis.qmd`** in your project root.  
+2.  **Add Content:**  
+
+```markdown
+---
+title: "Age vs. Fare Analysis"
+---
+
+This page explores passenger age vs. fare paid.
+
+```python
+#| label: setup-libs-data-agefare
+#| echo: true
+#| eval: true
+#| message: false
+#| warning: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+titanic_df = pd.read_csv('data/titanic.csv')
+```
+:::
+
+## Part 4: `age_fare_analysis.qmd` (cont.)
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+
+```markdown
+### Scatter Plot: Age vs. Fare
+Passengers with unknown age are excluded.  
+
+```python
+#| label: age-fare-scatter-plot
+#| echo: true
+#| eval: true
+#| fig-cap: "Scatter Plot of Age vs. Fare, Coloured by Survival Status"
+
+titanic_age_fare = titanic_df.dropna(subset=['age'])
+print(f"Number of passengers with known age: {len(titanic_age_fare)}")
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='age', y='fare', hue='survived', data=titanic_age_fare, alpha=0.7, palette={0: '#377eb8', 1: '#ff7f00'})
+plt.title('Age vs. Fare (Coloured by Survival)')
+plt.xlabel('Age (Years)')
+plt.ylabel('Fare Paid')
+plt.legend(title='Survived (0=No, 1=Yes)')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.show()
+```
+
+#### Interpretation
+The scatter plot shows passenger distribution by age and fare. Some younger passengers paid high fares.  
+:::
+
+## Part 5: Rendering and Previewing Your Website
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+*  **Render the Entire Website:**  
+    * Save all `.qmd` and `_quarto.yml` files.  
+    * In your terminal (root of `titanic_quarto_website`), run:  
+
+```sh
+quarto render
+```
+
+* *This builds the website in the `docs` folder. Look for errors!*  
+
+* **Preview Locally (Recommended):**  
+    * Use:  
+
+```sh
+quarto preview
+```
+
+* Opens site in browser. Check all pages.  
+* `Ctrl+C` in terminal to stop.  
+:::
+
+## Part 6: Publishing to GitHub Pages
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+* **Initialise a Git Repository:**  
+
+```sh
+git init
+git branch -M main # Ensure default branch is 'main'
+```
+
+* **Create a `.gitignore` file** (in project root):  
+    
+```gitignore
+# Quarto specific
+/.quarto/
+/_freeze/
+
+# Python specific
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.so
+venv/
+env/
+.env
+
+# OS specific
+.DS_Store
+Thumbs.db
+```
+:::
+
+## Part 6: Publishing (Commit & GitHub Repo)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+*  **Commit Your Website Files:**  
+
+```sh
+git add .
+git commit -m "Add Titanic Quarto website"
+```
+
+*  **Create a New Repository on GitHub:**  
+    * Go to [GitHub](https://github.com) -> New, empty public repository.  
+    * Name it (e.g., `titanic-quarto-insights`).  
+    * **Do not** initialize with README, etc., on GitHub.  
+    * Copy the HTTPS or SSH URL.  
+:::
+
+## Part 6: Publishing (Connect & Push)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+*  **Connect Local Repo to GitHub and Push:**  
+    * Link local to remote (replace `YOUR_GITHUB_REPO_URL`):  
+
+```sh
+git remote add origin YOUR_GITHUB_REPO_URL
+```
+* Push `main` branch to GitHub:  
+
+```sh
+git push -u origin main
+```
+:::
+
+## Part 6: Publishing (Configure GitHub Pages)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+*  **Configure GitHub Pages:**  
+    * Go to your new repository on GitHub -> "Settings" tab.  
+    * Left sidebar -> "Pages".  
+    * "Build and deployment" Source: "Deploy from a branch".  
+    * Branch: `main`, Folder: `/docs`. Click "Save".  
+
+*  **Access Your Live Website:**  
+    * May take a minute or two to build and deploy.  
+    * GitHub provides URL (e.g., `https://YOUR_USERNAME.github.io/YOUR_REPONAME/`).  
+    * Visit the URL to see your live website!  
+:::
+
+## Part 7: Bonus - Create a Presentation Slide (Optional)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+If you have extra time, turn an analysis page into a `revealjs` presentation.  
+
+*  **Modify YAML in `pclass_analysis.qmd`** (or a copy):  
+
+```yaml
+---
+title: "Survival Rate by Passenger Class"
+format:
+  revealjs: # Or add alongside html format
+    slide-level: 3 # H3 headings become slides
+---
+```
+
+*  **Render that specific file to `revealjs`:**  
+
+```sh
+quarto render pclass_analysis.qmd --to revealjs 
+```
+* This creates `pclass_analysis.html` as a presentation.  
+:::
+
+## End of Practice Session
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+- [Congratulations!]{.alert} 🥳  
+- You've created a multi-page Quarto website, performed data analysis, and published it using GitHub Pages.  
+- If you have any questions, please feel free to ask!  
+:::
+
+# And that's all for today! 🎉 {background-color="#2d4563"}
