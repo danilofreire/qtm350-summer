@@ -359,27 +359,6 @@ Source: <https://chatgpt.com/share/6e0c2115-6fd0-497d-a662-44cb0434cee2>
 :::
 :::
 
-## Instructions
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width="50%"}
-- Your prompt should include at least one [clear and concise instruction]{.alert}
-- [Fewer instructions are better]{.alert} because they reduce the chances of the model getting confused
-- You can also use [examples]{.alert} to guide the model
-  - Prompt: Develop a SQL query to retrieve from our database a list of customers who made purchases above $500 in the last quarter of 2023. The query should return the customer’s full name, their email address, the total amount spent, and the date of their last purchase. The results should be sorted by the total amount spent in descending order. Please ensure that the query is optimized for performance.
-:::
-
-:::{.column width="50%"}
-:::{style="text-align: center;"}
-![](figures/prompt-elements.png)
-
-Source: <https://learn.microsoft.com/en-us/copilot/security/prompting-tips>
-:::
-:::
-:::
-:::
-
 ## Input of the model
 
 :::{style="margin-top: 30px; font-size: 22px;"}
@@ -470,23 +449,19 @@ Source: <https://help.openai.com/en/articles/6654000-best-practices-for-prompt-e
 
 ## Autocompletion
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width="50%"}
 - If you start writing code in the editor, and Copilot will suggest completions
 - You can accept these completions by pressing `Tab` or `Enter`
-- Alternatively, you can press `Ctrl` and the right arrow key to select just the next word T
+- Alternatively, you can press `Ctrl` and the right arrow key to select just the next word
 - This can be helpful if some, but not all, of the suggestion is appropriate
-- This autocompletion will work in a number of different contexts, including code cells in Jupyter Notebooks, or within a .py file.
-- The autocompletion is aware of the code around your cursor, and will suggest completions based on this context I
-- It can use functions already in the code, and can infer a likely purpose of the next piece of code based on the code that has already been written 
 - Sometimes, writing a comment will help guide Copilot to suggest relevant code to you
 :::
 
 :::{.column width="50%"}
-:::{style="text-align: center;"}
+:::{style="text-align: center; font-size: 20px;"}
 ![](figures/autocomplete.gif)
-
 Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assisted-programming/blob/main/resources/autocomplete.gif>
 :::
 :::
@@ -500,22 +475,10 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 
 ![](figures/prompt_invitation.png)
 
-- If you press `Ctrl + I`, a text box will appear into which you can write a prompt C
+- If you press `Ctrl + I`, a text box will appear into which you can write a prompt
 - Copilot will suggest new code, or changes to existing code based on this prompt
-- These may be in the form of one or more proposed changes
-- You may choose to accept ach of these changes by clicking the Accept or Discard buttons
 
-![](figures/bubble_sort.png)
-:::
-
-## In-Editor Prompting
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-- You can also highlight an existing piece of code and press `Ctrl + I` to ask Copilot to suggest changes to that code 
-- This can be useful if you have a piece of code that you think could be improved, or if you want to see alternative ways of writing the same code
-- When you do this, you can also click on the button next to Accept and Discard to see which code Copilot is suggesting removing for each change
-
-![](figures/relative_std.gif)
+![](figures/fibonacci.png)
 :::
 
 ## In-Editor Prompting
@@ -529,24 +492,6 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
  -  `/tests` will ask Copilot to generate tests for the selected code. This will suggest changes in the editor, which may include creating a new file for the tests
 
 - You can also find these options by right-clicking a highlighted piece of code, and going into the Copilot menu
-:::
-
-## Copilot Chat
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-- You can also chat to Copilot in a manner closer to that of a chatbot like ChatGPT
-- To do this, you can open the chat window by clicking on the chat icon in the activity bar at the top right of the screen
-
-:::{style="text-align: center;"}
-![](figures/copilot_chat_icon.png){width="20%"}
-:::
-
-- You can type a message to Copilot in the window and it will respond, including suggesting code snippets where relevant
-- If Copilot produces a code snippet that you want to use, you can hover over the snippet and click the "Copy" button to copy it to the clipboard, click the "Insert at Cursor" button to insert at the location of the cursor in the editor, or insert it into a new file or the currently active terminal
-
-:::{style="text-align: center;"}
-![](figures/chat_inserting_code.png){width="65%"}
-:::
 :::
 
 ## Generate documentation
@@ -569,16 +514,16 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 :::
 :::
 
-## Using `@github` and `#web` to get more specific results
+## Using `@websearch` to get more specific results
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-- Copilot also has the `@github` command that allows you to [interact with any repository online](https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-july-2024/)
-- This means that you can ask questions about files, folders, structures, and functions in any repository on GitHub
-- It is powered by [Bing](https://www.bing.com/), and it can also search the web for information
-- You can use the `#web` command to ask Copilot to search the web for information
-- This can be useful if you are looking for information on a specific topic, or if you want to find out more about a particular function or library
+- Copilot also has the `@websearch` command that allows you to search the web for information
+- This can be useful if you are looking for information on a specific topic
+- You have to install the [Web Search for Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.web-search) first (available for free), then create an API key with [Tavily](https://tavily.com/) and paste it in the settings (Bing API will be discontinued soon)
+- Open VS Code settings, search for `websearch.preferredEngine`, and select `Tavily` 
+- [Tavily](https://tavily.com/) is a web search engine that provides an API for searching the web, and it is free to use for up to 1000 requests per month
 :::
 
 :::{.column width="50%"}
@@ -589,20 +534,26 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 :::
 :::
 
-## Using `@github` and `#web` to get more specific results
+## Getting an API key from Tavily
 
-:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
-:::{.column width="33%"}
-![](figures/github_search01.png){width="80%"}
+:::{.column width="50%"}
+- Go to [Tavily](https://tavily.com/) and create an account
+- Select the Free Plan and sign up
+- Once you are logged in, go to the [API Keys](https://tavily.com/api-keys) page and create a new API key
+- When you type `@websearch` in the Copilot Chat, it will ask you to paste the API key
+- And I have a surprise for you (hopefully!) 🤞
+
+:::{style="text-align: center;"}
+![](figures/tavily_email.jpeg){width="50%"}
+:::
 :::
 
-:::{.column width="33%"}
-![](figures/github_search02.png){width="70%"}
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/tavily.jpeg){width="60%"}
 :::
-
-:::{.column width="33%"}
-![](figures/github_search03.png){width="70%"}
 :::
 :::
 :::
