@@ -108,7 +108,7 @@ Suggested references:
 
 ### Wednesday, June 4:
 
-- Lecture 15: [APIs and Agents Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-15/15-ai-continued.html). 
+- Lecture 15: [APIs and Agents Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-15/15-apis.html#/title-slide). 
 - Lecture 16: [Quiz 02 - Quarto](https://github.com/danilofreire/qtm350-summer-quiz02/).
 - **Assignment 05 due (5%).**
 - **Assignment 06:** [Problem Set 06](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/06-assignment.ipynb).
