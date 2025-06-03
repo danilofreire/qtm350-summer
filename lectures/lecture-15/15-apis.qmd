@@ -1,0 +1,526 @@
+---
+title: QTM 350 - Data Science Computing
+subtitle: Lecture 15 - AI-Assisted Programming, APIs, and Agents (Continued)
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    affiliations: Emory University
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[AI 3](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-15/15-apis.html)"
+transition: slide
+transition-speed: default
+scrollable: true
+engine: knitr
+revealjs-plugins:
+  - fontawesome
+editor:
+  render-on-save: true
+---
+
+# Nice to see you all again! <br> How are you all doing? 😊 {background-color="#2d4563"}
+
+# LLM APIs 🧑🏻‍💻 {background-color="#2d4563"}
+
+## LLM APIs
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Application Programming Interfaces (APIs) are a way to [interact with a model using code]{.alert}
+- They allow you to send a prompt to a model and get a response back
+- In contrast with user interfaces, [APIs are made for computers]{.alert}
+  - They connects computers or pieces of software to each other
+- APIs can do a lot of things, but we mostly associated with [web APIs]{.alert}, which [allow computers to interact with websites or servers on the internet]{.alert}
+- We can do the same with LLMs too!
+- Instead of going to a website, we can [use an API straight from software]{.alert}
+  - Here we will use VSCode and the [Roo Code extension](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) to interact with many APIs
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/api.webp){width=100%}
+
+Source: [Cloud Now](https://www.cloudnowtech.com/blog/what-are-apis-and-why-do-they-matter/)
+:::
+:::
+:::
+:::
+
+## Roo Code
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width="50%"}
+- [Roo Code](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) is an extension for VSCode that serves as a [coding agent]{.alert}
+- Imagine something like GitHub Copilot, but with a lot more functionality
+- Roo Code comes with powerful tools that can: 
+  - Read and write files in your project 
+  - Execute commands in your VS Code terminal
+  - Control a web browser (if the LLM allows you to)
+- It can also interact with both local and remote APIs, including DeepSeek, OpenAI, Claude, etc
+- Installation: <https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline>
+- The code is available at <https://github.com/RooVetGit/Roo-Code>
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/roocode.png){width=100%}
+
+Documentation: <https://docs.roocode.com/>
+:::
+:::
+:::
+:::
+
+## Setting up Roo Code
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width="50%"}
+- First, install the Roo Code extension in VSCode
+- Open the extension (rocket icon 🚀) and let's configure our first LLM!
+- Click on the gear (top right) and you will be taken to the settings
+- You will see a series of options, let's see one by one
+- ... but we need [API keys!]{.alert}
+- In most cases, API credits are usually [cheaper]{.alert} than monthly subscriptions for the average user
+- You can get them directly from the model's website, or from [OpenRouter](https://openrouter.ai/)
+- The good thing is, OpenRouter has many free models available too!
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/roocode-setup.png){width=90%}
+:::
+:::
+:::
+:::
+
+## Adding API keys
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width="40%"}
+- [OpenRouter](https://openrouter.ai/) provides a uniform way to interact with many APIs
+- And it is super easy to use: just sign up and get your API key
+- Then, we are doing to select the models we will use in Roo Code settings
+- For this example, we will use the free version of DeepSeek
+- Feel free to test other free models (or paid ones) available in OpenRouter
+- Go to <https://openrouter.ai/> and sign up for an account (it is free, no credit card or subscription needed)
+:::
+
+:::{.column width="60%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/openrouter.png){width=100%}
+
+<https://openrouter.ai/>
+:::
+:::
+:::
+:::
+
+## Adding API keys
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width="40%"}
+- Then, click on your picture and `Keys`
+- Copy the key and paste it in the Roo Code settings
+  - You will only see the key once, so make sure to save it somewhere safe!
+- You can create as many keys as you want, and revoke them at any time
+- In `Credit Limit`, you can put a limit on how much you want to spend
+- Feel free to put $0.00 if you want to use only the free models
+- More models here: <https://openrouter.ai/models>
+:::
+
+:::{.column width="60%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/openrouter2.png){width=100%}
+
+<https://openrouter.ai/settings/keys>
+:::
+:::
+:::
+:::
+
+## Adding API keys
+
+:::{style="margin-top: 30px; font-size: 27px;"}
+- Now, let's go back to Roo Code settings and add the API key
+- Just copy and paste the key in the `OpenRouter API Key` field
+- [We are almost ready to go!]{.alert}
+- The last step is to select the models we want to use
+- Model choice depends on the task you have at hand, but a general model is a good start
+- Note that here we are not running the models locally, but running them on (someone else's) server
+  - So [while you gain speed, you lose privacy]{.alert}
+:::
+
+## Adding API keys
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+:::{.columns}
+:::{.column width="50%"}
+![](figures/roocode-settings.png){width=100%}
+:::
+
+:::{.column width="50%"}
+![](figures/roocode-models.png){width=100%}
+:::
+:::
+:::
+
+## Running a model in Roo Code
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+:::{.columns}
+:::{.column width="50%"}
+![](figures/roocode-run.png){width=100%}
+:::
+
+:::{.column width="50%"}
+![](figures/roocode-result.png){width=100%}
+:::
+:::
+:::
+
+## Using agents in Roo Code
+
+:::{style="margin-top: 30px; font-size: 27px;"}
+- So far, we have seen how to use Roo Code to interact with APIs
+- It already saves you a lot of time, as you [don't have to go to a website to get the information you need]{.alert}
+- But what if you could [automate even more tasks?]{.alert}
+- [That's where agents come in!]{.alert}
+- Agents are like [chatbots that can act autonomously]{.alert}, including [running code, sending emails, and interacting with websites]{.alert}
+- [This is the future of AI]{.alert}, and it is already here!
+- For coders, one of the best uses of agents is to [let it write and run code for you]{.alert}
+- It is the closest thing to "vibes programming" (😂) we have so far
+:::
+
+## Using agents in Roo Code
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+- Let's ask Roo Code to do the following:
+  - Create a new folder called `document`
+  - Create a new Quarto file called `api.qmd`
+  - Write a few paragraphs about the importance of APIs
+  - Save the file
+  - Render the file and open it in VSCode
+  - We could ask it to send it to GitHub, but we will do it manually just for the sake of it
+- Prompt:
+  - "`Create a new folder called document in my current folder. Create a new Quarto file called api.qmd. Write three paragraphs about the importance of APIs. Save the file. Render the file and open it in VSCode.`"
+- And see the magic happen! 🪄
+:::
+
+## Using agents in Roo Code
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+:::{.columns}
+:::{.column width="50%"}
+![](figures/roocode-agent.png){width=100%}
+:::
+
+:::{.column width="50%"}
+![](figures/roocode-agent2.png){width=100%}
+:::
+:::
+:::
+
+## Output
+### Completely automated! 🤖
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+![](figures/api.png){width=100%}
+:::
+
+# Cool, right? 🤓 {background-color="#2d4563"}
+
+## Alternatives to Roo Code and DeepSeek
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Roo Code is not the only tool that allows you to interact with APIs
+- Other popular choices are [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) and [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue)
+- They are all free to use, and you can choose the one that best fits your needs
+  - Roo Code is actually a fork of Cline, but with more features
+  - Continue is a new tool that is gaining popularity
+- They perform similar tasks and have a similar interface, so feel free to try them all 😉
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; text-align: center;"}
+![](figures/cline.png){width=100%}
+
+<https://cline.bot/>
+:::
+:::
+:::
+:::
+
+## Alternatives to Roo Code and DeepSeek
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width="50%"}
+- DeepSeek is not the only free model available in OpenRouter
+- Two models that are worth mentioning are [Google Gemini](https://openrouter.ai/models?q=gemini%20free) and [Qwen](https://openrouter.ai/models?q=qwen%20free)
+- Gemini offers free access to [all its models]{.alert}, including their "thinking" ones
+- Now that you know how to use APIs, you can get an API key for free at <https://aistudio.google.com/> and use it in VS Code
+- Qwen is a model specialised in coding, and it is great for writing code snippets
+- An advantage that both have over DeepSeek is that they are [multimodal]{.alert}, meaning they can generate text, images, and code
+- For instance, you can input a screenshot on Gemini and ask it to transcribe and a translate a text, or Qwen to recreate a table in Markdown
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; text-align: center;"}
+![](figures/gemini.png){width=100%}
+
+<https://aistudio.google.com/apikey>
+:::
+:::
+:::
+:::
+
+# Giving internet access to your editor 🌐 {background-color="#2d4563"}
+
+## Browser-use
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+:::{.columns}
+:::{.column width="50%"}
+- We have seen how to use LLMs locally, how to interact with APIs, and how to create agents
+- But what if you could [browse the internet straight from your code editor]{.alert}?
+- [OpenAI's Operator](https://openai.com/index/introducing-operator/) was released to much fanfare and it allows you to do just that
+- But there is a free and open source alternative called [Browser-use](https://browser-use.com/)
+- It is a Python library that uses LLM APIs to [interact with websites]{.alert}, [extract information]{.alert}, and [perform tasks]{.alert}
+- You can use it to [scrape data from websites]{.alert}, [fill out forms]{.alert}, [send emails]{.alert}, and [much more]{.alert}
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/browse-use.png){width=100%}
+
+<https://browser-use.com/>
+:::
+:::
+:::
+:::
+
+## Browser-use Web-ui
+
+:::{style="margin-top: 30px; font-size: 27px;"}
+:::{.columns}
+:::{.column width="50%"}
+- To make things more convenient, Browser-use comes with a [web interface](https://github.com/browser-use/web-ui) that allows you to [interact with websites visually]{.alert}
+- In this case, [we will need a model with vision capabilities]{.alert}, such as Google Gemini or Anthropic's Claude
+- Let's get an API from Google and test it in Browser-use!
+- But first, we need to install the software
+- You can find the instructions [here](https://github.com/browser-use/web-ui)
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/web-ui.png){width=100%}
+
+<https://github.com/browser-use/web-ui>
+:::
+:::
+:::
+:::
+
+## Browser-use Web-ui
+### Instructions
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width="50%"}
+Step 1: Clone the Repository
+```bash
+git clone https://github.com/browser-use/web-ui.git
+cd web-ui
+```
+
+Step 2: Set Up Python Environment
+They recommend using [uv](https://docs.astral.sh/uv/). Here: <https://docs.astral.sh/uv/getting-started/installation/>
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh 
+# pip install uv
+uv venv --python 3.11
+```
+
+Activate the virtual environment:
+
+- Windows (Command Prompt):
+```cmd
+.venv\Scripts\activate
+```
+- Windows (PowerShell):
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+- macOS/Linux:
+```bash
+source .venv/bin/activate
+```
+:::
+
+:::{.column width="50%"}
+Step 3: Install Dependencies
+Install Python packages:
+```bash
+uv pip install -r requirements.txt
+```
+
+Install Playwright:
+```bash
+playwright install --with-deps
+```
+
+Step 4: Configure Environment
+Create a copy of the example environment file:
+
+- Windows (Command Prompt):
+```bash
+copy .env.example .env
+```
+- macOS/Linux/Windows (PowerShell):
+```bash
+cp .env.example .env
+```
+
+2. Open `.env` in your preferred text editor and add your API keys and other settings
+:::
+:::
+:::
+
+## How to create a Google API key
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+- It's super easy to create a Google API key! You can do it in a few steps:
+- Go to the [Google Cloud Console](https://console.cloud.google.com/) and sign in with your Google account
+- Create a new project or select an existing one (you can name it whatever you want)
+- Now, go to <https://aistudio.google.com/apikey> and click on "Get API Key" and "Create API Key"
+- Select the project you created or selected earlier
+- Copy the API key and paste it in the `.env` file in the `GOOGLE_API_KEY` field
+- Check if you are using the [Free Plan]{.alert} (no credit card needed)
+- And that's it! You are ready to use Google Gemini in Browser-use! 🤖
+:::
+
+## How to create a Google API key
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+<https://console.cloud.google.com/>
+
+
+![](figures/google-create-project.png){width=100%}
+:::
+
+## How to create a Google API key
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+![](figures/google-console.png){width=100%}
+:::
+
+## How to create a Google API key
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+![](figures/google-new-project.png){width=100%}
+:::
+
+## How to create a Google API key
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+<https://aistudio.google.com/apikey>
+
+![](figures/google-api-keys.png){width=100%}
+:::
+
+## Browser-use Web-ui
+### `.env` file and running the server
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- Here is an example of the `.env` file
+- You just need to add your API key to the `GOOGLE_API_KEY` field and you are good to go!
+
+```verbatim
+OPENAI_ENDPOINT=https://api.openai.com/v1
+OPENAI_API_KEY=
+
+ANTHROPIC_API_KEY=
+
+GOOGLE_API_KEY=XXXXXXXX
+
+AZURE_OPENAI_ENDPOINT=
+AZURE_OPENAI_API_KEY=
+
+DEEPSEEK_ENDPOINT=https://api.deepseek.com
+DEEPSEEK_API_KEY=
+```
+
+- To run the server, just type the command below in the `web-ui` folder:
+  - `python webui.py --ip 127.0.0.1 --port 7788`
+  - If you need to install `dotenv`, you can do it by running `uv pip install python-dotenv`
+  - Then run `.venv/bin/python webui.py --ip 127.0.0.1 --port 7788`
+:::
+
+## Browser-use Web-ui in action
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+![](figures/webui01.png){width=100%}
+:::
+
+## Browser-use Web-ui in action
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+![](figures/webui02.png){width=100%}
+:::
+
+## Browser-use Web-ui in action
+
+:::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
+![](figures/webui03.png){width=100%}
+:::
+
+## Browser-use Web-ui in action
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+Task: `go to google.com and find out who won the Oscar for best international film in 2025`
+
+:::{style="text-align: center;"}
+![](figures/webui04.png){width=100%}
+:::
+:::
+
+## Browser-use Web-ui in action
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+Result: `The Guardian article says 'I’m Still Here wins Oscar for best international film, becoming first Brazilian film to do so'`
+
+:::{style="text-align: center;"}
+![](figures/webui05.png){width=100%}
+:::
+:::
+
+# That's super cool 🤩 {background-color="#2d4563"}
+
+## What did we learn today?
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- We can run LLMs locally using Ollama and LM Studio
+  - Ollama is a command-line tool that allows you to run pre-trained models on your computer
+  - LM Studio is a graphic interface that allows you to run any model from Hugging Face
+- We can interact with APIs using Roo Code
+  - Roo Code is an extension for VSCode that allows you to interact with many APIs
+  - You can use it to run code, write text, and analyse images faster
+- We can use agents to automate tasks
+  - Agents are like chatbots that can act autonomously
+- We can browse the internet straight from our code editor
+  - Browser-use is a Python library that allows you to interact with websites, extract information, and perform tasks
+  - It comes with a web interface that allows you to interact with websites visually
+:::
+
+# And that's it for now! 🎉 {background-color="#2d4563"}
+
+# Thank you for your attention! 😊 {background-color="#2d4563"}
