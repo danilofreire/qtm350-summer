@@ -115,6 +115,6 @@ Suggested references:
 
 ### Friday, June 6:
 
-- Lecture 17: [AI-Assisted Programming Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-17/17-ai-pratice.html).
+- Lecture 17: [AI-Assisted Programming Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-17/17-ai-practice.html). [Jupyter Notebook](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-17/17-ai-practice.ipynb).
 - Lecture 18: [Introduction to Cloud Computing](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-18/18-cloud.html).
 - **Assignment 06 due (5%).**
