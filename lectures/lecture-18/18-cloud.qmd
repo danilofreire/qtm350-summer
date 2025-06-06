@@ -526,7 +526,7 @@ More about [virtualisation](https://www.redhat.com/en/topics/virtualization/what
 - You found a series of audio files that you need to transcribe, and you have to do it quickly
 - So let's create an S3 bucket (folder), upload an audio file, transcribe it, download the subtitles, and then analyse the sentiment of the text
 - We will use [Amazon Transcribe]{.alert} and [Amazon Comprehend]{.alert} to do this
-- The file we will use is available here: [JFK - We Choose to Go to the Moon](https://raw.githubusercontent.com/danilofreire/qtm350-summer/main/lectures/lecture-18/figures/jfk.mp4)
+- The file we will use is available here: [JFK - We Choose to Go to the Moon](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-18/figures/JFK.mp4)
 - Select [AWS Management Console](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1) to open the console, then search for `S3` in the search bar
 - Click on [Create bucket]{.alert}, give it a name, accept the permissions, and click [Create bucket]{.alert}
 :::
