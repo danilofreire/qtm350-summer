@@ -6,28 +6,26 @@ author:
     orcid: 0000-0002-4712-6810
     affiliations: Emory University
 format:
-  clean-revealjs:
+  revealjs:
     self-contained: true
     footer: "[AI 3](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-15/15-apis.html)"
-transition: slide
-transition-speed: default
-scrollable: true
+    transition: slide
+    transition-speed: default
+    scrollable: true
+    plugins:
+      - fontawesome
 engine: knitr
-revealjs-plugins:
-  - fontawesome
-editor:
-  render-on-save: true
 ---
 
-# Nice to see you all again! <br> How are you all doing? 😊 {background-color="#2d4563"}
+# Nice to see you all again! <br/> How are you all doing? 😊 {background-color="#2d4563"}
 
 ## Tavily discount code
 
-:::{style="margin-top: 30px; font-size: 25px; text-align: center;"}
-![](figures/discount.png){width=100%}
+:::{.center style="margin-top: 30px; font-size: 25px;"}
+![](figures/discount-code.png){width=100%}
 :::
 
-# LLM APIs 🧑🏻‍💻 {background-color="#2d4563"}
+# LLM APIs :man_technologist: {background-color="#2d4563"}
 
 ## LLM APIs
 
@@ -46,7 +44,7 @@ editor:
 
 :::{.column width="50%"}
 :::{style="text-align: center;"}
-![](figures/api.webp){width=100%}
+![](figures/api-endpoints.png){width=100%}
 
 Source: [Cloud Now](https://www.cloudnowtech.com/blog/what-are-apis-and-why-do-they-matter/)
 :::
@@ -190,7 +188,7 @@ Documentation: <https://docs.roocode.com/>
 :::
 :::
 
-## Using agents in Roo Code
+## Using agents in Roo Code {background-color="#2d4563"}
 
 :::{style="margin-top: 30px; font-size: 27px;"}
 - So far, we have seen how to use Roo Code to interact with APIs
@@ -232,8 +230,8 @@ Documentation: <https://docs.roocode.com/>
 :::
 :::
 
-## Output
-### Completely automated! 🤖
+## Output {background-color="#2d4563"}
+### Completely automated! :robot:
 
 :::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
 ![](figures/api.png){width=100%}
