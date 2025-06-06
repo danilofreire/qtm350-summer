@@ -1,9 +1,0 @@
----
-title: "Testing Quarto"
-author: "Danilo"
-format: html
----
-
-# Testing Quarto
-
-This is a test.
