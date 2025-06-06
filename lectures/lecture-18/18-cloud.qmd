@@ -649,6 +649,18 @@ Then click on the bucket and upload the file
 :::
 :::
 
+## Delete the transcription job and S3 bucket
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- Now that we are done, we can delete the transcription job and the S3 bucket
+- Go to [Amazon Transcribe](https://us-east-1.console.aws.amazon.com/transcribe/home?region=us-east-1) again and select the transcription job
+- Click on [Delete job]{.alert} and confirm
+- Then go to [Amazon S3](https://us-east-1.console.aws.amazon.com/s3/home?region=us-east-1) and select the bucket
+- First you need to delete the objects inside the bucket. Just select the file and click on [Delete]{.alert}
+- Type "permanently delete" to confirm
+- Then click on the bucket, type the bucket name, and click on [Delete bucket]{.alert}
+:::
+
 # Conclusion 🎉 {background-color="#2d4563"}
 
 ## What we learned today
