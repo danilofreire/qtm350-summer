@@ -119,7 +119,7 @@ Suggested references:
 - Lecture 18: [Introduction to Cloud Computing](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-18/18-cloud.html).
 - **Assignment 06 due (5%).**
 
-## Monday, June 9:
+### Monday, June 9:
 
 - Lecture 19: [Cloud Computing Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-19/19-cloud2.html).
 - Lecture 20: [Cloud Computing Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-20/20-cloud-practice.html). (To be posted).
