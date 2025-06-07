@@ -474,5 +474,19 @@
     "title": "Lectures",
     "section": "Friday, May 30:",
     "text": "Friday, May 30:\n\nLecture 11: Quarto Continued.\nLecture 12: Quarto Practice. Jupyter Notebook version\nAssignment 04 due (5%).\nAssignment 05: Problem Set 05."
+  },
+  {
+    "objectID": "lectures/lectures.html#monday-june-9",
+    "href": "lectures/lectures.html#monday-june-9",
+    "title": "Lectures",
+    "section": "Monday, June 9:",
+    "text": "Monday, June 9:\n\nLecture 19: Cloud Computing Continued.\nLecture 20: Cloud Computing Practice. (To be posted).\nAssignment 07: Problem Set 07."
+  },
+  {
+    "objectID": "lectures/lectures.html#module-05-introduction-to-sql-and-relational-databases",
+    "href": "lectures/lectures.html#module-05-introduction-to-sql-and-relational-databases",
+    "title": "Lectures",
+    "section": "Module 05: Introduction to SQL and Relational Databases",
+    "text": "Module 05: Introduction to SQL and Relational Databases\n\nWednesday, June 11:\n\nLecture 21: Introduction to SQL and Relational Databases.\nLecture 22: Quiz 03 - AI-Assisted Programming and Cloud Computing.\n\n\n\nFriday, June 13:\n\nLecture 23: SQL in Python: Connecting to Databases with Pandas..\nLecture 24: Merging Data with SQL.\nAssignment 07 due (5%). (More time to complete this assignment!)."
   }
 ]

@@ -118,3 +118,23 @@ Suggested references:
 - Lecture 17: [AI-Assisted Programming Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-17/17-ai-practice.html). [Jupyter Notebook](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-17/17-ai-practice.ipynb).
 - Lecture 18: [Introduction to Cloud Computing](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-18/18-cloud.html).
 - **Assignment 06 due (5%).**
+
+## Monday, June 9:
+
+- Lecture 19: [Cloud Computing Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-19/19-cloud2.html).
+- Lecture 20: [Cloud Computing Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-20/20-cloud-practice.html). (To be posted).
+- **Assignment 07:** [Problem Set 07](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/07-assignment.ipynb).
+
+## Module 05: Introduction to SQL and Relational Databases
+
+### Wednesday, June 11:
+
+- Lecture 21: [Introduction to SQL and Relational Databases](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-21/21-introduction-sql.html).
+- Lecture 22: [Quiz 03 - AI-Assisted Programming and Cloud Computing](https://github.com/danilofreire/qtm350-summer-quiz03/).
+
+### Friday, June 13:
+
+- Lecture 23: [SQL in Python: Connecting to Databases with Pandas.](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-23/23-sql-python.html).
+- Lecture 24: [Merging Data with SQL](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-24/24-sql-tables.html).
+- **Assignment 07 due (5%).** (More time to complete this assignment!).
+
