@@ -122,7 +122,7 @@ Suggested references:
 ### Monday, June 9:
 
 - Lecture 19: [Cloud Computing Continued](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-19/19-cloud2.html).
-- Lecture 20: [Cloud Computing Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-20/20-cloud-practice.html). (To be posted).
+- Lecture 20: [Cloud Computing Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-20/20-cloud-pratice.html). [Jupyter Notebook version](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-20/20-cloud-pratice.ipynb)
 - **Assignment 07:** [Problem Set 07](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/07-assignment.ipynb).
 
 ## Module 05: Introduction to SQL and Relational Databases
