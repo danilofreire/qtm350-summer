@@ -129,18 +129,18 @@ editor:
 :::{.column width="50%"}
 - Using [EC2]{.alert} instances from your [local machine]{.alert}
   - Launching instances via AWS Console
-  - Connecting via SSH with [key pairs]{.alert}
+  - Connecting via SSH (secure shell) with [key pairs]{.alert}
 
 - Essential [Linux commands]{.alert} for instance management:
-  - Package management: `apt update`, `apt upgrade`, apt install`
-  - File operations: `scp` and `chmod`
+  - Package management: `apt update`, `apt upgrade`, `apt install`
+  - File operations: `scp` (secure copy) and `chmod` (change mode)
 
 - Activity 01: Launching a [Jupyter notebook]{.alert} on an EC2 instance
   - Installing Jupyter and running a Python script
   - Forwarding ports with SSH
   - Running Jupyter on a remote server
 
-- Activity 02: [Data analysis on the cloud]{.alert} (time permitting)
+- Activity 02: [Data analysis on the cloud]{.alert}
   - Creating a weather dataset and uploading it to an EC2 instance
   - Analysing the data with Python and downloading the results
 :::
@@ -448,8 +448,9 @@ Ubuntu on Windows (WSL)
 - You can find it on the AWS Console, on the [bottom left corner]{.alert}
 - It is a great way to run commands on your instances without having to install anything on your local machine
 - You can also use it to run commands on your S3 buckets, RDS databases, and other AWS services
+- You can use SSH by uploading your key pair to CloudShell (click on `Actions` and then `Upload file`)
 - I recommend using [your local terminal]{.alert} as you can write code in your local IDE and run it on the cloud
-- But it is nice that AWS provides this option 
+- But it is nice that AWS provides this option!
 :::
 
 :::{.column width="50%"}
