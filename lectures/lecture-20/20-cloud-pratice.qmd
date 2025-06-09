@@ -76,7 +76,9 @@ You are now running a Jupyter Notebook session on a remote cloud server. All wor
 - In the Jupyter file browser, click `New` -> `Python 3 (ipykernel)` to create a new notebook. Rename it `employee_analysis.ipynb`.
 
 - **Download the Raw Data:**
-- In the first cell of your new notebook, use the `wget` command to download the `dirty_employee_data` to your EC2 instance. The link is: `https://raw.githubusercontent.com/danilofreire/qtm350-summer/main/lectures/lecture-20/dirty_employee_data.csv`
+- In the first cell of your new notebook, use the `wget` command to download the `dirty_employee_data` to your EC2 instance. More information about the command [here](https://niagads.scrollhelp.site/support/wget-linux-file-downloader-user-guide). 
+- The link is <https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-20/dirty_employee_data.csv>.
+- If you need to create the dataset, you can find the script here: <https://github.com/danilofreire/qtm350-summer/blob/main/lecture-20/dirty-data-generation.py>.
 
 - **Load and Inspect the Data:**
 - In the next cell, load the data using pandas and use `df.info()` to inspect its structure and identify problems.
