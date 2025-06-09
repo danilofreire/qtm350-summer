@@ -1,0 +1,148 @@
+---
+title: QTM 350 - Data Science Computing
+subtitle: "Lecture 20 - Interactive Data Analysis with Jupyter on AWS EC2"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810 
+    email: danilo.freire@emory.edu
+    affiliations: Emory University
+format:
+  clean-revealjs: 
+    self-contained: true
+    footer: "EC2 Interactive Practice" 
+    transition: slide
+    transition-speed: default
+    scrollable: true
+engine: jupyter
+editor:
+  render-on-save: true
+---
+
+# Time to build (again)! 🧑🏻‍💻👩🏼‍💻 {background-color="#2d4563"}
+
+## Practice session: AWS
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Objective:**
+- In this comprehensive session, you will use a remote cloud server as a fully interactive data science workbench.
+
+- **Process:**
+- You will launch an EC2 instance, set up a remote Jupyter Notebook environment, download and clean a dataset interactively, perform an analysis with visualisation, and then retrieve your final work.
+
+- **Environment:**
+- This workflow uses a single AWS EC2 instance managed from your local terminal.
+
+- **Estimated Time:**
+- 45-60 minutes.
+:::
+
+## Part 1: Server Setup and Jupyter Launch
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Launch an EC2 Instance:**
+- Log into the AWS Console and launch one `t2.micro` instance. Use the `Ubuntu Server 24.04 LTS` image and name it `jupyter-ec2-instance`.
+- Use your existing `qtm350_key.pem` key pair and configure the security group to allow SSH traffic.
+
+- **Connect and Install Software:**
+- Connect to your instance using `ssh`.
+- Once connected, install `wget`, `pandas`, `matplotlib`, `seaborn`, and Jupyter on the instance.
+:::
+
+## Part 1: Running a Remote Jupyter Session
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Start a Port-Forwarding SSH Session:**
+- Open a **new local terminal window** and run the following command. This maps port 8000 on your local machine to port 8888 on the EC2 instance.
+
+- **Start the Jupyter Notebook Server:**
+- In your **original SSH terminal** connected to EC2, start the Jupyter server. The `--no-browser` flag is important.
+
+- **Access Jupyter in Your Browser:**
+- Jupyter will print a URL with a security token. Copy this token.
+- Open a web browser on your **local machine** and navigate to `http://localhost:8000`.
+- Paste the token into the password box to log in.
+:::
+
+## Part 2: Interactive Data Cleaning and Analysis
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+You are now running a Jupyter Notebook session on a remote cloud server. All work from this point will be done in notebook cells.
+:::
+
+## Part 2: Getting Started in Jupyter
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Create a New Notebook:**
+- In the Jupyter file browser, click `New` -> `Python 3 (ipykernel)` to create a new notebook. Rename it `employee_analysis.ipynb`.
+
+- **Download the Raw Data:**
+- In the first cell of your new notebook, use the `wget` command to download the `dirty_employee_data` to your EC2 instance. The link is: `https://raw.githubusercontent.com/danilofreire/qtm350-summer/main/lectures/lecture-20/dirty_employee_data.csv`
+
+- **Load and Inspect the Data:**
+- In the next cell, load the data using pandas and use `df.info()` to inspect its structure and identify problems.
+:::
+
+## Part 2: Data Cleaning Steps
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Perform Data Cleaning:**
+- In new cells, perform the following cleaning steps, inspecting the result after each one:
+  1.  **Standardise Department Names:** Use a dictionary and the `.replace()` method to merge 'HR'/'hr' into 'Human Resources' and 'Tech' into 'Technology'.
+  2.  **Fill Missing Salaries:** Use `.groupby()` and `.transform()` to fill missing salary values with the median salary of that employee's department.
+  3.  **Handle Missing Dates:** Remove any rows where the `start_date` is missing using `.dropna()`.
+  4.  **Correct Data Type:** Convert the `start_date` column to a proper datetime format using `pd.to_datetime()`.
+
+```python
+department_map = {'HR': 'Human Resources', 'hr': 'Human Resources', 'IT': 'Technology', 'Tech': 'Technology'}
+df['department'] = df['department'].replace(department_map)
+
+df['salary'] = df.groupby('department')['salary'].transform(lambda x: x.fillna(x.median()))
+
+df.dropna(subset=['start_date'], inplace=True)
+
+df['start_date'] = pd.to_datetime(df['start_date'])
+
+print("Data after cleaning:")
+df.info()
+```
+:::
+
+## Part 2: Visualisation
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Create a Visualisation:**
+- In a new cell, use `sns.countplot()` to create a bar chart showing the number of employees in each department. Here is an example of the code:
+
+```python
+# Create plot
+plt.figure(figsize=(10, 6))
+sns.countplot(y='department', data=df, order=df['department'].value_counts().index)
+plt.title('Number of Employees per Department', fontsize=16)
+plt.xlabel('Number of Employees')
+plt.ylabel('Department')
+plt.tight_layout()
+plt.show()
+```
+:::
+
+## Part 3: Saving and Retrieving Your Work
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- **Save the Cleaned Data:**
+- In the final cell of your notebook, save the cleaned DataFrame to a new CSV file.
+
+- **Download Your Files:**
+- In the Jupyter interface in your browser, first save the notebook (`File` -> `Save Notebook`).
+- Then, from your **local terminal**, use `scp` to download both your completed notebook and the new clean CSV file.
+:::
+
+## End of Practice Session
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+- [Congratulations!]{.alert} 🥳
+- You have successfully used a cloud server as an interactive data science workbench, from data acquisition to final analysis and retrieval of your work.
+- **Crucially, do not forget to terminate your EC2 instance** from the AWS Console to stop incurring charges.
+- To do this, go back to your SSH session running the Jupyter server, press `Ctrl+C` twice to stop it, then go to the AWS Console and terminate the `jupyter-ec2-instance`.
+:::
+
+# And that's all for today! 🎉 {background-color="#2d4563"}

@@ -1,0 +1,181 @@
+employee_id,name,department,salary,start_date
+1000,Employee_0,Marketing,64800.0,2020-01-05
+1001,Employee_1,Technology,78500.0,2020-01-12
+1004,Employee_4,Sales,77800.0,2020-02-02
+1005,Employee_5,Sales,82100.0,2020-02-09
+1006,Employee_6,Sales,57100.0,2020-02-16
+1007,Employee_7,Human Resources,84800.0,2020-02-23
+1008,Employee_8,Technology,60400.0,2020-03-01
+1009,Employee_9,Human Resources,86800.0,2020-03-08
+1011,Employee_11,Technology,77650.0,2020-03-22
+1015,Employee_15,Sales,103500.0,2020-04-19
+1016,Employee_16,Marketing,74000.0,2020-04-26
+1017,Employee_17,Technology,63700.0,2020-05-03
+1018,Employee_18,Technology,77650.0,2020-05-10
+1019,Employee_19,Marketing,62800.0,2020-05-17
+1020,Employee_20,Technology,73800.0,2020-05-24
+1021,Employee_21,Sales,80100.0,2020-05-31
+1022,Employee_22,Marketing,79200.0,2020-06-07
+1023,Employee_23,Marketing,87400.0,2020-06-14
+1024,Employee_24,Technology,75200.0,2020-06-21
+1025,Employee_25,Human Resources,96800.0,2020-06-28
+1026,Employee_26,Sales,71000.0,2020-07-05
+1027,Employee_27,Technology,77650.0,2020-07-12
+1028,Employee_28,Technology,77650.0,2020-07-19
+1030,Employee_30,Technology,58900.0,2020-08-02
+1031,Employee_31,Sales,77800.0,2020-08-09
+1032,Employee_32,Sales,71600.0,2020-08-16
+1033,Employee_33,Technology,85700.0,2020-08-23
+1034,Employee_34,Technology,77650.0,2020-08-30
+1036,Employee_36,Marketing,62300.0,2020-09-13
+1037,Employee_37,Sales,52300.0,2020-09-20
+1038,Employee_38,Human Resources,75450.0,2020-09-27
+1039,Employee_39,Technology,87800.0,2020-10-04
+1040,Employee_40,,,2020-10-11
+1041,Employee_41,Technology,56300.0,2020-10-18
+1042,Employee_42,Sales,77600.0,2020-10-25
+1043,Employee_43,Technology,80800.0,2020-11-01
+1045,Employee_45,Human Resources,77300.0,2020-11-15
+1046,Employee_46,,,2020-11-22
+1047,Employee_47,Technology,57900.0,2020-11-29
+1048,Employee_48,Technology,80400.0,2020-12-06
+1049,Employee_49,Sales,83400.0,2020-12-13
+1050,Employee_50,Technology,91200.0,2020-12-20
+1051,Employee_51,,,2020-12-27
+1052,Employee_52,Technology,54300.0,2021-01-03
+1053,Employee_53,Human Resources,60900.0,2021-01-10
+1055,Employee_55,Technology,82700.0,2021-01-24
+1056,Employee_56,Sales,82700.0,2021-01-31
+1057,Employee_57,Sales,132800.0,2021-02-07
+1058,Employee_58,Sales,77800.0,2021-02-14
+1059,Employee_59,Marketing,74000.0,2021-02-21
+1060,Employee_60,Marketing,89300.0,2021-02-28
+1061,Employee_61,Marketing,84800.0,2021-03-07
+1062,Employee_62,Human Resources,70300.0,2021-03-14
+1063,Employee_63,Marketing,86400.0,2021-03-21
+1064,Employee_64,Marketing,63400.0,2021-03-28
+1065,Employee_65,Technology,71400.0,2021-04-04
+1066,Employee_66,Sales,67700.0,2021-04-11
+1067,Employee_67,Human Resources,76200.0,2021-04-18
+1068,Employee_68,Sales,109700.0,2021-04-25
+1069,Employee_69,Technology,47000.0,2021-05-02
+1070,Employee_70,,,2021-05-09
+1071,Employee_71,Sales,50800.0,2021-05-16
+1072,Employee_72,Sales,67900.0,2021-05-23
+1073,Employee_73,Human Resources,91300.0,2021-05-30
+1074,Employee_74,Human Resources,76000.0,2021-06-06
+1075,Employee_75,Human Resources,58800.0,2021-06-13
+1076,Employee_76,Human Resources,64300.0,2021-06-20
+1077,Employee_77,Sales,85200.0,2021-06-27
+1078,Employee_78,Marketing,64000.0,2021-07-04
+1079,Employee_79,Sales,78200.0,2021-07-11
+1080,Employee_80,Human Resources,75700.0,2021-07-18
+1081,Employee_81,Technology,65200.0,2021-07-25
+1082,Employee_82,,,2021-08-01
+1083,Employee_83,Sales,84500.0,2021-08-08
+1084,Employee_84,Marketing,44600.0,2021-08-15
+1086,Employee_86,Human Resources,65100.0,2021-08-29
+1087,Employee_87,Technology,87800.0,2021-09-05
+1088,Employee_88,Human Resources,63100.0,2021-09-12
+1089,Employee_89,Technology,77650.0,2021-09-19
+1090,Employee_90,Sales,82600.0,2021-09-26
+1091,Employee_91,Human Resources,88000.0,2021-10-03
+1093,Employee_93,Technology,70000.0,2021-10-17
+1094,Employee_94,Human Resources,75450.0,2021-10-24
+1095,Employee_95,Technology,77650.0,2021-10-31
+1096,Employee_96,Technology,101500.0,2021-11-07
+1097,Employee_97,Technology,81100.0,2021-11-14
+1098,Employee_98,Sales,56100.0,2021-11-21
+1099,Employee_99,Sales,88800.0,2021-11-28
+1100,Employee_100,,,2021-12-05
+1101,Employee_101,Technology,90500.0,2021-12-12
+1102,Employee_102,Marketing,74000.0,2021-12-19
+1103,Employee_103,Technology,67700.0,2021-12-26
+1104,Employee_104,Technology,94000.0,2022-01-02
+1105,Employee_105,Sales,64400.0,2022-01-09
+1106,Employee_106,Technology,81700.0,2022-01-16
+1107,Employee_107,Human Resources,86600.0,2022-01-23
+1108,Employee_108,Sales,61100.0,2022-01-30
+1109,Employee_109,Sales,74100.0,2022-02-06
+1110,Employee_110,Marketing,74000.0,2022-02-13
+1111,Employee_111,Sales,59600.0,2022-02-20
+1114,Employee_114,Technology,99500.0,2022-03-13
+1116,Employee_116,Human Resources,68400.0,2022-03-27
+1117,Employee_117,Sales,77000.0,2022-04-03
+1118,Employee_118,Human Resources,75450.0,2022-04-10
+1119,Employee_119,Technology,53500.0,2022-04-17
+1120,Employee_120,Human Resources,92400.0,2022-04-24
+1121,Employee_121,Human Resources,75200.0,2022-05-01
+1122,Employee_122,Marketing,60300.0,2022-05-08
+1123,Employee_123,Sales,81900.0,2022-05-15
+1124,Employee_124,Sales,78000.0,2022-05-22
+1125,Employee_125,Technology,66000.0,2022-05-29
+1127,Employee_127,Human Resources,69200.0,2022-06-12
+1128,Employee_128,Sales,76700.0,2022-06-19
+1129,Employee_129,Technology,84900.0,2022-06-26
+1130,Employee_130,Technology,98800.0,2022-07-03
+1131,Employee_131,Sales,56400.0,2022-07-10
+1132,Employee_132,Sales,107000.0,2022-07-17
+1133,Employee_133,Marketing,45700.0,2022-07-24
+1134,Employee_134,Technology,72700.0,2022-07-31
+1135,Employee_135,Marketing,83800.0,2022-08-07
+1136,Employee_136,Technology,77650.0,2022-08-14
+1137,Employee_137,Human Resources,65700.0,2022-08-21
+1138,Employee_138,Marketing,71900.0,2022-08-28
+1139,Employee_139,,,2022-09-04
+1140,Employee_140,Technology,66200.0,2022-09-11
+1141,Employee_141,Marketing,87700.0,2022-09-18
+1142,Employee_142,Technology,80400.0,2022-09-25
+1143,Employee_143,Marketing,64600.0,2022-10-02
+1144,Employee_144,Marketing,88500.0,2022-10-09
+1145,Employee_145,Sales,79600.0,2022-10-16
+1146,Employee_146,Technology,87200.0,2022-10-23
+1147,Employee_147,Technology,84400.0,2022-10-30
+1148,Employee_148,Sales,62600.0,2022-11-06
+1149,Employee_149,Marketing,66600.0,2022-11-13
+1150,Employee_150,Technology,86200.0,2022-11-20
+1151,Employee_151,Sales,84200.0,2022-11-27
+1152,Employee_152,Sales,74700.0,2022-12-04
+1153,Employee_153,Technology,76800.0,2022-12-11
+1154,Employee_154,Technology,94200.0,2022-12-18
+1155,Employee_155,Sales,66100.0,2022-12-25
+1156,Employee_156,Human Resources,83200.0,2023-01-01
+1157,Employee_157,Human Resources,72000.0,2023-01-08
+1158,Employee_158,Sales,71700.0,2023-01-15
+1159,Employee_159,Human Resources,75450.0,2023-01-22
+1160,Employee_160,Marketing,87400.0,2023-01-29
+1161,Employee_161,Technology,87200.0,2023-02-05
+1162,Employee_162,Technology,77650.0,2023-02-12
+1163,Employee_163,Technology,75300.0,2023-02-19
+1164,Employee_164,Sales,85200.0,2023-02-26
+1165,Employee_165,Human Resources,70300.0,2023-03-05
+1166,Employee_166,Marketing,79900.0,2023-03-12
+1167,Employee_167,Sales,73000.0,2023-03-19
+1168,Employee_168,Sales,77800.0,2023-03-26
+1169,Employee_169,Technology,83900.0,2023-04-02
+1170,Employee_170,,,2023-04-09
+1171,Employee_171,Sales,77800.0,2023-04-16
+1172,Employee_172,Technology,59900.0,2023-04-23
+1173,Employee_173,Sales,56800.0,2023-04-30
+1175,Employee_175,Sales,86900.0,2023-05-14
+1176,Employee_176,Human Resources,84400.0,2023-05-21
+1177,Employee_177,Marketing,84400.0,2023-05-28
+1178,Employee_178,Technology,74800.0,2023-06-04
+1179,Employee_179,Sales,61500.0,2023-06-11
+1180,Employee_180,Marketing,76100.0,2023-06-18
+1181,Employee_181,Sales,64800.0,2023-06-25
+1183,Employee_183,,,2023-07-09
+1184,Employee_184,Marketing,74000.0,2023-07-16
+1185,Employee_185,Human Resources,70200.0,2023-07-23
+1186,Employee_186,Human Resources,81200.0,2023-07-30
+1187,Employee_187,Technology,66500.0,2023-08-06
+1188,Employee_188,Technology,62700.0,2023-08-13
+1189,Employee_189,Sales,78700.0,2023-08-20
+1190,Employee_190,Sales,78700.0,2023-08-27
+1191,Employee_191,Human Resources,67400.0,2023-09-03
+1192,Employee_192,Technology,67900.0,2023-09-10
+1194,Employee_194,Marketing,53300.0,2023-09-24
+1195,Employee_195,Marketing,53900.0,2023-10-01
+1196,Employee_196,Human Resources,64200.0,2023-10-08
+1197,Employee_197,,,2023-10-15
+1198,Employee_198,Human Resources,75450.0,2023-10-22
