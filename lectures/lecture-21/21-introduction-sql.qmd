@@ -117,16 +117,24 @@ editor:
   - Then type `.quit` to exit the SQLite prompt!
 - If you see the SQLite prompt, you are good to go! 😊
 - In case you don't have SQLite installed, you can download it from the [SQLite website](https://www.sqlite.org/download.html) or using [Homebrew](https://brew.sh/) (recommended)
-- To install [Homebrew](https://brew.sh/), paste the following command in your terminal
+- [macOS users]{.alert}: To install [Homebrew](https://brew.sh/), paste the following command in your terminal
 
 ```{verbatim}
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- Then install SQLite and verify the installation with the following commands
+- Then install SQLite and verify the installation with the following commands:
 
 ```{verbatim}
-brew install sqlite3
+brew install sqlite
+sqlite3 --version
+```
+
+- [WSL users]{.alert}: You can install SQLite with `apt`:
+
+```{verbatim}
+sudo apt update && sudo apt install sqlite3
+sudo apt install libsqlite3-dev # optional, but recommended
 sqlite3 --version
 ```
 :::
@@ -445,7 +453,7 @@ DROP TABLE students;
 - It is defined when the table is created but can be modified later
 - The schema is important because it ensures that the data is stored correctly and efficiently
 - Usually, there is no need to change the schema frequently, but it is possible to do so if needed
-- You can view it with the `PRAGMA table_info()` command
+- You can view it with the `PRAGMA table_info(table_name)` command
 :::
 
 :::{.column width="50%"}
