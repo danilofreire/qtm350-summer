@@ -248,7 +248,7 @@ Source: [DataCamp](https://www.datacamp.com/blog/what-is-a-virtual-machine)
 
 ## Windows Subsystem for Linux (WSL)
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
 - [WSL](https://docs.microsoft.com/en-us/windows/wsl/) is a compatibility layer for running Linux binary executables natively on Windows
@@ -258,7 +258,8 @@ Source: [DataCamp](https://www.datacamp.com/blog/what-is-a-virtual-machine)
 - More about WSL here: <https://learn.microsoft.com/en-us/windows/wsl/install>
 - If you work with WSL, [make sure to store your SSH key file under your Ubuntu home directory]{.alert}
 - Windows FS does not work well with `chmod 400`
-- How to locate your `/home/user` directory is by typing `cd` and that will automatically bring you to your home dir
+- You can copy your saved key file to your WSL home directory using `cp` and `~` as the destination
+- In some cases, you may need to use `sudo` to run the commands, including `chmod`, `scp`, and `ssh` (use the password you set when installing WSL)
 :::
 
 :::{.column width="50%"}
@@ -551,7 +552,7 @@ scp -i qtm350.pem hello.py ubuntu@XXXXXX.compute-1.amazonaws.com:~
 - Create an EC2 instance on AWS called `jupyter`
 - Connect to your instance using SSH
 - Update the package list, and install Python 3, pip, and Jupyter
-  - `sudo apt install python3-notebook`
+  - `sudo apt install python3 python3-pip jupyter`
   - `source ~/.profile`
 - Test it with `which python3`, `which pip3`, and `which jupyter`
 - Open a new terminal and type this to forward your connection to port `8000`
