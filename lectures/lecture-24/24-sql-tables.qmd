@@ -58,11 +58,10 @@ editor:
 :::{style="margin-top: 50px; font-size: 25px;"}
 - The instructions for the final project is now available on GitHub
 - Please find it here: <https://github.com/danilofreire/qtm350/blob/main/project/project-instructions.pdf>
-- The project is due on [28th April, 2025]{.alert}
-- Groups of 3-4 students
+- The project is due on [27th June, 2025]{.alert}
+- Groups of 2-3 students
 - You will create a GitHub repository with a report based on World Bank data
 - The report should be in Quarto, the data cleaning and descriptive statistics in SQL, and the data analysis and visualisation in Python
-- QTM 531 students will have a different project
 - Thanks to those who have already sent me their groups!
 - Please let me know if you have any questions!
 :::
