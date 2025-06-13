@@ -561,7 +561,7 @@ for row in cur.fetchall(): print(row)
 #| echo: true
 #| eval: true
 query_case_null = '''
-SELECT driver_name, 
+SELECT driver_name,
     -- Fill nationality based on name if NULL
     CASE 
         WHEN nationality IS NULL AND driver_name = 'Fernando Alonso' THEN 'Spanish'
@@ -574,7 +574,7 @@ SELECT driver_name,
         WHEN victories IS NULL THEN 0 
         ELSE victories
     END AS victories_filled
-FROM drivers WHERE driver_name LIKE 'F%' OR driver_name LIKE 'L%'; -- Limit output
+FROM drivers WHERE driver_name LIKE 'F%' OR driver_name LIKE 'C%'; -- Limit output
 '''
 cur.execute(query_case_null)
 for row in cur.fetchall(): print(row)
