@@ -57,7 +57,7 @@ editor:
 
 :::{style="margin-top: 50px; font-size: 25px;"}
 - The instructions for the final project is now available on GitHub
-- Please find it here: <https://github.com/danilofreire/qtm350/blob/main/project/project-instructions.pdf>
+- Please find it here: <https://github.com/danilofreire/qtm350-summer/blob/main/project/project-instructions.pdf>
 - The project is due on [27th June, 2025]{.alert}
 - Groups of 2-3 students
 - You will create a GitHub repository with a report based on World Bank data

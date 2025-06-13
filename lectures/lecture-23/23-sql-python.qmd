@@ -698,7 +698,6 @@ print(pd.read_sql('SELECT * FROM british_drivers', conn))
 - Fetch results using `fetchone()`, `fetchall()`, or by iterating the cursor.
 - Common SQL commands work as expected.
 - Window functions require [modern SQLite versions]{.alert}.
-- Use `CASE` + `GROUP BY` for pivoting.
 - [`pandas.read_sql()`]{.alert} greatly simplifies loading data for analysis.
 - `df.to_sql()` saves DataFrames back to the database.
 :::
