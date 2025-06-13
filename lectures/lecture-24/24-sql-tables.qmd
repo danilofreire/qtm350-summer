@@ -1,6 +1,6 @@
 ---
 title: QTM 350 - Data Science Computing
-subtitle: Lecture 24 - Tables in SQL
+subtitle: Lecture 24 - Merging Tables in SQL
 author:
   - name: Danilo Freire
     email: danilo.freire@emory.edu
@@ -39,7 +39,7 @@ editor:
 :::
 
 :::{.column width="50%"}
-### Today we will learn how to:
+### We will learn how to:
 
 - See different types of join in SQL
 - Use special joins, such as `CROSS JOIN` and `SELF JOIN`
@@ -89,7 +89,7 @@ editor:
 ## Load the libraries and connect to the database {#sec:tables}
 
 :::{style="margin-top: 50px; font-size: 23px;"}
-- Let's load the libraries and connect to the SQLite database. We'll use a file named `lecture19.db`.
+- Let's load the libraries and connect to the SQLite database. We'll use a file named `lecture24.db`.
 
 ```{python}
 #| echo: true
@@ -97,7 +97,7 @@ editor:
 import pandas as pd; import sqlite3
 
 # Connect to the SQLite database (this will create the file if it doesn't exist)
-connection = sqlite3.connect('lecture19.db'); cursor = connection.cursor()
+connection = sqlite3.connect('lecture24.db'); cursor = connection.cursor()
 
 cursor.execute('DROP TABLE IF EXISTS players;')
 cursor.execute('''
@@ -730,7 +730,7 @@ ORDER BY
 - "Cleaning" the database often means simply deleting the database file and starting fresh.
 - If you encounter issues, the easiest way to reset is to close any active connections to the database file and then remove the file using your operating system or Python's `os` module.
 
-- Here's how you can close the connection and delete the database file (`lecture19.db`) we used in this lecture using Python:
+- Here's how you can close the connection and delete the database file (`lecture24.db`) we used in this lecture using Python:
 
 ```{python}
 #| echo: true
