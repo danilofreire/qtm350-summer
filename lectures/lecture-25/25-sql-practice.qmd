@@ -1,0 +1,316 @@
+---
+title: "QTM 350 - Data Science Computing"
+subtitle: "Lecture 25 - Analysing Classic Video Games & Studios in SQL"
+author:
+  - name: "Danilo Freire"
+    email: "danilo.freire@emory.edu"
+    affiliations: "Emory University"
+format:
+  clean-revealjs:
+    self-contained: true
+    code-overflow: wrap
+    footer: "[SQL Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-25/25-sql-practice.html)"
+transition: slide
+transition-speed: default
+scrollable: true
+jupyter: python3
+editor:
+  render-on-save: false
+---
+
+## SQL Practice
+::: {style="margin-top: 30px; font-size: 20pt;"}
+
+### Objective
+In this session, you will practice your SQL skills by creating and querying a database of classic video games and their development studios. You will use `SELECT` statements, aggregate functions, joins, and other SQL features to answer a series of questions.
+
+### Instructions
+1. Run the **Setup** cells to create and populate your database for this session.
+2. For each question, write a single SQL query in the designated code cell to find the answer.
+3. Use `pd.read_sql()` to execute your query and display the results as a pandas DataFrame.
+:::
+
+## Part 1: Database and Table Setup
+::: {style="margin-top: 30px; font-size: 20pt;"}
+
+```{python}
+#| echo: true
+#| eval: false 
+import sqlite3
+import pandas as pd
+from IPython.display import display
+
+# Connect to an in-memory SQLite database
+conn = sqlite3.connect(':memory:')
+cursor = conn.cursor()
+
+print("Database connection established.")
+```
+:::
+
+## Table Schemas
+
+::: {style="margin-top: 30px; font-size: 20pt;"}
+
+We will work with two tables: `studios` and `games`.
+
+**`studios` table:**
+
+| Column         | Type    | Description                               |
+|----------------|---------|-------------------------------------------|
+| `studio_id`    | INTEGER | Primary Key for the studio.               |
+| `studio_name`  | TEXT    | The name of the game development studio.  |
+| `country`      | TEXT    | The country where the studio is based.    |
+| `year_founded` | INTEGER | The year the studio was founded.          |
+
+**`games` table:**
+
+| Column               | Type    | Description                                      |
+|----------------------|---------|--------------------------------------------------|
+| `game_id`            | INTEGER | Primary Key for the game.                        |
+| `title`              | TEXT    | The title of the video game.                     |
+| `studio_id`          | INTEGER | Foreign Key referencing `studios(studio_id)`.      |
+| `genre`              | TEXT    | The genre of the game (e.g., RPG, Platformer).   |
+| `release_year`       | INTEGER | The year the game was released.                  |
+| `units_sold_millions`| REAL    | Units sold, in millions.                         |
+
+:::
+
+## Create Tables and Insert Data
+::: {style="margin-top: 30px; font-size: 20pt;"}
+```{python}
+#| echo: true
+#| eval: false 
+# Drop tables if they already exist to ensure a clean slate
+cursor.execute("DROP TABLE IF EXISTS games;")
+cursor.execute("DROP TABLE IF EXISTS studios;")
+
+# Create studios table
+cursor.execute("""
+CREATE TABLE studios (
+    studio_id INTEGER PRIMARY KEY,
+    studio_name TEXT NOT NULL,
+    country TEXT,
+    year_founded INTEGER
+);
+""")
+
+# Create games table
+cursor.execute("""
+CREATE TABLE games (
+    game_id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
+    studio_id INTEGER,
+    genre TEXT,
+    release_year INTEGER,
+    units_sold_millions REAL,
+    FOREIGN KEY (studio_id) REFERENCES studios(studio_id)
+);
+""")
+
+print("Tables 'studios' and 'games' created successfully.")
+
+# Insert data into studios table
+studios_data = [
+    (1, 'Nintendo', 'Japan', 1889),
+    (2, 'Blizzard Entertainment', 'USA', 1991),
+    (3, 'Square Enix', 'Japan', 2003),
+    (4, 'CD Projekt Red', 'Poland', 1994),
+    (5, 'Rockstar Games', 'USA', 1998),
+    (6, 'FromSoftware', 'Japan', 1986)
+]
+cursor.executemany("INSERT INTO studios VALUES (?, ?, ?, ?)", studios_data)
+
+# Insert data into games table
+games_data = [
+    (1, 'The Legend of Zelda: Ocarina of Time', 1, 'Action-Adventure', 1998, 7.6),
+    (2, 'World of Warcraft', 2, 'MMORPG', 2004, 12.0),
+    (3, 'Final Fantasy VII', 3, 'RPG', 1997, 10.0),
+    (4, 'The Witcher 3: Wild Hunt', 4, 'RPG', 2015, 50.0),
+    (5, 'Super Mario 64', 1, 'Platformer', 1996, 11.9),
+    (6, 'Grand Theft Auto V', 5, 'Action-Adventure', 2013, 195.0),
+    (7, 'Diablo II', 2, 'Action RPG', 2000, 4.0),
+    (8, 'Chrono Trigger', 3, 'RPG', 1995, 2.63),
+    (9, 'Elden Ring', 6, 'Action RPG', 2022, 23.0),
+    (10, 'Red Dead Redemption 2', 5, 'Action-Adventure', 2018, 61.0)
+]
+cursor.executemany("INSERT INTO games VALUES (?, ?, ?, ?, ?, ?)", games_data)
+
+conn.commit()
+print("Data inserted successfully.")
+```
+:::
+
+## Question 1: Basic Filtering
+::: {style="margin-top: 30px; font-size: 20pt;"}
+List all games released **after** the year 2010. Show the game `title` and its `release_year`.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 1 here
+query1 = """
+
+"""
+
+# display(pd.read_sql(query1, conn))
+```
+:::
+
+## Question 2: Aggregation with `SUM` and `WHERE`
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Find the total units sold (in millions) for all games in the 'RPG' genre.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 2 here
+query2 = """
+
+"""
+
+# display(pd.read_sql(query2, conn))
+```
+:::
+
+### Question 3: `ORDER BY` and `LIMIT`
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Show the name and release year of the top 3 best-selling games (by `units_sold_millions`).
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 3 here
+query3 = """
+
+"""
+
+# display(pd.read_sql(query3, conn))
+```
+:::
+
+### Question 4: `LEFT JOIN`
+::: {style="margin-top: 30px; font-size: 20pt;"}
+List all games and their studio names. Ensure that all games are listed, even if their studio is not in the `studios` table (which is not the case in our sample data, but the query should be written to handle it).
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 4 here
+query4 = """
+
+"""
+
+# display(pd.read_sql(query4, conn))
+```
+:::
+
+### Question 5: `GROUP BY` with an Aggregate Function
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Calculate the average units sold for each studio. Show the studio name and their average sales, aliased as `avg_sales`. Order the results by average sales in descending order.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 5 here
+query5 = """
+
+"""
+
+# display(pd.read_sql(query5, conn))
+```
+:::
+
+### Question 6: `GROUP BY` with `HAVING`
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Find all studios that have released **more than one** game. Show the studio name and the count of games they have released.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 6 here
+query6 = """
+
+"""
+
+# display(pd.read_sql(query6, conn))
+```
+:::
+
+### Question 7: String Manipulation with `LIKE`
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Find all game titles that contain the word `The`.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 7 here
+query7 = """
+
+"""
+
+# display(pd.read_sql(query7, conn))
+```
+:::
+
+### Question 8: Conditional Logic with `CASE`
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Categorise games based on their sales: 'Blockbuster' for games with over 50 million units sold, 'Hit' for games with 10 to 50 million units sold (inclusive), and 'Classic' for games with under 10 million units sold. Show the game `title` and its `sales_category`.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 8 here
+query8 = """
+
+"""
+
+# display(pd.read_sql(query8, conn))
+```
+:::
+
+### Question 9: Subquery in a `WHERE` Clause
+::: {style="margin-top: 30px; font-size: 20pt;"}
+List all games that have sold more units than the average of all games in the database.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 9 here
+query9 = """
+
+"""
+
+# display(pd.read_sql(query9, conn))
+```
+:::
+
+### Question 10: Window Function (`RANK`)
+::: {style="margin-top: 30px; font-size: 20pt;"}
+Rank games within each `genre` based on their release year (from oldest to newest). Show the `genre`, game `title`, `release_year`, and the rank.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Your SQL query for Question 10 here
+query10 = """
+
+"""
+
+# display(pd.read_sql(query10, conn))
+```
+:::
+
+## Part 3: Cleanup
+::: {style="margin-top: 30px; font-size: 20pt;"}
+
+When you are finished, it's good practice to close the database connection.
+
+```{python}
+#| echo: true
+#| eval: false 
+# Close the connection
+conn.close()
+print("Database connection closed.")
+```
+:::
