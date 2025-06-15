@@ -138,3 +138,39 @@ Suggested references:
 - Lecture 24: [Merging Data with SQL](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-24/24-sql-tables.html).
 - **Assignment 07 due (5%).** (More time to complete this assignment!).
 
+## Module 06: Parallel Computing, Dependency Management and Containers
+
+### Monday, June 16:
+
+- Lecture 25: [SQL Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-25/25-sql-practice.html).
+- Lecture 26: [Parallel Computing](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-26/26-parallel-computing.html).
+- **Assignment 08:** [Problem Set 08](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/08-assignment.ipynb).
+
+### Wednesday, June 18:
+
+- Lecture 27: [Application: Parallelising Data Analysis with Dask and AutoML](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-27/27-parallel-automl.html).
+- Lecture 28: [Quiz 04 - SQL](https://github.com/danilofreire/qtm350-summer-quiz04/).
+- **Assignment 08 due (5%).**
+
+### Friday, June 20:
+
+- Lecture 29: [Dependency Management, Virtual Environments, and Containers.](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-29/29-containers.html).
+- Lecture 30: [Docker for Data Science](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-30/30-docker.html).
+- **Assignment 09:** [Problem Set 09](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/09-assignment.ipynb).
+
+### Monday, June 23:
+
+- Lecture 31: [Course Revision](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-31/31-revision.html).
+- Lecture 32: [Parallel Computing and Docker Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-32/32-parallel-practice.html).
+- **Assignment 09 due (5%).**
+- **Assignment 10:** [Problem Set 10](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/10-assignment.ipynb).
+
+### Wednesday, June 25:
+
+- Lecture 33: [Quiz 05 - Parallel Computing and Docker](https://github.com/danilofreire/qtm350-summer-quiz05/).
+- Question and Answer Session - Final Project.
+
+### Friday, June 27:
+
+- **Final Project due (20%).**
+- **Assignment 10 due (5%).**
