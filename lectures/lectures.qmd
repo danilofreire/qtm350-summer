@@ -168,7 +168,7 @@ Suggested references:
 ### Wednesday, June 25:
 
 - Lecture 33: [Quiz 05 - Parallel Computing and Docker](https://github.com/danilofreire/qtm350-summer-quiz05/).
-- Question and Answer Session - Final Project.
+- Lecture 34: Final Project Q&A Session.
 
 ### Friday, June 27:
 
