@@ -142,7 +142,7 @@ Suggested references:
 
 ### Monday, June 16:
 
-- Lecture 25: [SQL Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-25/25-sql-practice.html).
+- Lecture 25: [SQL Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-25/25-sql-practice.html). [Jupyter Notebook version](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-25/25-sql-practice.ipynb).
 - Lecture 26: [Parallel Computing](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-26/26-parallel-computing.html).
 - **Assignment 08:** [Problem Set 08](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/08-assignment.ipynb).
 
