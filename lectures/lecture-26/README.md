@@ -1,6 +1,6 @@
 # Lecture 21 - Parallel Computing with Python
 
-This lecture covers the basics of parallel computing. We will discuss the following topics:
+This lecture covers the fundamentals of parallel computing. We shall discuss the following topics:
 
 - Serial vs Parallel Algorithms
 - Python implementations of parallelism

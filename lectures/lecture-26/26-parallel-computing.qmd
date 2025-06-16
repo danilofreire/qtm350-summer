@@ -17,7 +17,7 @@ execute:
   cache: true
 jupyter: python3
 editor:
-  render-on-save: false
+  render-on-save: true
 ---
 
 # Hello, everyone! 😊 <br> {background-color="#2d4563"}
@@ -48,7 +48,7 @@ editor:
 
 ## Virtual environment
 
-:::{style="margin-top: 30px; font-size: 20pt;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width="50%"}
 - We are going to use `joblib` and `dask` for parallel computing
@@ -71,7 +71,7 @@ source .venv-dask/Scripts/activate
 :::{.column width="50%"}
 - Once the environment is activated, they should run the following `pip install` commands:
 ```bash
-pip install 'dask==2024.5.0' 'distributed==2024.5.0' 'dask-sql==2024.5.0' 'pandas==2.2.2' 'pyarrow==18.1.0' numpy joblib jupyterlab notebook ipykernel
+pip install python=3.10 dask-sql=2024.5.0 dask=2024.4.1 ipykernel=6.29.3 joblib=1.3.2 numpy=1.26.4 pandas=2.2.1
 ```
 
 - And we're done! We will talk about virtual environments in more detail in a future lecture 🤓
@@ -79,6 +79,15 @@ pip install 'dask==2024.5.0' 'distributed==2024.5.0' 'dask-sql==2024.5.0' 'panda
 ```bash
 deactivate
 rm -rf .venv-dask
+```
+
+- If you prefer to use `conda`, you can create a new environment with the following command:
+```bash
+conda create -n venv-dask -c conda-forge python=3.10 dask-sql=2024.5.0 dask=2024.4.1 ipykernel=6.29.3 joblib=1.3.2 numpy=1.26.4 pandas=2.2.1
+```
+- And then activate it with:
+```bash
+conda activate venv-dask
 ```
 :::
 :::
@@ -88,7 +97,7 @@ rm -rf .venv-dask
 
 ## Serial Execution
 
-:::{style="margin-top: 30px; font-size: 24pt;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 - Typical programs operate lines sequentially:
 
 ```{python}
@@ -361,8 +370,6 @@ Parallel(n_jobs=4)(delayed(image_flipper)(f) for f in file_list)
 ## Try it yourself! 🧠 {#sec:exercise01}
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-- Install `joblib` and `numpy` if you haven't done so yet
-  - `!pip install joblib numpy`
 - Compare the time of the serial and parallel versions of the following function:
 
 ```{python}
@@ -646,9 +653,6 @@ df[["x", "y"]].rolling(window="24h").mean().head()
 ## Try it yourself! 🧠 {#sec:exercise02}
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-- Install `dask` if you haven't done so yet
-  - `!pip install dask`
-
 - Create a Dask array with 1 million random numbers and calculate the mean of the square root of the array
 - Compare the time it takes to run the same operation in NumPy
 - [[Appendix 02]{.button}](#sec:appendix02)
