@@ -14,9 +14,6 @@ transition: slide
 transition-speed: default
 scrollable: true
 engine: jupyter
-revealjs-plugins:
-  - fontawesome
-  - multimodal
 editor:
   render-on-save: true
 ---
@@ -108,29 +105,21 @@ Frank -> Scheduler: I've computed b and am holding on to it!
 - [Dask also provides a dashboard to monitor the performance of your cluster]{.alert}
 :::
 
-## Setting up a Dask Cluster
+## Virtual environment
 
-:::{style="margin-top: 30px; font-size: 27px;"}
-- First, we need to install Dask and the distributed scheduler
-
+:::{style="margin-top: 30px; font-size: 22px;"}
+- Before we start, let's make sure we are using the virtual environment we created in the previous class
+- If you are using Anaconda, you can activate the environment with:
 ```{verbatim}
-python -m pip install dask distributed --upgrade
+conda activate venv-dask
 ```
 
-- The `distributed` scheduler is the default for Dask and it works great 👍
-- Conda users can install it with:
-
+- If you are using `venv`, you can activate the environment with:
 ```{verbatim}
-conda install dask distributed -c conda-forge
+source venv-dask/bin/activate
 ```
 
-- Or you can source it straight from GitHub:
-
-```{verbatim}
-git clone https://github.com/dask/distributed.git
-cd distributed
-python -m pip install .
-```
+- The `venv-dask` environment should have all the necessary packages installed!
 :::
 
 ## Setting up a Dask Client
@@ -283,17 +272,12 @@ y.compute()
 ## What is Dask ML?
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-- First, let's install Dask ML:
-
-```{verbatim}
-!pip install dask-ml
-```
-
-- And then import the necessary modules, mainly scikit-learn:
+- First, let's import the necessary modules, mainly scikit-learn:
 
 ```{python}
 #| echo: true
 #| eval: true
+import time
 import numpy as np
 from dask.distributed import LocalCluster, Client
 import joblib
@@ -371,10 +355,10 @@ print("Time taken: {:.2f} seconds".format(elapsed_time))
 ```
 
 ```{verbatim}
-Best parameters found:  {'tol': 0.0001, 'gamma': 0.0001, 'class_weight': None, 'C': 10.0}
-Best score:  0.9565943238731217
-Best estimator:  SVC(C=10.0, gamma=0.0001, tol=0.0001)
-Time taken: 2.68 seconds
+Best parameters found:  {'tol': 0.01, 'gamma': 0.001, 'class_weight': None, 'C': 10000.0}
+Best score:  0.9760712298274902
+Best estimator:  SVC(C=10000.0, gamma=0.001, tol=0.01)
+Time taken: 4.15 seconds
 ```
 :::
 
@@ -383,7 +367,7 @@ Time taken: 2.68 seconds
 
 :::{style="margin-top: 30px; font-size: 30px;"}
 
-- The model was trained in 2.68 seconds, which is pretty fast
+- The model was trained in 4.15 seconds, which is pretty fast
 - The dataset is small, so we are not memory constrained
 - The model is not complex, so we are not compute constrained
 - So in this case we only used dask to parallelise the search, but we could have used scikit-learn alone
@@ -525,13 +509,12 @@ Time taken: 1.62 seconds
 - Here we will use [TPOT](https://epistasislab.github.io/tpot/), which is a Python library that automatically creates and optimises machine learning pipelines using genetic programming
 - TPOT is built on top of scikit-learn and uses a similar syntax 
 - There are several articles about how to optimise AutoML algorithms and quickly find the best model for your data, so I won't go into too much detail here (but you can check out [this article](https://arxiv.org/pdf/1908.00709) for more information)
-- First, let's install TPOT:
-
+- You should have TPOT installed in your `venv-dask` environment, but if you don't, you can install it with:
 ```{verbatim}
-!pip install tpot
+conda install -c conda-forge tpot=0.12.2
 ```
 
-- I'm using Python 3.9.6 for this example, so your mileage may vary
+- I'm using Python 3.10.18 for this example (as suggested in the previous lecture), but your mileage may vary
 :::
 
 ## Using TPOT
@@ -569,9 +552,19 @@ print(f"Time taken: {elapsed_time:.2f} seconds")
 ```
 
 ```{verbatim}
-Best pipeline: KNeighborsClassifier(input_matrix, n_neighbors=3, p=2, weights=distance)
-0.9822222222222222
-Time taken: 57.38 seconds
+Generation 1 - Current best internal CV score: 0.9821836706595072
+                                                                             
+Generation 2 - Current best internal CV score: 0.9821836706595072
+                                                                             
+Generation 3 - Current best internal CV score: 0.9821836706595072
+                                                                             
+Generation 4 - Current best internal CV score: 0.9821836706595072
+                                                                              
+Generation 5 - Current best internal CV score: 0.9829299187663499
+                                                                              
+Best pipeline: KNeighborsClassifier(Normalizer(input_matrix, norm=l1), n_neighbors=2, p=2, weights=distance)
+0.9911111111111112
+Time taken: 240.45 seconds
 ```
 :::
 
@@ -613,9 +606,11 @@ print(f"Time taken: {elapsed_time:.2f} seconds")
 ```
 
 ```{verbatim}
-Best pipeline: KNeighborsClassifier(input_matrix, n_neighbors=3, p=2, weights=distance)
-0.9822222222222222
-Time taken: 20.40 seconds
+Generation 5 - Current best internal CV score: 0.985895635412364
+                                                                              
+Best pipeline: KNeighborsClassifier(GaussianNB(input_matrix), n_neighbors=2, p=2, weights=distance)
+0.9844444444444445
+Time taken: 32.35 seconds
 ```
 :::
 
@@ -629,11 +624,7 @@ Time taken: 20.40 seconds
 - It is designed for analyzing time series data that display patterns on different time scales
 - It is particularly good for data that has multiple seasonality with changing trends
 - The library is built on top of `pystan`, which is a Python interface to Stan, a probabilistic programming language
-- First, let's install the library:
-
-```{verbatim}
-!pip install prophet
-```
+- If you installed the `venv-dask` environment, you should already have `Prophet` installed
 :::
 
 :::{.column width="50%"}
