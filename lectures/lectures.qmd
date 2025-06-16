@@ -161,7 +161,7 @@ Suggested references:
 ### Monday, June 23:
 
 - Lecture 31: [Course Revision](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-31/31-revision.html).
-- Lecture 32: [Parallel Computing and Docker Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-32/32-parallel-practice.html).
+- Lecture 32: [Parallel Computing and Docker Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-32/32-parallel-practice.html). [Jupyter Notebook version](https://github.com/danilofreire/qtm350-summer/blob/main/lectures/lecture-32/32-parallel-practice.ipynb).
 - **Assignment 09 due (5%).**
 - **Assignment 10:** [Problem Set 10](https://github.com/danilofreire/qtm350-summer/blob/main/assignments/10-assignment.ipynb).
 
