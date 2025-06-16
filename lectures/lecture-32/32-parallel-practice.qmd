@@ -1,0 +1,199 @@
+---
+title: "QTM 350 - Data Science Computing"
+subtitle: "Lecture 32 - Parallel Computing & Docker Practice"
+author:
+  - name: "Danilo Freire"
+    email: "danilo.freire@emory.edu"
+    affiliations: "Emory University"
+format:
+  clean-revealjs:
+    self-contained: true
+    code-overflow: wrap
+    footer: "[Parallel Computing and Docker Practice](https://raw.githack.com/danilofreire/qtm350-summer/main/lectures/lecture-32/32-parallel-practice.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+jupyter: python3
+editor:
+  render-on-save: true
+---
+
+## Practice Session
+::: {style="margin-top: 30px; font-size: 24px;"}
+
+### Objective
+In this session, you will apply your knowledge of parallel computing and containerisation. The goal is to move from writing simple serial code to creating scalable, parallel computations with Dask, and finally, packaging your entire workflow into a portable, reproducible Docker container.
+
+### Instructions
+1.  **Follow the sections sequentially.** The notebook is designed to build concepts progressively.
+2.  **Set up the environment first.** The initial steps are crucial for the subsequent tasks to run correctly.
+3.  **Complete the code in the designated cells.** For each question, fill in the necessary code to achieve the described outcome.
+4.  **Consult the lecture notes.** This practice directly relates to the concepts covered in lectures 26-30.
+:::
+
+## Part 1: Environment Setup
+### Task 1: Create a Conda Environment
+
+::: {style="margin-top: 30px; font-size: 20px;"}
+To ensure our work is reproducible, we must first define and create a consistent Python environment. This practice requires **Python 3.10** and several specific package versions.
+
+Write the **single terminal command** to create a new `conda` environment named `qtm350-parallel` that includes `python=3.10` and the following packages:
+
+- `dask-sql=2024.5.0`
+- `dask=2024.4.1`
+- `ipykernel=6.29.3`
+- `joblib=1.3.2`
+- `numpy=1.26.4`
+- `pandas=2.2.1`
+
+After creating it, remember to activate it and select it as the kernel for this notebook.
+
+You can either paste the bash/zsh command below, or run it from Python using the [subprocess](https://feigeek.com/how-to-activate-a-conda-environment-in-python-code.html) library.
+
+```{python}
+#| echo: true
+#| eval: false
+# Your code here
+```
+:::
+
+## Part 2: Parallel Computing
+### Task 2: Simulating Parallelism with `joblib`
+
+::: {style="margin-top: 30px; font-size: 20px;"}
+Imagine you have a list of 100 data records to process. Each record takes a small but non-trivial amount of time. Your task is to simulate this using `joblib` to see the benefits of parallelisation.
+
+1.  Define a function `process_record(record_id)` that simulates work by printing which record it's processing and then sleeping for 0.1 seconds (using `time.sleep(0.1)`).
+2.  Create a list of `record_ids` from 0 to 99.
+3.  Use `joblib.Parallel` to run this function on all record IDs using **4 cores** (`n_jobs=4`).
+4.  Measure and compare the total time taken for the parallel execution versus a simple serial `for` loop. You can use `%time` magic for this.
+
+```{python}
+#| echo: true
+#| eval: false
+import time
+from joblib import Parallel, delayed
+# Your code here
+```
+:::
+
+
+## Task 3: Large-Scale Matrix Operations with Dask Array
+::: {style="margin-top: 30px; font-size: 20px;"}
+Dask is perfect for linear algebra on very large matrices.
+
+**Task:**
+
+1.  Create a Dask array `X` of random numbers with a shape of (20000, 5000).
+2.  Compute the dot product of the transpose of `X` with `X` (i.e., `X.T @ X`).
+3.  Calculate the mean of the resulting matrix and print the result.
+
+```{python}
+#| echo: true
+#| eval: false
+import dask.array as da
+
+# Your code here
+```
+:::
+
+
+## Task 4: Basic Aggregations with Dask DataFrame
+::: {style="margin-top: 30px; font-size: 20px;"}
+This task focuses on a fundamental `groupby` aggregation on a larger-than-memory dataset. We will create a large sample employee dataset and calculate the average salary for each department.
+
+```{python}
+#| echo: true
+#| eval: false
+import pandas as pd
+import numpy as np
+import dask.dataframe as dd
+
+# Create a large sample pandas DataFrame
+n_rows = 1_000_000
+departments = ['Engineering', 'HR', 'Sales', 'Marketing']
+data = {
+    'department': np.random.choice(departments, n_rows),
+    'salary': np.random.randint(50000, 150000, n_rows),
+    'years_of_service': np.random.randint(1, 20, n_rows)
+}
+pdf = pd.DataFrame(data)
+
+# Convert to a Dask DataFrame
+df = dd.from_pandas(pdf, npartitions=4)
+
+# Your code here
+```
+:::
+
+## Task 5: Filtering and Aggregating with Dask-SQL
+::: {style="margin-top: 30px; font-size: 20px;"}
+This task uses the same employee dataset but introduces SQL for more expressive querying.
+
+**Task:** 
+
+1. Write a SQL query to find the number of employees and their average years of service for each department, but only for employees with a salary greater than $100,000. 
+2. Order the results by the employee count.
+
+```{python}
+#| echo: true
+#| eval: false
+from dask_sql import Context
+
+# c = Context()
+# c.create_table('employees', df)
+
+# Your SQL query here
+```
+:::
+
+## Part 3: Containerisation with Docker
+### Task 6: A Dockerfile with Dependencies
+::: {style="margin-top: 30px; font-size: 16px;"}
+
+A "Hello, World!" is good, but a real script has dependencies. Let's create a Dockerfile for a Python script that uses `pandas`.
+
+Your task:
+Write a `Dockerfile` that:
+
+1.  Starts from the `python:3.10-slim` base image.
+2.  Uses `pip` to install `pandas`.
+3.  Sets the working directory to `/data`.
+4.  Copies a local script `generate_report.py` into the container.
+5.  Runs the script using `CMD`.
+
+*To test, create a local file `generate_report.py` that imports pandas, creates a simple DataFrame, and prints it. Sample code is provided below.*
+
+#### generate_report.py
+```{python}
+#| echo: true
+#| eval: false 
+import pandas as pd
+data = {'Product': ['Apples', 'Oranges', 'Bananas'], 'Sales': [150, 200, 120]}
+df = pd.DataFrame(data)
+print('--- Sales Report ---')
+print(df)
+print('--------------------')
+```
+
+#### Dockerfile
+```{dockerfile}
+# Your code here
+```
+:::
+
+## Task 7: Reproducible Environment with Conda
+::: {style="margin-top: 30px; font-size: 22px;"}
+Using an `environment.yml` file is standard for reproducible environments. We will build a Docker image using this best practice.
+
+**Task:** Write a `Dockerfile` that:
+
+1.  Starts from `continuumio/miniconda3`.
+2.  Copies a local `environment.yml` file.
+3.  Uses `conda` to create the environment from the file.
+4.  Sets the default command to start a `bash` shell within the activated environment.
+
+```{dockerfile}
+# Your Dockerfile here
+```
+:::
