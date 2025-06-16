@@ -83,11 +83,12 @@ All group members should contribute to the repository. It can be helpful to assi
    - Data description.
    - Data analysis.
    - Results and discussion.
-   - Conclusion.
+   - Conclusion and further reading.
+   - References.
 
 The report should be concise, but not too brief. You may aim for 5 pages, excluding the code.  You should focus on the main results and insights from the analysis. The report should be fully reproducible, meaning that anyone should be able to run the code and generate the same results as in the report.
 
-The first five sections should be the same as in the Quarto report. The "Further Reading" section should include links to the World Bank's website, the World Bank's API documentation, and other relevant resources you used in the project. All additional resources should also be related to your topic and consist of academic sources. You should include a navigation bar at the top of the page with links to each section. The website should be fully functional and accessible to anyone with the link.
+3. A website with the same content as the Quarto report. You should include a navigation bar at the top of the page with links to each section. The website should be fully functional and accessible to anyone with the link.
 
 If you have any questions, please let me know. 
 
