@@ -221,7 +221,8 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 - Each environment can have its own dependencies, and you can switch between them easily
 - As they are isolated from each other, you can have different versions of the same package in different environments, and you can share the environment file with others
 - They are probably the most user-friendly way to manage dependencies in Python, and are widely used in data science
-- Here's how to create one:
+- You can save folders with your code and data in the environment too!
+- Here's how to create an environment with `conda`:
 
 ```{verbatim}
 conda create --name qtm350 python=3.12 -y
@@ -574,9 +575,9 @@ pipenv install --ignore-pipfile
 - [Docker](https://www.docker.com/) is the leading containerisation platform, mainly in the industry
 - Other software like [Singulariy](https://sylabs.io/singularity/) is used in more niche applications, such as high-performance computing, but has a smaller user base
 - The main entities in Docker are [containers](https://www.docker.com/resources/what-container), [images](https://www.docker.com/resources/what-container), and [registries](https://www.docker.com/resources/what-container-registry)
-- [A container]{.alert}, as we have just seen, is an executable package of software that includes everything needed to run an application
-- [An image is a snapshot of a container]{.alert}. Images are created with the `build` command, and they will produce a container when started with `run`. More about the distinction [here](https://stackoverflow.com/questions/23735149/what-is-the-difference-between-a-docker-image-and-a-container)
-- [A registry]{.alert} is a collection of repositories from which you can pull images
+- [A container]{.alert} is an executable package of software that includes everything needed to run an application (based on an image)
+- [An image is a snapshot ("blueprint") of a container]{.alert}. Images are created with the `build` command, and they will produce a container when started with `run`. More about the distinction [here](https://stackoverflow.com/questions/23735149/what-is-the-difference-between-a-docker-image-and-a-container)
+- [A registry]{.alert} is a collection of repositories from which you can pull images (imagine it as a GitHub for Docker images). The most popular one is [Docker Hub](https://hub.docker.com/)
 - Docker has very similar syntax to Git and Linux, so if you are familiar with the command line tools for them then most of Docker should seem somewhat natural (though you should still read the docs!)
 :::
 
