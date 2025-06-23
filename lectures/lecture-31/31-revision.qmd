@@ -20,6 +20,19 @@ editor:
 
 # Hello, everyone! 😊 {background-color="#2d4563"}
 
+## Brief announcements
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+- [Course evaluations are now open]{.alert}! Please take a moment to fill them out and provide your feedback
+- Please log on to Canvas and select [Account → Profile → Course Evaluations]{.alert} to access the evaluation form
+- Your feedback is super important!
+
+:::{style="margin-top: 40px;"}
+- Also, please don't forget to [submit assignment 09]{.alert} as soon as possible!
+- If you have any questions, please let me know
+:::
+:::
+
 ## Course recap
 
 :::{style="margin-top: 30px; font-size: 24px;"}
@@ -449,33 +462,7 @@ WebUI GitHub repository: <https://github.com/browser-use/web-ui>
 * **Stopping/Terminating**: Stop instances via console to pause (still pay for storage); Terminate to delete permanently (data lost) [Manage costs carefully!]{.alert}
 :::
 
-# Python and SQL for data science 🐍 🗄️{background-color="#2d4563"}
-
-## Data wrangling with Pandas 
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width="50%"}
-* [Pandas]{.alert} is the workhorse library in Python for data manipulation, built around the `DataFrame` (2D table) and `Series` (1D array)
-* Emphasises working with [tidy data]{.alert} (variables as columns, observations as rows) for easier analysis
-* **Reshaping**:
-    * `melt()`: Converts wide data to long format
-    * `pivot()`/`pivot_table()`: Converts long data to wide format; `pivot_table` handles aggregation if needed
-* **Combining**:
-    * `pd.concat()`: Stacks DataFrames row/column-wise
-    * `pd.merge()`: Performs database-style joins (`inner`, `left`, `right`, `outer`)
-:::
-:::{.column width="50%"}
-* **Grouping**: `df.groupby('column')` splits data for group-wise operations
-* **Aggregation**: Apply summary functions (`mean`, `sum`, `size`, `count`, `std`, `min`, `max`, custom functions) to groups, often using `.agg()` for flexibility
-* **Applying Functions**: Use `.apply()` (row/column-wise), `.applymap()` (element-wise DF), `.map()` (element-wise Series)
-* **Missing Data ([NaN]{.alert})**: Pandas uses `NaN`
-    * Detect: `isnull()`, `notnull()`, `info()`
-    * Remove: `dropna()`
-    * Impute: `fillna()` (with value, mean, median, `method='ffill'`, etc)
-:::
-:::
-:::
+# SQL for data science 🗄️{background-color="#2d4563"}
 
 ## Relational databases & SQL
 
